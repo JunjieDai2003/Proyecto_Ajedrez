@@ -10,7 +10,7 @@ void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecl
 int main(int argc,char* argv[])
 {
 	//Inicializar el gestor de ventanas GLUT
-	//y crear la ventana
+	//y crear la ventana//cambio
 	glutInit(&argc, argv);
 	glutInitWindowSize(800,600);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
