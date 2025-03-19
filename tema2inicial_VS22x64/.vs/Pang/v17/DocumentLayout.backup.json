@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\daiju\\Desktop\\tema2inicial_VS22x64\\tema2inicial_VS22x64\\",
+  "WorkspaceRootPath": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\tema2inicial_VS22x64\\tema2inicial_VS22x64\\Pang.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\Pang.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:Pang.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -28,11 +28,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Pang.cpp",
-              "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\tema2inicial_VS22x64\\tema2inicial_VS22x64\\Pang.cpp",
+              "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\Pang.cpp",
               "RelativeDocumentMoniker": "Pang.cpp",
-              "ToolTip": "C:\\Users\\daiju\\Desktop\\tema2inicial_VS22x64\\tema2inicial_VS22x64\\Pang.cpp",
+              "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\Pang.cpp",
               "RelativeToolTip": "Pang.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-18T10:37:12.474Z",
               "EditorCaption": ""

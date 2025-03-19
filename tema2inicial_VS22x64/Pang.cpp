@@ -1,5 +1,5 @@
 #include "freeglut.h"
-//cambio2
+//cambio21222
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
