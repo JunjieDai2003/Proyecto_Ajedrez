@@ -1,5 +1,5 @@
 #include "freeglut.h"
-
+//cambio1
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
@@ -47,7 +47,7 @@ void OnDraw(void)
 		0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
-	//aqui es donde hay que poner el código de dibujo
+	//aqui es donde hay que poner el cÃ³digo de dibujo
 	glutWireCube(5);
 
 	//no borrar esta linea ni poner nada despues
