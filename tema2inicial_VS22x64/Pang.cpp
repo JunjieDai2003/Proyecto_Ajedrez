@@ -1,6 +1,6 @@
 #include "freeglut.h"
 #include "raton.h"
-//cambio212221
+//cambio2122212
 // 
 // 1234512
 //los callback, funciones que seran llamadas automaticamente por la glut
