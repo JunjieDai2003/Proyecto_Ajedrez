@@ -140,6 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Pang.cpp" />
+    <ClCompile Include="raton.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="raton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
