@@ -139,11 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="mundo.cpp" />
     <ClCompile Include="Pang.cpp" />
     <ClCompile Include="raton.cpp" />
+    <ClCompile Include="tablero.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="mundo.h" />
     <ClInclude Include="raton.h" />
+    <ClInclude Include="tablero.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

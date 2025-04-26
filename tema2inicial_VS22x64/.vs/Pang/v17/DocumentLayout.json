@@ -3,23 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\mundo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:mundo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\mundo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:mundo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez - copia\\tema2inicial_VS22x64\\raton.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\raton.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:raton.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\raton.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:raton.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez - copia\\tema2inicial_VS22x64\\raton.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\Pang.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:Pang.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\raton.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:raton.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,8 +41,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "raton.cpp",
+              "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\raton.cpp",
+              "RelativeDocumentMoniker": "raton.cpp",
+              "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\raton.cpp",
+              "RelativeToolTip": "raton.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T18:28:07.769Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -49,31 +75,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "raton.cpp",
-              "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\raton.cpp",
-              "RelativeDocumentMoniker": "raton.cpp",
-              "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\raton.cpp",
-              "RelativeToolTip": "raton.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "tablero.cpp",
+              "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\tablero.cpp",
+              "RelativeDocumentMoniker": "tablero.cpp",
+              "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\tablero.cpp",
+              "RelativeToolTip": "tablero.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T18:28:07.769Z"
+              "WhenOpened": "2025-04-26T13:26:50.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "mundo.cpp",
+              "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\mundo.cpp",
+              "RelativeDocumentMoniker": "mundo.cpp",
+              "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\mundo.cpp",
+              "RelativeToolTip": "mundo.cpp",
+              "ViewState": "AgIAACcAAAAAAAAAAAAkwFYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-26T13:26:34.819Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "mundo.h",
+              "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\mundo.h",
+              "RelativeDocumentMoniker": "mundo.h",
+              "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\mundo.h",
+              "RelativeToolTip": "mundo.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-26T13:24:23.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tablero.h",
+              "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\tablero.h",
+              "RelativeDocumentMoniker": "tablero.h",
+              "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\tablero.h",
+              "RelativeToolTip": "tablero.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-26T13:24:17.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "raton.h",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez - copia\\tema2inicial_VS22x64\\raton.h",
               "RelativeDocumentMoniker": "..\\..\\Proyecto_Ajedrez - copia\\tema2inicial_VS22x64\\raton.h",
               "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez - copia\\tema2inicial_VS22x64\\raton.h",
               "RelativeToolTip": "..\\..\\Proyecto_Ajedrez - copia\\tema2inicial_VS22x64\\raton.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-15T18:26:17.531Z"
+              "WhenOpened": "2025-04-15T18:26:17.531Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "raton.h",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\raton.h",
               "RelativeDocumentMoniker": "raton.h",
@@ -81,31 +148,20 @@
               "RelativeToolTip": "raton.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-15T18:25:56.476Z"
+              "WhenOpened": "2025-04-15T18:25:56.476Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Pang.cpp",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\Pang.cpp",
               "RelativeDocumentMoniker": "Pang.cpp",
               "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\Pang.cpp",
               "RelativeToolTip": "Pang.cpp",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAkwF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T18:18:34.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\tema2inicial_VS22x64\\main.cpp*",
-              "RelativeToolTip": "main.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-18T10:37:12.474Z",
+              "WhenOpened": "2025-04-15T18:18:34.379Z",
               "EditorCaption": ""
             }
           ]

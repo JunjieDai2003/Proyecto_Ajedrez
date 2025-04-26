@@ -1,14 +1,23 @@
 #include "freeglut.h"
-#include "raton.h"
+//#include "raton.h"
+#include"mundo.h"
+#include<iostream>
+//estas son lineas inutiles para comprobar el funcionamiento de github(push, pull,merge,etc)
 //cambio2122212
 // 
 // 1234512
+
+
+
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
+// 
+mundo m;
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
 void OnDraw(void);		 //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
+void OnMouseDown(int button, int state, int x, int y);//cuando se pulse el raton, reconoce el click derecho e izquierdo, mantenido o no, eje x y
 
 int main(int argc, char* argv[])
 {
@@ -20,52 +29,67 @@ int main(int argc, char* argv[])
 	glutCreateWindow("MiJuego");
 
 	//habilitar luces y definir perspectiva
-	
+
 	glEnable(GL_LIGHT0);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_COLOR_MATERIAL);	
+	glEnable(GL_COLOR_MATERIAL);
 	glMatrixMode(GL_PROJECTION);
-	gluPerspective( 40.0, 800/600.0f, 0.1, 150);
-	
+	gluPerspective(40.0, 800 / 600.0f, 0.1, 150);
+
 
 	//Registrar los callbacks
 	glutDisplayFunc(OnDraw);
-	glutTimerFunc(25,OnTimer,0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
-	glutKeyboardFunc(OnKeyboardDown);
-	glutMouseFunc(ClickRaton);
-	
-	//pasarle el control a GLUT,que llamara a los callbacks
-	glutMainLoop();	
+	glutTimerFunc(25, OnTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
+	glutKeyboardFunc(OnKeyboardDown);//para usar teclado
+	glutMouseFunc(OnMouseDown); //para usar raton
 
-	return 0;   
+	//pasarle el control a GLUT,que llamara a los callbacks
+	glutMainLoop();
+
+	return 0;
 }
 void OnDraw(void)
 {
 	//Borrado de la pantalla	
-   	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	//Para definir el punto de vista
-	glMatrixMode(GL_MODELVIEW);	
+	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	
-	gluLookAt(0.0, 10, 20,  // posicion del ojo
-		0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
-		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
-	//aqui es donde hay que poner el código de dibujo
-	glutWireCube(5);
+	//aqui dibujamos la pantalla de inicio, el tablero de ajedrez, o quizas se dibuja en otra clase llamada tablero.
+	//la idea es una maquina de estado, el tablero es fijo, se los que se mueven son las piezas.
+	m.dibuja();
+
+
 
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
+	//He probado en mundo.cpp, cambiar la maquina de estado introduciendo jJ, sin embargo no refresa la pantalla hasta recibir un raton
+	//no es muy importante ahora pq podemos crear una pantalla y selecionar el objeto
+	//habra que solucionarlo que otras posibles funcionalidades
 
+	//m.teclado(key);
+}
+void OnMouseDown(int button, int state, int x, int y) {
+	//comprobar la posicion de raton
+	//este codigo es para ver como funciona el raton
+	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+		std::cout << "Clic izquierdo en: (" << x << ", " << y << ")" << std::endl;
+	}
+	if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) {
+		std::cout << "Clic derecho en: (" << x << ", " << y << ")" << std::endl;
+	}
+	//para utilizar las posiciones x e y de raton y jugar
+	m.raton(button, state, x, y);
 }
 
 void OnTimer(int value)
 {
-	
+
 }
 
