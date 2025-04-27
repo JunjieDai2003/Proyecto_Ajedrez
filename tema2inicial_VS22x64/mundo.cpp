@@ -13,8 +13,8 @@
 mundo::mundo()
 {
 	estado = PANT_INI;
-	fil = 1;
-	col = 1;
+	fil = 0;
+	col = 0;
 }
 mundo::~mundo()
 {
@@ -36,11 +36,12 @@ void mundo::dibuja()
 		glutWireCube(5);
 		break;
 		//IMPRIMIR EL TABLERO
+		//JUEGO Y JUGANDO PUEDE SER UNA MISMA FUNCION
 	case JUEGO:
-		tab.dibuja(100, 100);
+		tab.dibuja(100, 100);//IMPRIIMIIR POR PRIMERA VEZ SIN SELECCION DE PIEZA, SE PUEDE RECICLAR PARA POS SELECCION
 		break;
 	case JUGANDO:
-		tab.dibuja(fil, col); //tab.dibuja(mund::fil,mundo::col)
+		tab.dibuja(mundo::fil, mundo::col); //tab.dibuja(mund::fil,mundo::col) //SELECCION DE CASILLA, FALTA LA CONVERSION DE EJE A CASILLA
 		break;
 	}
 }
@@ -79,8 +80,17 @@ void mundo::raton(int button, int state, int x, int y)
 			estado = JUEGO;
 			estado = JUGANDO;
 			//conversion de x y a fil col
-			fil = 2;
-			col = 2;
+			mundo::fil++;
+			mundo::col++;
+		}
+	case JUGANDO:
+		if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) && (x > 280) && (x < 520) && (y > 180) && (y < 420))
+		{
+			estado = JUEGO;
+			estado = JUGANDO;
+			//conversion de x y a fil col
+			mundo::fil++;
+			mundo::col++;
 		}
 	}
 }
