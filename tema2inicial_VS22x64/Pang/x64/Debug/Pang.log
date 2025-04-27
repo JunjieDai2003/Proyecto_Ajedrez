@@ -1,2 +1,8 @@
 ﻿  mundo.cpp
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\tema2inicial_VS22x64\mundo.cpp(83,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\tema2inicial_VS22x64\mundo.cpp(84,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\tema2inicial_VS22x64\mundo.cpp(93,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\tema2inicial_VS22x64\mundo.cpp(94,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+  tablero.cpp
+  Generando código...
   Pang.vcxproj -> C:\Users\daiju\Desktop\Proyecto_Ajedrez\tema2inicial_VS22x64\x64\Debug\Pang.exe

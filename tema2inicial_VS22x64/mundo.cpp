@@ -75,22 +75,24 @@ void mundo::raton(int button, int state, int x, int y)
 		}
 		break;
 	case JUEGO:
-		if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) && (x > 280) && (x < 520) && (y > 180) && (y < 420))
+		if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) && (x > 235) && (x < 565) && (y > 135) && (y < 465))
 		{
 			estado = JUEGO;
 			estado = JUGANDO;
 			//conversion de x y a fil col
-			mundo::fil++;
-			mundo::col++;
+			mundo::col = (x - 330) / 41.25;
+			mundo::fil = (y - 330) / 41.25;
+			std::cout << "casilla x" << mundo::fil << "casilla y " << mundo::col;
 		}
 	case JUGANDO:
-		if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) && (x > 280) && (x < 520) && (y > 180) && (y < 420))
+		if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) && (x > 235) && (x < 565) && (y > 135) && (y < 465))
 		{
 			estado = JUEGO;
 			estado = JUGANDO;
 			//conversion de x y a fil col
-			mundo::fil++;
-			mundo::col++;
+			mundo::col = (x - 235) / 41.25;
+			mundo::fil = (y - 135) / 41.25;
+			std::cout << "casilla x" << mundo::fil << "casilla y " << mundo::col;
 		}
 	}
 }
