@@ -1,6 +1,6 @@
 #include "freeglut.h"
 //cambio212221
-// 123
+// 123456789junjie mola mazo
 // 1234512
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
