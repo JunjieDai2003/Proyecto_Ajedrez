@@ -1,5 +1,5 @@
 #include "freeglut.h"
-//cambio212221
+//cambio212221 probando merge
 // 123
 // 1234512
 //los callback, funciones que seran llamadas automaticamente por la glut
