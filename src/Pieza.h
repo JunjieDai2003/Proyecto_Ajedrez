@@ -21,7 +21,7 @@ protected: //Lo hago protected porque de pieza van a heredar otras clases
 public:
 	//CONSTRUCTORES
 	Pieza(); //CONSTRUCTOR por defecto
-	Pieza(/*int fila, int columna,*/ Tipo tipo, Color color, Casilla casilla) :fila(fila), columna(columna), tipo(tipo), color(color), Casilla(casilla) {}
+	Pieza(/*int fila, int columna,*/  Casilla cas, Color color,Tipo tipo) :/*fila(fila), columna(columna),*/  Casilla(cas), color(color),tipo(tipo) {}
 	//Porque crea fila y columna en vez de meter directamente la Casilla??? asi se ahorra crear y aprovecha lo creado???
 	//MODIFICAR EL CONSTRUCTOR
 	Pieza(const Pieza& p); //CONSTRUCTOR PUEDE COPIAR A OTRA PIEZA?????

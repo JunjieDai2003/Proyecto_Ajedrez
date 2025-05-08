@@ -1,5 +1,6 @@
 #include "Casilla.h"
 #include<math.h> //No hace falta, está declarado en Casilla.h
+#include<iostream>
 
 
 //CONSTRUCTORES
@@ -17,6 +18,11 @@ Casilla::Casilla() {}
 Casilla::~Casilla() {}
 
 //FUNCIONES
+
+
+
+
+
 double Casilla::modulo()const
 {
 	return sqrt((fila * fila) + (columna * columna));//NO SE PARA QUE SIRVE
