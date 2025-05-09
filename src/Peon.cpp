@@ -6,7 +6,7 @@
 //CONSTRUCTOR
 Peon::Peon(Casilla coordenadas, Color color) :Pieza(coordenadas, color, Tipo::PEON){}
 
-//FUNCION MOVIMIENTO
+//FUNCION POSIBLE MOVIMIENTO
 //El PEON puede moverse hacia delante (en el caso que se mueva) O hacia los dos vertices (en el caso en que coma)
 // TENEMOS QUE ESTUDIAR Y ENTENDER BIEN QUE HACE por eso hago los dibujos y comentarios
 bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza* coordenadas[5][5])
@@ -61,11 +61,11 @@ bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza
 				std::cout << "La pieza puede moverse";
 				return true;
 			}
-			else
+			/*else
 			{
 				std::cout << "La pieza NO puede moverse";
 				return false;
-			}
+			}*/
 			
 		}
 		if (DiferenciaC == 0 && DiferenciaF == 2) //PEON se mueve DOS casillas
@@ -77,12 +77,12 @@ bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza
 				std::cout << "La pieza puede moverse";
 				return true;
 			}
-			else
+			/*else
 			{
 				std::cout << "La pieza NO puede moverse";
 				return false;
 				
-			}
+			}*/
 			
 		}
 
@@ -96,11 +96,11 @@ bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza
 			return true;
 			std::cout << "La pieza come";
 		}
-		else
+		/*else
 		{
 			return false;
 			std::cout << "La pieza NO come";
-		}
+		}*/
 			
 		
 		// En este if hacemos que se cumplan 3 condiciones para que la pieza pueda comer
@@ -110,14 +110,61 @@ bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza
 	}
 
 
-
-	//CASO COLOR NEGRO:
-	else if (coordenadas[origen.fila][origen.columna]->getColor() == NEGRO)
+	//CASO COLOR NEGRO: Es lo mismo pero adaptando los ifs a lo explicado antes,SUPONEMOS QUE LAS PIEZAS NEGRAS EMPIEZAN ARRIBA DEL TABLERO
+	else if (coordenadas[origen.fila][origen.columna]->getColor() == NEGRO) //coordenadas es una PIEZA, el getColor() es de una pieza, no una casilla.Realmente casilla no tiene color solo dos atributos int
 	{
-		std::cout << "Movimiento de un Peon color NEGRO";
-	}
-	
+		std::cout << "Movimiento de un Peon color NEGRA";
 
+	//MOVIMIENTO DEL PEON (HACIA DELANTE)
+		if (DiferenciaC == 0 && DiferenciaF == -1) //PEON se mueve UNA casilla
+		{
+			std::cout << "Movimiento del Peon hacia delante en UNA casilla, varia la posicion<<" << origen.fila << "," << origen.columna << "hacia " << destino.fila << "," << destino.columna;
+			//Hay que comprobar que la casilla de destino no esté ocupada por otra pieza
+			if (coordenadas[destino.fila][destino.columna]->getTipo() == VACIO)//Usamos la FUNCION getTipo() declarada también en la clase PIEZA
+			{
+				std::cout << "La pieza puede moverse";
+				return true;
+			}
+			/*else
+			{
+				std::cout << "La pieza NO puede moverse";
+				return false;
+			}*/
+
+		}
+		if (DiferenciaC == 0 && DiferenciaF == -2) //PEON se mueve DOS casillas
+		{
+			std::cout << "Movimiento del Peon hacia delante en DOS casillas, varia la posicion<<" << origen.fila << "," << origen.columna << "hacia " << destino.fila << "," << destino.columna;
+			//Hay que comprobar que la casilla de destino no esté ocupada por otra pieza
+			if (coordenadas[destino.fila][destino.columna]->getTipo() == VACIO)
+			{
+				std::cout << "La pieza puede moverse";
+				return true;
+			}
+			/*else
+			{
+				std::cout << "La pieza NO puede moverse";
+				return false;
+
+			}*/
+
+		}
+
+		//MOVIMIENTO COMER DEL PEON
+		if (abs(DiferenciaC) == 1 && DiferenciaF == -1 && coordenadas[destino.fila][origen.columna]->getColor() == BLANCO)
+		{
+			return true;
+			std::cout << "La pieza come";
+		}
+		/*else
+		{
+			return false;
+			std::cout << "La pieza NO come";
+		}*/
+	}
+
+	
+	return false; //DUDO si dejo este false aqui no devolvería siempre false ????
 
 }
 
