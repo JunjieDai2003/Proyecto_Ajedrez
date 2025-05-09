@@ -47,8 +47,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-08T18:14:03.332Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -58,7 +57,7 @@
               "RelativeDocumentMoniker": "src\\Peon.cpp",
               "ToolTip": "C:\\Users\\jacob\\OneDrive\\Escritorio\\Proyecto_Ajedrez\\src\\Peon.cpp",
               "RelativeToolTip": "src\\Peon.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAE0AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-08T18:14:23.748Z",
               "EditorCaption": ""
@@ -71,7 +70,7 @@
               "RelativeDocumentMoniker": "src\\Pieza.h",
               "ToolTip": "C:\\Users\\jacob\\OneDrive\\Escritorio\\Proyecto_Ajedrez\\src\\Pieza.h",
               "RelativeToolTip": "src\\Pieza.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAAAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-08T18:11:52.961Z",
               "EditorCaption": ""
@@ -99,8 +98,7 @@
               "RelativeToolTip": "src\\Pieza.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T18:11:39.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T18:11:39.985Z"
             },
             {
               "$type": "Document",
@@ -112,8 +110,7 @@
               "RelativeToolTip": "src\\Casilla.cpp",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T18:11:31.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T18:11:31.597Z"
             }
           ]
         }

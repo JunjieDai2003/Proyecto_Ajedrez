@@ -30,7 +30,7 @@ public:
 
 
 	//GETTERS
-	Tipo getTipo()const { return tipo; }
+	Tipo getTipo()const { return tipo; } 
 	Color getColor()const { return color; }
 	Casilla getCasilla()const { return casilla; }
 	bool getMovida()const { return movida; }//TODAVIA NO SE PARA QUE SIRVE NI COMO SE UTILIZA
