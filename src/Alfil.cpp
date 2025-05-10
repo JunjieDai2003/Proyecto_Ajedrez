@@ -14,6 +14,8 @@ bool Alfil::PuedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* c
 
 	int DiferenciaF = destino.fila - origen.fila;
 	int DiferenciaC = destino.columna - origen.columna;
+	int FilaAuxiliar;
+	int ColumnaAuxiliar;
 
 	if (coordenadas[origen.fila][origen.columna]->getColor() == BLANCO)
 	{
@@ -34,19 +36,41 @@ bool Alfil::PuedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* c
 									C1|C2|C3|C4|C5
 
         */
-		//Si estoy en la casilla 12 y quiero desplazarme mis opciones sería: 21,23,34,45
+		//Si estoy en la casilla 33 y quiero desplazarme mis opciones serían: 42,51,44,55,22,11,24,15; 
 		//es decir varían tanto las filas como las columnas.
-		// Podemos decir que el movimiento en diagonal obliga a los alfiles a desplazarse el 
-		// mismo numero de filas que de columnas, si no este movimiento no se estaría cumpliendo
-		//Además, solo pueden desplazarse por las casillas que tienen el color de la casilla del inicio
-		//Al contrario que los Peones los alfiles pueden ir y volver
+		// 
+		//LÓGICAAAAAA 
+		//La lógica de los alfiles para saber en que posición pueden desplazarse sería:(siguiendo con el ejemplo de la casilla 33)
+		//Creamos dos variables auxiliares: FILAauxiliar y COLUMNAauxiliar.
+		//hacemos un bucle que recorra la matriz o tablero compuesto por filas y columnas es decir
+		// FILAauxiliar y COLUMNAauxiliar va a tomar todos los valores posibles del tablero desde el 11 hasta el 55
+		// 
+		// Si  FILAauxiliar + COLUMNAauxiliar es == a 3+3 (fila y columna donde está situada la pieza),
+		// entonces esa casilla es un posible punto donde el ALFIL PUEDE DESPLAZARSE
+		//   
+		// Si FILAauxiliar - COLUMNAauxiliar es == a  3-3 (fila y columna donde está situada la pieza),
+		// entonces esa casilla TAMBIÉN es un  posible punto donde el ALFIL PUEDE DESPLAZARSE
+		//
+		//INSISTO si os dibujais el tablero en un cuaderno y haces las operaciones lo veis mejor.
+		//
+		// 
+		// Además podemos comprobar si el movimiento es diagonal o no, ya que siempre pasa:
+		// abs(fila.destino-fila.origen)=abs(columna.destino-columna.origen), ya que al ser un movimiento diagonal SIEMPRE
+		// avanzamos el mismo numero de filas que de columnas.
 
-		//COMPROBACION DIAGONAL: la diferencia de fila.destino-fila.origen == columna.destino-columna.origen
 
+		//COMPROBACIÓN MOVIMIENTO DIAGONAL
 		if (abs(DiferenciaF) != abs(DiferenciaC))
 		{
+			std::cout << "Movimeinto NO diagonal";
 			return false;
 		}
+
+
+	
+
+
+	
 
 
 	}

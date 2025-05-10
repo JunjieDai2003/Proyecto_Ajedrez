@@ -55,8 +55,7 @@
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-08T18:14:03.332Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -69,8 +68,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-09T11:34:42.098Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -80,7 +78,7 @@
               "RelativeDocumentMoniker": "src\\Alfil.cpp",
               "ToolTip": "C:\\Users\\jacob\\OneDrive\\Escritorio\\Proyecto_Ajedrez\\src\\Alfil.cpp",
               "RelativeToolTip": "src\\Alfil.cpp",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAADAAAAADAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-09T11:34:56.43Z",
               "IsPinned": true,
@@ -96,8 +94,7 @@
               "RelativeToolTip": "src\\Peon.cpp",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAACYAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T18:14:23.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T18:14:23.748Z"
             },
             {
               "$type": "Document",
@@ -109,8 +106,7 @@
               "RelativeToolTip": "src\\Pieza.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-08T18:11:52.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T18:11:52.961Z"
             },
             {
               "$type": "Document",
