@@ -1,7 +1,4 @@
 ﻿  Juego.cpp
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(20,33): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(21,30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Mundo.cpp
-  pang.cpp
-  Generando código...
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(12,30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(13,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   Pang.vcxproj -> C:\Users\daiju\Desktop\Proyecto_Ajedrez\bin\Pang.exe

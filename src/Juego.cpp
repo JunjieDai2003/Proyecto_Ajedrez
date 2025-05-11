@@ -6,11 +6,19 @@ void Juego::dibuja()
 	//colocamos un fondo con etsidi.h
 	tablero.dibuja();
 }
+Casilla Juego::getCoord(int x, int y)
+{
+	Casilla casilla;
+	casilla.columna = (x - 330) / 41.25;
+	casilla.fila = (y - 330) / 41.25;
+	std::cout << "estoy clickeando " << casilla.columna << " y " << casilla.fila << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
+	return casilla;
+}
 void Juego::ratonjuego(int button, int state, int x, int y)
 {
-	//usamos lamda pq necesitamos la variable x y que estan en esta funcion
-	// para no ir entrando y retornando valores de otras funciones externas
+	//dejo la funcion lamda pq MH lo menciono una vez en clase y lo investigue y me parecio interesante, en teoria funciona igual q getCoord que tengo arriba
 	//una funcion lammba getCoord que convierte el x y en atributos de la clase Casilla definida posteriomente
+	/*
 	auto getCoord = [](int x, int y)->Casilla //Declararemos amistad para que juego pueda usar los atributos privados
 		{
 
@@ -20,7 +28,8 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			std::cout << "estoy clickeando " << casilla.columna << " y " << casilla.fila << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
 			return casilla;//no se si es paso por valor o paso por referencia
 
-		};
+		};*/
+
 	if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN))
 	{
 		//conseguir las coordenadas
