@@ -31,7 +31,7 @@ bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza
 	// y he nombrado las filas y columnas de abajo a arriba y de izquierdas a derechas
 	//Si haces eso podeis comprobar que si se mueve hacia adelante obviamente solo cambia
 	//la fila,
-	//por ejemplo si el peon está en la posición 11 y lo movemos hacia delante,
+	//por ejemplo si el peon est?en la posición 11 y lo movemos hacia delante,
 	//pasaría a la posicion 21, es decir solo se modifica la fila
 
 //DIBUJO DEL AJEDREZ:
@@ -55,7 +55,7 @@ bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza
 		if (DiferenciaC == 0 && DiferenciaF == 1) //PEON se mueve UNA casilla
 		{
 			std::cout << "Movimiento del Peon hacia delante en UNA casilla, varia la posicion<<" << origen.fila << "," << origen.columna << "hacia " << destino.fila << "," << destino.columna;
-			//Hay que comprobar que la casilla de destino no esté ocupada por otra pieza
+			//Hay que comprobar que la casilla de destino no est?ocupada por otra pieza
 			if (coordenadas[destino.fila][destino.columna]->getTipo() == VACIO)//Usamos la FUNCION getTipo() declarada también en la clase PIEZA
 			{
 				std::cout << "La pieza puede moverse";
@@ -71,7 +71,7 @@ bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza
 		if (DiferenciaC == 0 && DiferenciaF == 2) //PEON se mueve DOS casillas
 		{
 			std::cout << "Movimiento del Peon hacia delante en DOS casillas, varia la posicion<<" << origen.fila << "," << origen.columna << "hacia " << destino.fila << "," << destino.columna;
-			//Hay que comprobar que la casilla de destino no esté ocupada por otra pieza
+			//Hay que comprobar que la casilla de destino no est?ocupada por otra pieza
 			if (coordenadas[destino.fila][destino.columna]->getTipo() == VACIO)
 			{
 				std::cout << "La pieza puede moverse";
@@ -87,7 +87,7 @@ bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza
 		}
 
 		//MOVIMIENTO COMER DEL PEON
-		//Para comer el Peon se dirige de forma diagonal, es decir si está en la casilla 13 puede ir a la
+		//Para comer el Peon se dirige de forma diagonal, es decir si est?en la casilla 13 puede ir a la
 		//casilla 22 o a la casilla 24, es decir siempre se aumenta en una unidad la fila 
 		//mientras que la columna puede aumentar o disminuir en una unidad. Usamos valor absoluto(abs).
 
@@ -119,7 +119,7 @@ bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza
 		if (DiferenciaC == 0 && DiferenciaF == -1) //PEON se mueve UNA casilla
 		{
 			std::cout << "Movimiento del Peon hacia delante en UNA casilla, varia la posicion<<" << origen.fila << "," << origen.columna << "hacia " << destino.fila << "," << destino.columna;
-			//Hay que comprobar que la casilla de destino no esté ocupada por otra pieza
+			//Hay que comprobar que la casilla de destino no est?ocupada por otra pieza
 			if (coordenadas[destino.fila][destino.columna]->getTipo() == VACIO)//Usamos la FUNCION getTipo() declarada también en la clase PIEZA
 			{
 				std::cout << "La pieza puede moverse";
@@ -135,7 +135,7 @@ bool Peon::MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza
 		if (DiferenciaC == 0 && DiferenciaF == -2) //PEON se mueve DOS casillas
 		{
 			std::cout << "Movimiento del Peon hacia delante en DOS casillas, varia la posicion<<" << origen.fila << "," << origen.columna << "hacia " << destino.fila << "," << destino.columna;
-			//Hay que comprobar que la casilla de destino no esté ocupada por otra pieza
+			//Hay que comprobar que la casilla de destino no est?ocupada por otra pieza
 			if (coordenadas[destino.fila][destino.columna]->getTipo() == VACIO)
 			{
 				std::cout << "La pieza puede moverse";

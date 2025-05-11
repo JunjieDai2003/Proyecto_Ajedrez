@@ -9,6 +9,8 @@ public:
 	int fila, columna;
 	//CONSTRUCTORES
 	Casilla(int, int);
+
+
 	Casilla(); //Realmente no serviría???
 
 	//DESTRUCTOR 
@@ -21,5 +23,5 @@ public:
 
 	//friend class Pieza; // No se porque los hace FRIEND
 	//friend class Tablero; // creo que es mejor ir haciéndolos public;
-	//friend class Ajedrez; //Tipo class Pieza:public Tablero{};
+	friend class Juego; //Tipo class Pieza:public Tablero{};
 };

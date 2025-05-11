@@ -45,10 +45,10 @@ bool Alfil::PuedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* c
 		//hacemos un bucle que recorra la matriz o tablero compuesto por filas y columnas es decir
 		// FILAauxiliar y COLUMNAauxiliar va a tomar todos los valores posibles del tablero desde el 11 hasta el 55
 		// 
-		// Si  FILAauxiliar + COLUMNAauxiliar es == a 3+3 (fila y columna donde está situada la pieza),
+		// Si  FILAauxiliar + COLUMNAauxiliar es == a 3+3 (fila y columna donde est?situada la pieza),
 		// entonces esa casilla es un posible punto donde el ALFIL PUEDE DESPLAZARSE
 		//   
-		// Si FILAauxiliar - COLUMNAauxiliar es == a  3-3 (fila y columna donde está situada la pieza),
+		// Si FILAauxiliar - COLUMNAauxiliar es == a  3-3 (fila y columna donde est?situada la pieza),
 		// entonces esa casilla TAMBIÉN es un  posible punto donde el ALFIL PUEDE DESPLAZARSE
 		//
 		//INSISTO si os dibujais el tablero en un cuaderno y haces las operaciones lo veis mejor.

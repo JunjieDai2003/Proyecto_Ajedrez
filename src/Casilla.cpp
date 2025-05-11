@@ -1,5 +1,5 @@
 #include "Casilla.h"
-#include<math.h> //No hace falta, está declarado en Casilla.h
+#include<math.h> //No hace falta, est?declarado en Casilla.h
 #include<iostream>
 
 

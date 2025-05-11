@@ -5,7 +5,7 @@ class Tablero
 public:
 	Tablero();
 	~Tablero();
-	void dibuja(int fil, int col);
+	void dibuja();
 };
 
 
