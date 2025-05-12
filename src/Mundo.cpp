@@ -6,7 +6,7 @@
 //enum Estado { PANT_INI, DOS_JUGADOR,CONTRA_AI};
 Mundo::Mundo()
 {
-	estado = PANT_INI;
+	estado_mundo = PANT_INI;
 	//fil = 0;
 	//col = 0;
 }
@@ -16,7 +16,7 @@ Mundo::Mundo()
 }*/
 void Mundo::dibuja()
 {
-	switch (estado)
+	switch (estado_mundo)
 	{
 	case PANT_INI:
 		std::cout << "QUE QUIERES JUGAR?\n";
@@ -55,22 +55,22 @@ void Mundo::dibuja()
 ///*
 void Mundo::raton(int button, int state, int x, int y)
 {
-	switch (estado)
+	switch (estado_mundo)
 	{
 	case PANT_INI:
 		if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) && (x > 280) && (x < 520) && (y > 180) && (y < 420))
 		{
-			estado = DOS_JUGADOR;
+			estado_mundo = DOS_JUGADOR;
 		}
 		else
 		{
-			estado = CONTRA_AI;
+			estado_mundo = CONTRA_AI;
 			std::cout << "fuera de rango y por lo tanto vs ai\n";//por alguna razon imprime 2 veces esto, no molesta, esto es para orientar
 		}
 		break;
 
 	}
-	if (estado == CONTRA_AI || estado == DOS_JUGADOR)
+	if (estado_mundo == CONTRA_AI || estado_mundo  == DOS_JUGADOR)
 	{
 		juego.ratonjuego(button, state, x, y);
 	}
