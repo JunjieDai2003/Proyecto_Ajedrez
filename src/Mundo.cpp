@@ -20,14 +20,21 @@ void Mundo::dibuja()
 	{
 	case PANT_INI:
 		std::cout << "QUE QUIERES JUGAR?\n";
-		//DIBUJAR EN UNA PANTALLA UN CUADRO DONDE PONE LAS DIFERENNTES POCIONES DE JUEGO
-		//dibujar pantalla de inicio
-		gluLookAt(0.0, 0.0, 20,  // posicion del ojo
-			0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
-			0.0, 5, 0.0);      // definimos hacia arriba (eje Y)    
-		glutWireCube(5);
-		//aqui es donde hay que poner el c¨®digo de dibujo
-		//glutWireCube(5);
+		gluLookAt(0, 7.5, 20,  // posicion del ojo
+			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
+			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Pantallainicial.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex2f(-10, 0);
+		glTexCoord2d(1, 1); glVertex2f(10, 0);
+		glTexCoord2d(1, 0); glVertex2f(10, 15);
+		glTexCoord2d(0, 0); glVertex2f(-10, 15);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
 		break;
 	case DOS_JUGADOR:
 		juego.dibuja();
@@ -55,25 +62,34 @@ void Mundo::dibuja()
 ///*
 void Mundo::raton(int button, int state, int x, int y)
 {
-	switch (estado_mundo)
+	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
 	{
-	case PANT_INI:
-		if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) && (x > 280) && (x < 520) && (y > 180) && (y < 420))
+		switch (estado_mundo)
 		{
-			estado_mundo = DOS_JUGADOR;
-		}
-		else
-		{
-			estado_mundo = CONTRA_AI;
-			std::cout << "fuera de rango y por lo tanto vs ai\n";//por alguna razon imprime 2 veces esto, no molesta, esto es para orientar
-		}
-		break;
+		case PANT_INI:
+			if ((x > 230) && (x < 500) && (y > 418) && (y < 585))
+			{
+				estado_mundo = DOS_JUGADOR;
+			}
+			else if ((x > 230) && (x < 500) && (y > 520) && (y < 570))
+			{
+				estado_mundo = CONTRA_AI;
+			}
+			else
+			{
+				std::cout << "fuera de rango \n";//por alguna razon imprime 2 veces esto, no molesta, esto es para orientar
+			}
 
+			break;
+
+		}
+		if (estado_mundo == CONTRA_AI || estado_mundo == DOS_JUGADOR)
+		{
+			juego.ratonjuego(button, state, x, y);
+		}
 	}
-	if (estado_mundo == CONTRA_AI || estado_mundo  == DOS_JUGADOR)
-	{
-		juego.ratonjuego(button, state, x, y);
-	}
+	
+	
 }
 //paso lla informacion de raton 
 /*

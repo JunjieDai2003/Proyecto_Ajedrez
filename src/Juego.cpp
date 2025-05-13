@@ -1,4 +1,5 @@
 #include "Juego.h"
+#include "ETSIDI.h"
 #include <iostream>
 Juego::Juego()
 {
@@ -9,15 +10,32 @@ Juego::Juego()
 }
 void Juego::dibuja()
 {
-	//colocamos un fondo con etsidi.h
-	tablero.dibuja();
+	
+	gluLookAt(3, 3, 20,  // posicion del ojo
+		3, 3, 0.0,      // hacia que punto mira  (0,0,0) 
+		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
+	tablero.dibuja();//hay que dibujarlo antes
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/rift.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 1); glVertex2f(-15,-5);
+	glTexCoord2d(1, 1); glVertex2f(15,-5);
+	glTexCoord2d(1, 0); glVertex2f(15,20);
+	glTexCoord2d(0, 0); glVertex2f(-15,20);
+	glEnd();
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
+	
 }
 Casilla Juego::getCoord(int x, int y)
 {
 	//las coordenadas seran modificadas posteriormente, este funciona con mi pov, pero creo q usare pov de laboratorio
 	Casilla casilla;
-	casilla.columna = (x - 330) / 41.25;
-	casilla.fila = (y - 330) / 41.25;
+	casilla.columna = (y - 177) / 31.25;
+	casilla.fila = (x - 277) / 30.75;
+	std::cout << "estoy clickeando " <<x << " y " << y<< std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
 	std::cout << "estoy clickeando " << casilla.columna << " y " << casilla.fila << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
 	return casilla;
 }

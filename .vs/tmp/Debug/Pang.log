@@ -1,12 +1,8 @@
 ﻿  Juego.cpp
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(19,30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(20,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(36,30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(37,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   Mundo.cpp
   Tablero.cpp
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Tablero.cpp(6,2): error C2065: 'fila': identificador no declarado
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Tablero.cpp(7,2): error C2065: 'colu': identificador no declarado
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Tablero.cpp(15,27): error C2065: 'fila': identificador no declarado
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Tablero.cpp(21,22): error C2065: 'fila': identificador no declarado
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Tablero.cpp(23,23): error C2065: 'colu': identificador no declarado
   pang.cpp
   Generando código...
+  Pang.vcxproj -> C:\Users\daiju\Desktop\Proyecto_Ajedrez\bin\Pang.exe
