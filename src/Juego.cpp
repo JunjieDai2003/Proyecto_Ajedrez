@@ -4,7 +4,7 @@
 Juego::Juego()
 {
 	estado_juego = Seleccion1;
-	turno = 2;
+	//turnov1 = 2;
 	//fil = 0;
 	//col = 0;
 }
@@ -42,7 +42,7 @@ Casilla Juego::getCoord(int x, int y)
 void Juego::ratonjuego(int button, int state, int x, int y)
 {
 
-	if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN))
+	if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)&&(x>277)&&(x<523)&&(y>177)&&(y<424))
 	{
 		switch (estado_juego)
 		{
@@ -52,9 +52,12 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				//if(turno%2!=0) estado_juego=Seleccion1://has seleccionado color incorrecto o vacio
 				//else dibujo con tablero la casilla seleccionada y movimientos permitidos
 				estado_juego = Seleccion2;
+				std::cout << "estoy en seleccion1";
 				break;
 			case Seleccion2:
 				final = getCoord(x, y);
+				std::cout << "estoy en seleccion2";
+				estado_juego = Seleccion1;
 				//comprobar de que se ha seleccionado dentro, si no, break directamente;
 				//if(final=inicial) estado_juego=Seleccion1; Selecciono misma casilla
 				//limpiamos lo dibujado; break;
