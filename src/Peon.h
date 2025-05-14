@@ -3,7 +3,7 @@
 
 //Peon,Torre,Caballo,Alfil,Rey,Reina van a tener #include"Pieza.h"
 //Creo que la mejor opción en vez de usar friend es :public Pieza
-//Así tienen acceso a las funciones, métodos... de pieza
+//As?tienen acceso a las funciones, métodos... de pieza
 //Podemos ir viendo y cambiarlo si algo no nos cuadra
 
 class Peon :public Pieza

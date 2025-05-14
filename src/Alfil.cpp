@@ -3,7 +3,7 @@
 #include<iostream>
 
 //CONSTRUTOR
-Alfil::Alfil(Casilla coordenadas, Color color) :Pieza(coordenadas, color, Tipo::ALFIL){}
+Alfil::Alfil(Casilla coordenadas, Color color) :Pieza(coordenadas, color, Tipo::ALFIL) {}
 
 
 //FUNCIONES PARA VER MOVIMIENTOS
@@ -35,7 +35,7 @@ bool Alfil::PuedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* c
 
 									C1|C2|C3|C4|C5
 
-        */
+		*/
 		//Si estoy en la casilla 33 y quiero desplazarme mis opciones serían: 42,51,44,55,22,11,24,15; 
 		//es decir varían tanto las filas como las columnas.
 		// 
@@ -67,15 +67,15 @@ bool Alfil::PuedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* c
 		}
 
 
-	
 
 
-	
+
+
 
 
 	}
 
-	
+
 
 
 

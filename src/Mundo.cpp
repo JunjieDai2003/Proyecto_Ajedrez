@@ -88,8 +88,8 @@ void Mundo::raton(int button, int state, int x, int y)
 			juego.ratonjuego(button, state, x, y);
 		}
 	}
-	
-	
+
+
 }
 //paso lla informacion de raton 
 /*

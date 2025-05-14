@@ -6,8 +6,8 @@
 class Juego
 {
 private:
-	enum Estado_juego{Seleccion1,Seleccion2};
-	enum Turno{Blanco,Negro}; //para cambiar turnov2 = Blanco
+	enum Estado_juego { Seleccion1, Seleccion2 };
+	enum Turno { Blanco, Negro }; //para cambiar turnov2 = Blanco
 	Turno turnov2;
 	int turnov1; //para cambiar turno++ y comprobar si es par o no
 	Estado_juego estado_juego;
