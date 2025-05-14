@@ -28,9 +28,6 @@ public:
 	//Tablero();
 	//~Tablero();
 	void dibuja();
-	void ColocarPeonInicial(int, Color);
-	void ColocarPiezaInicial(int fila, Color color, std::vector<Tipo>PIEZAS);
-	void Vacio(int fila);
 	void configurarTablero();
 };
 
