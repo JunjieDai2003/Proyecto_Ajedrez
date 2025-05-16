@@ -25,10 +25,26 @@ class Tablero
 	std::vector<Tipo> PIEZAS = { Tipo::TORRE, Tipo::CABALLO, Tipo::ALFIL, Tipo::REINA, Tipo::REY,Tipo::ALFIL,Tipo::CABALLO,Tipo::TORRE };
 
 public:
-	//Tablero();
-	//~Tablero();
+	//CONTRUCTOR 
+	Tablero();
+
+	//DESTRUCTOR 
+	~Tablero();
+
+	//FUNCIONES IMPRESION POR PANTALLA
 	void dibuja();
 	void configurarTablero();
+
+	//FUNCIONES PARA LA LOGICA
+	void posicionInicial(bool est);
+	int getColor(Casilla& cas);
+	bool validarMovimiento(const Casilla& origen, const Casilla& destino);
+	void actualizarMovimiento(Casilla& origen, Casilla& destino);
+	int posiblesMovmientos(Casilla& origen);
+	void seMovimientoInicial();
+	void resaltarMovimientosLegales(const Casilla& origen);
+	void LimpiarDestacados();
+
 };
 
 

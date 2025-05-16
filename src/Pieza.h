@@ -47,7 +47,7 @@ public:
 	//No hace falta settear la fila y columna porque en nuestro caso usamos directamente
 	//la casilla que creo que es mejor, ya veremos si lo cambiamos o que 
 
-	virtual bool puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* Casilla[5][5])
+	virtual bool Movimeintovalido(const Casilla& origen, const Casilla& destino, Pieza* Casilla[5][5])
 	{
 		return false;
 	}

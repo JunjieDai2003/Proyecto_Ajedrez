@@ -46,7 +46,7 @@ void Tablero::dibuja()
 
 }
 
-void Tablero::configurarTablero()
+void Tablero::configurarTablero() 
 {
     std::vector<Tipo> PIEZAS = { Tipo::TORRE, Tipo::CABALLO, Tipo::ALFIL, Tipo::REINA, Tipo::REY,Tipo::ALFIL,Tipo::CABALLO,Tipo::TORRE };
     for (int i = 0;i < 8;i++)
@@ -77,3 +77,28 @@ void Tablero::configurarTablero()
     }
 
 }
+//JunJie creo que has Hecho las funciones colocarPiezasInicilaes,posicionar peones y vaciaerFila en la funcion 
+//configurar Tablero.
+
+
+
+//DESTRUCTOR
+Tablero::~Tablero()
+{
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            delete casillas1[i][j];
+            casillas1[i][j] = nullptr;
+        }
+    }
+}
+
+
+
+
+
+
+
+
