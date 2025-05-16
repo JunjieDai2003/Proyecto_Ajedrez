@@ -73,20 +73,25 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 		case TurnoBlanco2:
 			final = getCoord(x, y);
 			std::cout << "puedes eliminar tu propia pieza, por lo que no comprobamos el color salvo haya una ejecucion\n";
-			//codigo de abajo es orientativo
+			//codigo de abajo es orientativo, sera sustituido en una line///////77
+			////////////////////777
+			/////////////////////
 			if (final==origen)
 			{
 				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
 				estado_juego = TurnoBlanco;
+				tablero.moverPiezas(origen, final);
 				break;
 			}else if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
+				tablero.moverPiezas(origen, final);
 				
 			}
 			else if (tablero.getColor(final) == 1)
 			{
 				std::cout << "ejecutas tu propia pieza\n";
+				tablero.moverPiezas(origen, final);
 				
 			}
 			else
@@ -124,17 +129,20 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			else if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
+				tablero.moverPiezas(origen, final);
 				estado_juego = TurnoBlanco;
 			}
 			else if (tablero.getColor(final) == 1)
 			{
 				std::cout << "ejecutas tu propia pieza\n";
+				tablero.moverPiezas(origen, final);
 				estado_juego = TurnoBlanco;
 			}
 			else
 			{
 				std::cout << "ejecutas pieza negra\n";
 				estado_juego = TurnoBlanco;
+				tablero.moverPiezas(origen, final);
 			}
 			break;
 			

@@ -29,7 +29,8 @@ public:
 	//~Tablero();
 	void dibuja();
 	void configurarTablero();
-	int getColor(Casilla &casillacolor);
+	int getColor(Casilla &);
+	void moverPiezas(Casilla&,Casilla&);
 };
 
 

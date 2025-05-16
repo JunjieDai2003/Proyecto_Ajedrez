@@ -44,6 +44,8 @@ public:
 	//Una vez que mueves piezas se usan las siguientes funciones
 	void setTipo(Tipo nuevoTipo) { tipo = nuevoTipo; }
 	void setColor(Color nuevoColor) { color = nuevoColor; }
+	//me gustaria averiguar esto
+	//void setCasilla(Casilla casilla) { casilla.fila =fila; casilla.columna = columna; }
 	void setCasilla(int fil, int colum) { casilla.fila = fil; casilla.columna = colum; }
 	void setMovida(bool a) { movida = a; }//ESTO NO SIRVE??? 
 	//No hace falta settear la fila y columna porque en nuestro caso usamos directamente

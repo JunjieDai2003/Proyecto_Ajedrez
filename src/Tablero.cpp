@@ -55,10 +55,11 @@ void Tablero::configurarTablero()
         {
             if (i == 0)
             {
-                casillas1[i][j] = new Pieza(Tipo::PEON, Color::NEGRO ,i, j);
+                casillas1[i][j] = new Pieza(Tipo::PEON, Color::NEGRO, i, j);
             }
             else if (i == 1)
             {
+                //casillas1[i][j] = new Pieza(casilla, PIEZAS[j], Color::NEGRO); //otra forma de inicializacion pero tiene error
                 casillas1[i][j] = new Pieza(PIEZAS[j], Color::NEGRO, i, j);
             }
             else if (i > 1 && i < 6)
@@ -84,4 +85,20 @@ int Tablero::getColor(Casilla& casillacolor)
     color=casillas1[casillacolor.fila][casillacolor.columna]->getColor();//get color de pieza pq casillas[][]es una pieza
     std::cout <<"EL COLOR OBTENIDO ES" << color;
     return color;
+}
+void Tablero::moverPiezas(Casilla& origen, Casilla & final)
+{
+    //la filosofia es pedir dato de final y meterselo al original 
+    // para ello dos ->
+    Tipo nuevoTipo = casillas1[origen.fila][origen.columna]->getTipo();
+    Color nuevoColor = casillas1[origen.fila][origen.columna]->getColor();
+    //Casilla nuevoCasilla = casillas1[origen.fila][origen.columna]->getCasilla(); //funciona para otro tipo de inicializacion
+    casillas1[final.fila][final.columna]->setTipo(nuevoTipo);
+    casillas1[final.fila][final.columna]->setColor(nuevoColor);
+    //casillas1[final.fila][final.columna]->setCasilla() //pensaba que pieza tenia 4 atributos, tipo, color, fil, col,
+    //pensaba q habria madoficarr i j tambien, pero pensandolo bien creo q no es necesario
+
+    casillas1[origen.fila][origen.columna]->setColor(NO_COLOR);
+    casillas1[origen.fila][origen.columna]->setTipo(VACIO);
+
 }
