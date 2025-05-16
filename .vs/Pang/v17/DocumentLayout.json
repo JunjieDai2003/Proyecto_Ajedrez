@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:src\\Juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:src\\Juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Mundo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:src\\Mundo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -13,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:src\\Juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -47,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:src\\Alfil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:src\\Juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Mundo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:src\\Mundo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -70,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,8 +98,7 @@
               "RelativeToolTip": "src\\pang.cpp",
               "ViewState": "AgIAADIAAAAAAAAAAAAqwF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-11T10:13:04.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T10:13:04.185Z"
             },
             {
               "$type": "Document",
@@ -111,12 +110,11 @@
               "RelativeToolTip": "src\\Mundo.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-11T10:17:39.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T10:17:39.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Mundo.cpp",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Mundo.cpp",
               "RelativeDocumentMoniker": "src\\Mundo.cpp",
@@ -129,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "Juego.h",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Juego.h",
               "RelativeDocumentMoniker": "src\\Juego.h",
@@ -142,20 +140,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Juego.cpp",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Juego.cpp",
               "RelativeDocumentMoniker": "src\\Juego.cpp",
               "ToolTip": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Juego.cpp",
               "RelativeToolTip": "src\\Juego.cpp",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADEAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAHsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-11T11:24:22.774Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Tablero.h",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Tablero.h",
               "RelativeDocumentMoniker": "src\\Tablero.h",
@@ -163,12 +161,11 @@
               "RelativeToolTip": "src\\Tablero.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-11T11:28:11.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T11:28:11.853Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Tablero.cpp",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Tablero.cpp",
               "RelativeDocumentMoniker": "src\\Tablero.cpp",
@@ -176,8 +173,7 @@
               "RelativeToolTip": "src\\Tablero.cpp",
               "ViewState": "AgIAAC4AAAAAAAAAAAAQwDkAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-11T10:15:44.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T10:15:44.843Z"
             },
             {
               "$type": "Document",
@@ -189,12 +185,11 @@
               "RelativeToolTip": "src\\Casilla.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T18:11:31.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T18:11:31.597Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Casilla.h",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Casilla.h",
               "RelativeDocumentMoniker": "src\\Casilla.h",
@@ -202,12 +197,11 @@
               "RelativeToolTip": "src\\Casilla.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-08T18:11:52.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T18:11:52.148Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Pieza.cpp",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Pieza.cpp",
               "RelativeDocumentMoniker": "src\\Pieza.cpp",
@@ -215,12 +209,11 @@
               "RelativeToolTip": "src\\Pieza.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T18:11:39.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T18:11:39.985Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Pieza.h",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Pieza.h",
               "RelativeDocumentMoniker": "src\\Pieza.h",
@@ -228,12 +221,11 @@
               "RelativeToolTip": "src\\Pieza.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-08T18:11:52.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T18:11:52.961Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Alfil.cpp",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Alfil.cpp",
               "RelativeDocumentMoniker": "src\\Alfil.cpp",
@@ -241,12 +233,11 @@
               "RelativeToolTip": "src\\Alfil.cpp",
               "ViewState": "AgIAACYAAAAAAAAAAAAqwFMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-09T11:34:56.43Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T11:34:56.43Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Alfil.h",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Alfil.h",
               "RelativeDocumentMoniker": "src\\Alfil.h",
@@ -254,12 +245,11 @@
               "RelativeToolTip": "src\\Alfil.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-09T11:34:42.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T11:34:42.098Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Peon.h",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Peon.h",
               "RelativeDocumentMoniker": "src\\Peon.h",
@@ -267,12 +257,11 @@
               "RelativeToolTip": "src\\Peon.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-08T18:14:03.332Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T18:14:03.332Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Peon.cpp",
               "DocumentMoniker": "C:\\Users\\daiju\\Desktop\\Proyecto_Ajedrez\\src\\Peon.cpp",
               "RelativeDocumentMoniker": "src\\Peon.cpp",
@@ -280,8 +269,7 @@
               "RelativeToolTip": "src\\Peon.cpp",
               "ViewState": "AgIAAH8AAAAAAAAAAAAqwJ0AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T18:14:23.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T18:14:23.748Z"
             }
           ]
         }
