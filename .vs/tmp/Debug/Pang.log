@@ -3,8 +3,8 @@ C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Alfil.cpp(17,6): warning C4101: 'Fil
 C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Alfil.cpp(18,6): warning C4101: 'ColumnaAuxiliar': variable local sin referencia
   Casilla.cpp
   Juego.cpp
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(37,30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(38,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(37,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(38,30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   Mundo.cpp
   Peon.cpp
   Pieza.cpp

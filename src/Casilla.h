@@ -9,8 +9,6 @@ public:
 	int fila, columna;
 	//CONSTRUCTORES
 	Casilla(int, int);
-
-
 	Casilla(); //Realmente no serviría???
 
 	//DESTRUCTOR 
@@ -25,3 +23,4 @@ public:
 	//friend class Tablero; // creo que es mejor ir haciéndolos public;
 	//friend class Juego; //Tipo class Pieza:public Tablero{};
 };
+bool operator == (const Casilla&, const Casilla&);

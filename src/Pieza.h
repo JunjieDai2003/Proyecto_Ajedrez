@@ -3,7 +3,7 @@
 #include<vector>
 #include "freeglut.h"
 enum  Tipo { VACIO, PEON, CABALLO, ALFIL, TORRE, REY, REINA };
-enum Color { NO_COLOR, BLANCO, NEGRO };
+enum Color { NO_COLOR=0, BLANCO, NEGRO };
 
 class Pieza :public Casilla
 {
@@ -28,6 +28,8 @@ public:
 	Pieza(const Pieza& p); //CONSTRUCTOR PUEDE COPIAR A OTRA PIEZA?????
 	//DESTRUCTOR por defecto
 	~Pieza();
+	//////////////////////////////////////////////////////////////////////////////////////////
+	
 
 
 	//GETTERS

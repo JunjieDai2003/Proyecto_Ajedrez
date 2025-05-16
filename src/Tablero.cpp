@@ -77,3 +77,11 @@ void Tablero::configurarTablero()
     }
 
 }
+int Tablero::getColor(Casilla& casillacolor)
+{
+    int color;
+    std::cout << "comprobando color";
+    color=casillas1[casillacolor.fila][casillacolor.columna]->getColor();//get color de pieza pq casillas[][]es una pieza
+    std::cout <<"EL COLOR OBTENIDO ES" << color;
+    return color;
+}

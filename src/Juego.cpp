@@ -34,10 +34,10 @@ Casilla Juego::getCoord(int x, int y)
 {
 	//las coordenadas seran modificadas posteriormente, este funciona con mi pov, pero creo q usare pov de laboratorio
 	Casilla casilla;
-	casilla.columna = (y - 116) / 45.87;
-	casilla.fila = (x - 216) / 46.25;
+	casilla.fila = (y - 116) / 45.87;
+	casilla.columna = (x - 216) / 46.25;
 	std::cout << "estoy clickeando " << x << " y " << y << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
-	std::cout << "estoy clickeando " << casilla.columna << " y " << casilla.fila << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
+	std::cout << "estoy clickeando " << casilla.fila << " y " << casilla.columna << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
 	return casilla;
 }
 void Juego::ratonjuego(int button, int state, int x, int y)
@@ -47,19 +47,98 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 	{
 		switch (estado_juego)
 		{
-		case Seleccion1:
+		case Seleccion1: //primera etapa
 			origen = getCoord(x, y);
 			//comprobar de que se ha seleccionado dentro, si no, break directamente;
 			//if(turno%2!=0) estado_juego=Seleccion1://has seleccionado color incorrecto o vacio
 			//else dibujo con tablero la casilla seleccionada y movimientos permitidos
 			tablero.configurarTablero();
-			estado_juego = Seleccion2;
-			std::cout << "estoy en seleccion1";
+			estado_juego = TurnoBlanco;
+			std::cout << "estoy en seleccion inicial\n";
 			break;
-		case Seleccion2:
+		case TurnoBlanco:
+			std::cout << "Es turno de los blancos\n";
+			origen = getCoord(x, y);
+			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 1)
+			{
+				std::cout << "seleccionaste blanco en turno correcto, selecciona siguiente posicion\n";
+				estado_juego = TurnoBlanco2;
+			}
+			else
+			{
+				std::cout << "seleccionaste negro en turno erroneo, vuelve a seleccionar una pieza blanca\n";
+				estado_juego = TurnoBlanco;
+			}
+			break;
+		case TurnoBlanco2:
 			final = getCoord(x, y);
-			std::cout << "estoy en seleccion2";
-			estado_juego = Seleccion1;
+			std::cout << "puedes eliminar tu propia pieza, por lo que no comprobamos el color salvo haya una ejecucion\n";
+			//codigo de abajo es orientativo
+			if (final==origen)
+			{
+				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
+				estado_juego = TurnoBlanco;
+				break;
+			}else if (tablero.getColor(final) == 0)
+			{
+				std::cout << "seleccionaste vacio\n";
+				
+			}
+			else if (tablero.getColor(final) == 1)
+			{
+				std::cout << "ejecutas tu propia pieza\n";
+				
+			}
+			else
+			{
+				std::cout << "ejecutas pieza negra\n";
+			}
+			estado_juego = TurnoNegro;
+			break;
+		case TurnoNegro:
+			std::cout << "Es turno de los blancos\n";
+			origen = getCoord(x, y);
+			if (/*turno % 2 == 1 &&*/ tablero.getColor(origen) == 2)
+			{
+				std::cout << "seleccionaste negro en turno correcto, selecciona siguiente posicion\n";
+				estado_juego = TurnoNegro2;
+			}
+			else
+			{
+				std::cout << "seleccionaste blanco en turno erroneo, vuelve a seleccionar una pieza negro\n";
+				estado_juego = TurnoNegro;
+			}
+			break;
+		case TurnoNegro2:
+			final = getCoord(x, y);
+			std::cout << "puedes eliminar tu propia pieza, por lo que no comprobamos el color salvo haya una ejecucion\n";
+			//codigo de abajo es orientativo
+			if (final==origen)//quiero usar sobrecarga de operador para comprobar,final y origen son de clase casilla
+				//sobrecarga en casilla
+				//es como poner final.fila==origen.fila && final.columa==origen.columna
+			{
+				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
+				estado_juego = TurnoNegro;
+			}
+			//esto es orientativo, se puede sustituir por una fila de operacion exitoso
+			else if (tablero.getColor(final) == 0)
+			{
+				std::cout << "seleccionaste vacio\n";
+				estado_juego = TurnoBlanco;
+			}
+			else if (tablero.getColor(final) == 1)
+			{
+				std::cout << "ejecutas tu propia pieza\n";
+				estado_juego = TurnoBlanco;
+			}
+			else
+			{
+				std::cout << "ejecutas pieza negra\n";
+				estado_juego = TurnoBlanco;
+			}
+			break;
+			
+
 			//comprobar de que se ha seleccionado dentro, si no, break directamente;
 			//if(final=inicial) estado_juego=Seleccion1; Selecciono misma casilla
 			//limpiamos lo dibujado; break;
