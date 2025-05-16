@@ -20,10 +20,11 @@ void Juego::dibuja()
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
-	glTexCoord2d(0, 1); glVertex2f(-15, -5);
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 1); glVertex2f(-7, -5);
 	glTexCoord2d(1, 1); glVertex2f(15, -5);
-	glTexCoord2d(1, 0); glVertex2f(15, 20);
-	glTexCoord2d(0, 0); glVertex2f(-15, 20);
+	glTexCoord2d(1, 0); glVertex2f(15, 15);
+	glTexCoord2d(0, 0); glVertex2f(-7, 15);
 	glEnd();
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);

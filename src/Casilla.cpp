@@ -1,7 +1,7 @@
 #include "Casilla.h"
 #include<math.h> //No hace falta, est?declarado en Casilla.h
 #include<iostream>
-
+int turno = 1;
 
 //CONSTRUCTORES
 //Crea una Casilla con dos parametros (int),fila y columna

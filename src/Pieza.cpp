@@ -23,6 +23,8 @@ void Pieza::dibuja(float x, float y)
 	{
 		glEnable(GL_TEXTURE_2D);
 		glDisable(GL_LIGHTING);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		switch (tipo)
 		{
 		case PEON:
@@ -48,6 +50,7 @@ void Pieza::dibuja(float x, float y)
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
+		glColor4f(1, 1, 1, 0.9);
 		glTexCoord2d(0, 1); glVertex3f(x + cen, y + cen, 0.01);
 		glTexCoord2d(1, 1); glVertex3f(x + cen + dim1, y + cen, 0.01);
 		glTexCoord2d(1, 0); glVertex3f(x + dim1 + cen, y + dim1 + cen, 0.01);
