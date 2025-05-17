@@ -31,6 +31,7 @@ public:
 	void configurarTablero();
 	int getColor(Casilla &);
 	void moverPiezas(Casilla&,Casilla&);
+	Casilla getCasilla(Casilla& casilla);
 };
 
 

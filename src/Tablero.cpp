@@ -53,29 +53,30 @@ void Tablero::configurarTablero()
     {
         for (int j = 0;j < 8;j++)
         {
+            Casilla casilla(i, j);
             if (i == 0)
             {
-                casillas1[i][j] = new Pieza(PIEZAS[j], Color::NEGRO, i, j);
+                casillas1[i][j] = new Pieza(PIEZAS[j], Color::NEGRO,casilla);
                //casillas1[i][j] = new Pieza(i,j,PIEZAS[j], Color::NEGRO);
             }
             else if (i == 1)
             {
                 //casillas1[i][j] = new Pieza(casilla, PIEZAS[j], Color::NEGRO); //otra forma de inicializacion pero tiene error
-                casillas1[i][j] = new Pieza(Tipo::PEON, Color::NEGRO, i, j);
+                casillas1[i][j] = new Pieza(Tipo::PEON, Color::NEGRO, casilla);
             }
             else if (i > 1 && i < 6)
             {
-                casillas1[i][j] = new Pieza(Tipo::VACIO, Color::NO_COLOR, i, j);
+                casillas1[i][j] = new Pieza(Tipo::VACIO, Color::NO_COLOR, casilla);
             }
             else if (i == 6)
             {
-                casillas1[i][j] = new Pieza(Tipo::PEON, Color::BLANCO, i, j);
+                casillas1[i][j] = new Pieza(Tipo::PEON, Color::BLANCO, casilla);
                 
             }
             else
             {
                 //para invertir
-                casillas1[i][j] = new Pieza(PIEZAS[7-j], Color::BLANCO, i, j);
+                casillas1[i][j] = new Pieza(PIEZAS[7-j], Color::BLANCO, casilla);
             }
         }
     }
@@ -84,11 +85,21 @@ void Tablero::configurarTablero()
 int Tablero::getColor(Casilla& casillacolor)
 {
     int color;
-    std::cout << "comprobando color";
+    std::cout << "comprobando color\n";
     color=casillas1[casillacolor.fila][casillacolor.columna]->getColor();//get color de pieza pq casillas[][]es una pieza
-    std::cout <<"EL COLOR OBTENIDO ES" << color;
+    std::cout <<"EL COLOR OBTENIDO ES\n" << color;
     return color;
 }
+Casilla Tablero::getCasilla(Casilla & casilla)
+{
+    Casilla cas;
+    cas = casillas1[casilla.fila][casilla.columna]->getCasilla();
+    std::cout << "LA FILA CON LA CONCION ES" << cas.fila<<std::endl;
+    std::cout << "LA FILA CON LA CONCION ES" << cas.columna<< std::endl;
+    return cas;
+}
+
+
 void Tablero::moverPiezas(Casilla& origen, Casilla & final)
 {
     //la filosofia es pedir dato de final y meterselo al original 

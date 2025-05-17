@@ -20,7 +20,8 @@ protected: //Lo hago protected porque de pieza van a heredar otras clases
 	//Inicializo movida en 0, siempre presuponemos que no se mueve VER funcion puedeMoverse()
 public:
 	//CONSTRUCTORES
-	Pieza(Tipo tipo, Color color, int fila, int col) :tipo(tipo), color(color), casilla(fila, col), fila(fila), columna(col) {};
+	Pieza(Tipo tipo, Color color, int fila, int col) :tipo(tipo), color(color),  fila(fila), columna(col) {};
+	Pieza(Tipo tipo, Color color, Casilla casilla) :tipo(tipo), color(color), casilla(casilla){};
 	Pieza(); //CONSTRUCTOR por defecto
 	Pieza(/*int fila, int columna,*/  Casilla cas, Color color, Tipo tipo) :/*fila(fila), columna(columna),*/  Casilla(cas), color(color), tipo(tipo) {}
 	//Porque crea fila y columna en vez de meter directamente la Casilla??? asi se ahorra crear y aprovecha lo creado???

@@ -59,6 +59,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 		case TurnoBlanco:
 			std::cout << "Es turno de los blancos\n\n";
 			origen = getCoord(x, y);
+			//tablero.getCasilla(origen);
 			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 1)
 			{
 				std::cout << "seleccionaste blanco en turno correcto, selecciona siguiente posicion\n";
