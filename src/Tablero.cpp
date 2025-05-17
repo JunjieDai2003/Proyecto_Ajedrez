@@ -131,20 +131,16 @@ int Tablero::movValido(const Casilla& origen, const Casilla & final)
     //if(ejecucion==1 && (casillas->getColor!=casillas->getColor)
     //return 0;
     //salir de funcion directamente si hay una ejecucion pero no ejecutamos
-    Pieza* copia[8][8];
-    for (int i = 0;i < 8;i++)
-    {
-        for (int j = 0;i < 8;i++)
-        {
-            copia[i][j] = casillas1[i][j];
-        }
-    }
+ 
     Tipo pieza;
     pieza = (casillas1[origen.fila][origen.columna])->getTipo();
     switch (pieza)
     {
     case PEON:
-        //return(Peon::comprobacionmov(origen,final,copia)
+        //matriz=Peon::comprobacionmov(origen,const &casilla1)
+        //matriz[final.fila][final.columna]==1;//movimiento exitoso return 1
+        //==0 movimiento mal return 0
+      
         return 1;
     }
     return 0;
