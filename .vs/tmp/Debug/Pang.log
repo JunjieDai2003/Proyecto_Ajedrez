@@ -1,10 +1,4 @@
 ﻿  Juego.cpp
 C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(37,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
 C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(38,30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Mundo.cpp
-  Tablero.cpp
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Tablero.cpp(158,28): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Tablero.cpp(163,28): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-  pang.cpp
-  Generando código...
   Pang.vcxproj -> C:\Users\daiju\Desktop\Proyecto_Ajedrez\bin\Pang.exe

@@ -27,13 +27,6 @@ bool operator==(const Casilla& c1, const Casilla& c2)
 }
 
 
-double Casilla::modulo()const
-{
-	return sqrt((fila * fila) + (columna * columna));//NO SE PARA QUE SIRVE
-}
-double Casilla::argumento()const
-{
-	return atan2(fila, columna); //NO SE PARA QUE SIRVE
-}
+
 // atan2(x,y) Calcula el ángulo EN RADIANES entre el eje positivo de X 
 //y el vector (x,y)  

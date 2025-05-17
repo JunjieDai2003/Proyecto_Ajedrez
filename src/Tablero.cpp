@@ -168,3 +168,40 @@ void Tablero::ascensoPeon()
     }
 
 }
+
+int Tablero::cantidadBlanco()
+{
+    Color color;
+    int blanco=0;
+    for (int i = 0;i < 8;i++)
+    {
+        for (int j = 0;j < 8;j++)
+        {
+            color = (casillas1[i][j]->getColor());
+            if (color == BLANCO)
+            {
+                blanco++;
+            }
+        }
+    }
+    std::cout << "quedan" << blanco << "blancos\n";
+    return blanco;
+}
+int Tablero::cantidadNegro()
+{
+    Color color;
+    int negro = 0;
+    for (int i = 0;i < 8;i++)
+    {
+        for (int j = 0;j < 8;j++)
+        {
+            color = (casillas1[i][j]->getColor());
+            if (color == NEGRO)
+            {
+                negro++;
+            }
+        }
+    }
+    std::cout << "quedan" << negro << "negros\n";
+    return negro;
+}

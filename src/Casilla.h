@@ -18,8 +18,6 @@ public:
 
 	void MostrarCasilla(Casilla); //A lo mejor lo usamos
 
-	double modulo() const; //Devuelve el modulo de la casilla
-	double argumento()const; //Devuelve el argumento
 
 	//friend class Pieza; // No se porque los hace FRIEND
 	//friend class Tablero; // creo que es mejor ir haciéndolos public;

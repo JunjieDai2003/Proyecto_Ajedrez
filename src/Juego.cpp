@@ -108,7 +108,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				estado_juego = TurnoNegro;
 				vidanegra--;
 			}
-			if (vidablanca == 0 || vidanegra == 0)
+			if (tablero.cantidadBlanco() == 0 || tablero.cantidadNegro() == 0)
 			{
 				estado_juego = END;
 			}
@@ -166,7 +166,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				tablero.moverPiezasyAscenso(origen, final);
 				vidablanca--;
 			}
-			if (vidablanca == 0 || vidanegra == 0)
+			if (tablero.cantidadBlanco() == 0 || tablero.cantidadNegro() == 0)
 			{
 				estado_juego = END;
 			}
@@ -179,6 +179,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 
 		}
 		//tablero.ascensoPeon();
+		
 	}
 	return;//hay q cambiar, dejo aqui para no saltar error
 }
