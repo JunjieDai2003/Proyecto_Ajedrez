@@ -29,9 +29,11 @@ public:
 	//~Tablero();
 	void dibuja();
 	void configurarTablero();
-	int getColor(Casilla &);
-	void moverPiezas(Casilla&,Casilla&);
-	Casilla getCasilla(Casilla& casilla);
+	int getColor(const Casilla&);
+	void moverPiezasyAscenso(Casilla&, Casilla&);
+	Casilla getCasilla(const Casilla& casilla);
+	int movValido(const Casilla&, const Casilla&);
+	void ascensoPeon();
 };
 
 

@@ -90,21 +90,21 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			else if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
-				tablero.moverPiezas(origen, final);
+				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
 
 			}
 			else if (tablero.getColor(final) == 2)
 			{
 				std::cout << "ejecutas tu propia pieza\n";
-				tablero.moverPiezas(origen, final);
+				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
 				vidablanca--;
 			}
 			else
 			{
 				std::cout << "ejecutas pieza negra\n";
-				tablero.moverPiezas(origen, final);
+				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
 				vidanegra--;
 			}
@@ -113,6 +113,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				estado_juego = END;
 			}
 			break;
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		case TurnoNegro:
 			std::cout << "Es turno de los negros\n\n";
 			origen = getCoord(x, y);
@@ -148,13 +149,13 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			else if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
-				tablero.moverPiezas(origen, final);
+				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
 			}
 			else if (tablero.getColor(final) == 1)
 			{
 				std::cout << "ejecutas tu propia pieza\n";
-				tablero.moverPiezas(origen, final);
+				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
 				vidanegra--;
 			}
@@ -162,7 +163,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			{
 				std::cout << "ejecutas pieza blanca\n";
 				estado_juego = TurnoBlanco;
-				tablero.moverPiezas(origen, final);
+				tablero.moverPiezasyAscenso(origen, final);
 				vidablanca--;
 			}
 			if (vidablanca == 0 || vidanegra == 0)
@@ -173,19 +174,11 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 		case END:
 		{
 			std::cout << "se ha terminado\n";
+			break;
 		}
 
-		//comprobar de que se ha seleccionado dentro, si no, break directamente;
-		//if(final=inicial) estado_juego=Seleccion1; Selecciono misma casilla
-		//limpiamos lo dibujado; break;
-		//if(movimiento no permitido)
-		//limpiamos lo dibujado; break; es un or con anterior
-		//else(cambiamos la matriz de tablero)
-		//limpiamos lo destacado;
-		//estado_juego=Seleccioon1;
-		//turno++;
-		//break;
 		}
+		//tablero.ascensoPeon();
 	}
 	return;//hay q cambiar, dejo aqui para no saltar error
 }
