@@ -1,6 +1,9 @@
-﻿  Juego.cpp
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(37,25): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Juego.cpp(38,30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+﻿  Pieza.cpp
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Pieza.cpp(70,22): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Pieza.cpp(71,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Pieza.cpp(72,59): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Pieza.cpp(73,66): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\daiju\Desktop\Proyecto_Ajedrez\src\Pieza.cpp(74,59): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
   Tablero.cpp
   Generando código...
   Pang.vcxproj -> C:\Users\daiju\Desktop\Proyecto_Ajedrez\bin\Pang.exe

@@ -55,12 +55,13 @@ void Tablero::configurarTablero()
         {
             if (i == 0)
             {
-                casillas1[i][j] = new Pieza(Tipo::PEON, Color::NEGRO, i, j);
+                casillas1[i][j] = new Pieza(PIEZAS[j], Color::NEGRO, i, j);
+               //casillas1[i][j] = new Pieza(i,j,PIEZAS[j], Color::NEGRO);
             }
             else if (i == 1)
             {
                 //casillas1[i][j] = new Pieza(casilla, PIEZAS[j], Color::NEGRO); //otra forma de inicializacion pero tiene error
-                casillas1[i][j] = new Pieza(PIEZAS[j], Color::NEGRO, i, j);
+                casillas1[i][j] = new Pieza(Tipo::PEON, Color::NEGRO, i, j);
             }
             else if (i > 1 && i < 6)
             {
@@ -68,11 +69,13 @@ void Tablero::configurarTablero()
             }
             else if (i == 6)
             {
-                casillas1[i][j] = new Pieza(PIEZAS[j], Color::BLANCO, i, j);
+                casillas1[i][j] = new Pieza(Tipo::PEON, Color::BLANCO, i, j);
+                
             }
             else
             {
-                casillas1[i][j] = new Pieza(Tipo::PEON, Color::BLANCO, i, j);
+                //para invertir
+                casillas1[i][j] = new Pieza(PIEZAS[7-j], Color::BLANCO, i, j);
             }
         }
     }

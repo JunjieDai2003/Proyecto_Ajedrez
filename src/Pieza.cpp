@@ -35,33 +35,33 @@ void Pieza::dibuja(float x, float y)
 			break;
 		case REY:
 			if (color == BLANCO)
-				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/rey_negro.png").id);
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/rey_blanco.png").id);
 			else
-				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/rey_negro.png").id);
 			break;
 		case REINA:
 			if (color == BLANCO)
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/reina_blanca.png").id);
 			else
-				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/reina_negra.png").id);
 			break;
 		case TORRE:
 			if (color == BLANCO)
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/torre_blanco.png").id);
 			else
-				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/torre_negro.png").id);
 			break;
 		case CABALLO:
 			if (color == BLANCO)
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/caballo_blanco.png").id);
 			else
-				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/caballo_negro.png").id);
 			break;
 		case ALFIL:
 			if (color == BLANCO)
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/alfil_blanco.png").id);
 			else
-				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/alfinal_negro.png").id);
 			break;
 		}
 		glDisable(GL_LIGHTING);

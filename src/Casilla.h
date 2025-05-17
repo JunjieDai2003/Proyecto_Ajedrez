@@ -2,6 +2,8 @@
 #include<math.h>
 #include"ostream"
 extern int turno;
+extern int vidablanca;
+extern int vidanegra;
 class Casilla
 {	//Me gustaria encontrar una forma en la que poner fila y columna en protected y tener acceso en otras clases
 	//Falla en la clase PEON MovimientoValido me obliga a ponerlo en public, si no no tengo acceso a origen.fila

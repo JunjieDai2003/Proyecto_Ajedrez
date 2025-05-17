@@ -21,7 +21,7 @@ class Tablero
 	}; //para detectar pieza con ejecucion obligatoria
 	int movvalido[8][8] = { 0,0,1 }; // para detectar mov validos
 	//std::vector<std::vector<Pieza*>> casillas2;
-	//std::vector<std::vector<int>> mov;
+	//std::vector<std::vector<int>> movvalido2;
 	std::vector<Tipo> PIEZAS = { Tipo::TORRE, Tipo::CABALLO, Tipo::ALFIL, Tipo::REINA, Tipo::REY,Tipo::ALFIL,Tipo::CABALLO,Tipo::TORRE };
 
 public:

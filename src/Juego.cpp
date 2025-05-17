@@ -57,7 +57,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			std::cout << "estoy en seleccion inicial\n";
 			break;
 		case TurnoBlanco:
-			std::cout << "Es turno de los blancos\n";
+			std::cout << "Es turno de los blancos\n\n";
 			origen = getCoord(x, y);
 			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 1)
 			{
@@ -76,32 +76,39 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			//codigo de abajo es orientativo, sera sustituido en una line///////77
 			////////////////////777
 			/////////////////////
-			if (final==origen)
+			if (final == origen)
 			{
 				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
 				estado_juego = TurnoBlanco;
-				tablero.moverPiezas(origen, final);
-				break;
-			}else if (tablero.getColor(final) == 0)
+			}
+			else if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
 				tablero.moverPiezas(origen, final);
-				
+				estado_juego = TurnoNegro;
+
 			}
-			else if (tablero.getColor(final) == 1)
+			else if (tablero.getColor(final) == 2)
 			{
 				std::cout << "ejecutas tu propia pieza\n";
 				tablero.moverPiezas(origen, final);
-				
+				estado_juego = TurnoNegro;
+				vidablanca--;
 			}
 			else
 			{
 				std::cout << "ejecutas pieza negra\n";
+				tablero.moverPiezas(origen, final);
+				estado_juego = TurnoNegro;
+				vidanegra--;
 			}
-			estado_juego = TurnoNegro;
+			if (vidablanca == 0 || vidanegra == 0)
+			{
+				estado_juego = END;
+			}
 			break;
 		case TurnoNegro:
-			std::cout << "Es turno de los blancos\n";
+			std::cout << "Es turno de los negros\n\n";
 			origen = getCoord(x, y);
 			if (/*turno % 2 == 1 &&*/ tablero.getColor(origen) == 2)
 			{
@@ -118,13 +125,13 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			final = getCoord(x, y);
 			std::cout << "puedes eliminar tu propia pieza, por lo que no comprobamos el color salvo haya una ejecucion\n";
 			//codigo de abajo es orientativo
-			if (final==origen)//quiero usar sobrecarga de operador para comprobar,final y origen son de clase casilla
+			if (final == origen)//quiero usar sobrecarga de operador para comprobar,final y origen son de clase casilla
 				//sobrecarga en casilla
 				//es como poner final.fila==origen.fila && final.columa==origen.columna
-				//la sobrecarga no funciona aun
 			{
 				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
 				estado_juego = TurnoNegro;
+				break;
 			}
 			//esto es orientativo, se puede sustituir por una fila de operacion exitoso
 			else if (tablero.getColor(final) == 0)
@@ -138,26 +145,35 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "ejecutas tu propia pieza\n";
 				tablero.moverPiezas(origen, final);
 				estado_juego = TurnoBlanco;
+				vidanegra--;
 			}
 			else
 			{
-				std::cout << "ejecutas pieza negra\n";
+				std::cout << "ejecutas pieza blanca\n";
 				estado_juego = TurnoBlanco;
 				tablero.moverPiezas(origen, final);
+				vidablanca--;
+			}
+			if (vidablanca == 0 || vidanegra == 0)
+			{
+				estado_juego = END;
 			}
 			break;
-			
+		case END:
+		{
+			std::cout << "se ha terminado\n";
+		}
 
-			//comprobar de que se ha seleccionado dentro, si no, break directamente;
-			//if(final=inicial) estado_juego=Seleccion1; Selecciono misma casilla
-			//limpiamos lo dibujado; break;
-			//if(movimiento no permitido)
-			//limpiamos lo dibujado; break; es un or con anterior
-			//else(cambiamos la matriz de tablero)
-			//limpiamos lo destacado;
-			//estado_juego=Seleccioon1;
-			//turno++;
-			//break;
+		//comprobar de que se ha seleccionado dentro, si no, break directamente;
+		//if(final=inicial) estado_juego=Seleccion1; Selecciono misma casilla
+		//limpiamos lo dibujado; break;
+		//if(movimiento no permitido)
+		//limpiamos lo dibujado; break; es un or con anterior
+		//else(cambiamos la matriz de tablero)
+		//limpiamos lo destacado;
+		//estado_juego=Seleccioon1;
+		//turno++;
+		//break;
 		}
 	}
 	return;//hay q cambiar, dejo aqui para no saltar error
