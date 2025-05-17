@@ -29,7 +29,7 @@ public:
 	//~Tablero();
 	void dibuja();
 	void configurarTablero();
-	int getColor(const Casilla&);
+	Color getColor(const Casilla&);
 	void moverPiezasyAscenso(Casilla&, Casilla&);
 	Casilla getCasilla(const Casilla& casilla);
 	int movValido(const Casilla&, const Casilla&);
