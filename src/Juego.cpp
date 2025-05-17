@@ -34,7 +34,7 @@ Casilla Juego::getCoord(int x, int y)
 {
 	//las coordenadas seran modificadas posteriormente, este funciona con mi pov, pero creo q usare pov de laboratorio
 	Casilla casilla;
-	casilla.fila = (483-y) / 45.87;
+	casilla.fila = (483 - y) / 45.87;
 	casilla.columna = (x - 216) / 46.25;
 	std::cout << "estoy clickeando " << x << " y " << y << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
 	std::cout << "estoy clickeando " << casilla.fila << " y " << casilla.columna << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
@@ -77,6 +77,11 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			//codigo de abajo es orientativo, sera sustituido en una line///////77
 			////////////////////777
 			/////////////////////
+			if (tablero.movValido(origen, final) == 0)
+			{
+				estado_juego = TurnoBlanco;
+				break;
+			}
 			if (final == origen)
 			{
 				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
@@ -125,6 +130,11 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 		case TurnoNegro2:
 			final = getCoord(x, y);
 			std::cout << "puedes eliminar tu propia pieza, por lo que no comprobamos el color salvo haya una ejecucion\n";
+			if (tablero.movValido(origen, final) == 0)
+			{
+				estado_juego = TurnoNegro;
+				break;
+			}
 			//codigo de abajo es orientativo
 			if (final == origen)//quiero usar sobrecarga de operador para comprobar,final y origen son de clase casilla
 				//sobrecarga en casilla
