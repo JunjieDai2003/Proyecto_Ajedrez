@@ -3,7 +3,7 @@
 #include<vector>
 #include "freeglut.h"
 enum  Tipo { VACIO, PEON, CABALLO, ALFIL, TORRE, REY, REINA };
-enum Color { NO_COLOR, BLANCO, NEGRO };
+enum Color { NO_COLOR=0, BLANCO, NEGRO };
 
 class Pieza :public Casilla
 {
@@ -28,6 +28,8 @@ public:
 	Pieza(const Pieza& p); //CONSTRUCTOR PUEDE COPIAR A OTRA PIEZA?????
 	//DESTRUCTOR por defecto
 	~Pieza();
+	//////////////////////////////////////////////////////////////////////////////////////////
+	
 
 
 	//GETTERS
@@ -42,6 +44,8 @@ public:
 	//Una vez que mueves piezas se usan las siguientes funciones
 	void setTipo(Tipo nuevoTipo) { tipo = nuevoTipo; }
 	void setColor(Color nuevoColor) { color = nuevoColor; }
+	//me gustaria averiguar esto
+	//void setCasilla(Casilla casilla) { casilla.fila =fila; casilla.columna = columna; }
 	void setCasilla(int fil, int colum) { casilla.fila = fil; casilla.columna = colum; }
 	void setMovida(bool a) { movida = a; }//ESTO NO SIRVE??? 
 	//No hace falta settear la fila y columna porque en nuestro caso usamos directamente

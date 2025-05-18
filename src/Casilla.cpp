@@ -20,7 +20,10 @@ Casilla::~Casilla() {}
 //FUNCIONES
 
 
-
+bool operator==(const Casilla& c1, const Casilla& c2)
+{
+	return((c1.fila == c2.fila) && (c1.columna == c2.columna));
+}
 
 
 double Casilla::modulo()const

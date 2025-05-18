@@ -8,7 +8,7 @@ Pieza::Pieza(const Pieza& p)
 {
 	tipo = p.tipo;
 	color = p.color;
-	//casilla = p.casilla;
+	casilla = p.casilla;
 }
 
 Pieza::~Pieza() {}
@@ -28,23 +28,40 @@ void Pieza::dibuja(float x, float y)
 		switch (tipo)
 		{
 		case PEON:
-
-			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_blanco.png").id);
+			if(color==BLANCO)
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_blanco.png").id);
+			else
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
 			break;
 		case REY:
-			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/rey_negro.png").id);
+			if (color == BLANCO)
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/rey_negro.png").id);
+			else
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
 			break;
 		case REINA:
-			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/reina_blanca.png").id);
+			if (color == BLANCO)
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/reina_blanca.png").id);
+			else
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
 			break;
 		case TORRE:
-			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/torre_blanco.png").id);
+			if (color == BLANCO)
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/torre_blanco.png").id);
+			else
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
 			break;
 		case CABALLO:
-			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/caballo_blanco.png").id);
+			if (color == BLANCO)
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/caballo_blanco.png").id);
+			else
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
 			break;
 		case ALFIL:
-			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/alfil_blanco.png").id);
+			if (color == BLANCO)
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/alfil_blanco.png").id);
+			else
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);
 			break;
 		}
 		glDisable(GL_LIGHTING);
