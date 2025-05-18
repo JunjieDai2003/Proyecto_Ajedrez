@@ -5,7 +5,7 @@
 
 void Tablero::dibuja()
 {
-    //qwq
+
     float dim = (float)9 / 8; //6 pq es multiplo de tamano de ventana
     float dim1 = (float)4.5 / 8; //6 pq es multiplo de tamano de ventana
     float cen = (dim - dim1) / 2;
@@ -129,6 +129,7 @@ int Tablero::movValido(const Casilla&origen,const Casilla&final)
         //mov matriz=Peon::comprobacionmov(origen,const &matriz);
         //if
         return 0;
+        
     }
     return 1;
 }
