@@ -132,4 +132,4 @@ int Tablero::movValido(const Casilla&origen,const Casilla&final)
         
     }
     return 1;
-}
+}//prueba
