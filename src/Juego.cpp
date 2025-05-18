@@ -34,7 +34,7 @@ Casilla Juego::getCoord(int x, int y)
 {
 	//las coordenadas seran modificadas posteriormente, este funciona con mi pov, pero creo q usare pov de laboratorio
 	Casilla casilla;
-	casilla.fila = (483 - y) / 45.87;
+	casilla.fila = (483-y) / 45.87;
 	casilla.columna = (x - 216) / 46.25;
 	std::cout << "estoy clickeando " << x << " y " << y << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
 	std::cout << "estoy clickeando " << casilla.fila << " y " << casilla.columna << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
@@ -77,7 +77,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			//codigo de abajo es orientativo, sera sustituido en una line///////77
 			////////////////////777
 			/////////////////////
-			if (tablero.movValido(origen, final) == 0)
+			if(tablero.movValido(origen,final) == 0)
 			{
 				estado_juego = TurnoBlanco;
 				break;
@@ -108,12 +108,12 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				estado_juego = TurnoNegro;
 				vidanegra--;
 			}
-			if (tablero.cantidadBlanco() == 0 || tablero.cantidadNegro() == 0)
+			if (vidablanca == 0 || vidanegra == 0)
 			{
 				estado_juego = END;
 			}
 			break;
-			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		case TurnoNegro:
 			std::cout << "Es turno de los negros\n\n";
 			origen = getCoord(x, y);
@@ -166,7 +166,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				tablero.moverPiezasyAscenso(origen, final);
 				vidablanca--;
 			}
-			if (tablero.cantidadBlanco() == 0 || tablero.cantidadNegro() == 0)
+			if (vidablanca == 0 || vidanegra == 0)
 			{
 				estado_juego = END;
 			}
@@ -176,10 +176,9 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			std::cout << "se ha terminado\n";
 			break;
 		}
-
+		
 		}
 		//tablero.ascensoPeon();
-		
 	}
 	return;//hay q cambiar, dejo aqui para no saltar error
 }

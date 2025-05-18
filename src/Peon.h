@@ -14,7 +14,7 @@ class Peon :public Pieza
 
 
 	//FUNCION PARA VER SI EL MOVIMIENTO ES VÁLIDO verifica los POSIBLES movimientos
-	static bool MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza* coordenadas[8][8]);
+	static bool MovimientoValido(const Casilla& origen, const Casilla& destino, Pieza* coordenadas[5][5]);
 	//FUNCION parecida a la que se encuentra en pieza 
 	/*
 	virtual bool puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* Casilla[5][5])
