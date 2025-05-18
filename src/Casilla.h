@@ -19,6 +19,9 @@ public:
 
 	double modulo() const; //Devuelve el modulo de la casilla
 	double argumento()const; //Devuelve el argumento
+	
+	//friend class Pieza;
+
 
 };
 bool operator == (const Casilla&, const Casilla&);
