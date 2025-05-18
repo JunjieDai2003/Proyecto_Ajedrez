@@ -5,7 +5,7 @@
 
 void Tablero::dibuja()
 {
-
+    //qwq
     float dim = (float)9 / 8; //6 pq es multiplo de tamano de ventana
     float dim1 = (float)4.5 / 8; //6 pq es multiplo de tamano de ventana
     float cen = (dim - dim1) / 2;
