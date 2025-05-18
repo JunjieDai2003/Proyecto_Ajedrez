@@ -34,7 +34,7 @@ Casilla Juego::getCoord(int x, int y)
 {
 	//las coordenadas seran modificadas posteriormente, este funciona con mi pov, pero creo q usare pov de laboratorio
 	Casilla casilla;
-	casilla.fila = (483-y) / 45.87;
+	casilla.fila = (483 - y) / 45.87;
 	casilla.columna = (x - 216) / 46.25;
 	std::cout << "estoy clickeando " << x << " y " << y << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
 	std::cout << "estoy clickeando " << casilla.fila << " y " << casilla.columna << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
@@ -57,8 +57,9 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			std::cout << "estoy en seleccion inicial\n";
 			break;
 		case TurnoBlanco:
-			std::cout << "Es turno de los blancos\n";
+			std::cout << "Es turno de los blancos\n\n";
 			origen = getCoord(x, y);
+			//tablero.getCasilla(origen);
 			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 1)
 			{
 				std::cout << "seleccionaste blanco en turno correcto, selecciona siguiente posicion\n";
@@ -76,32 +77,45 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			//codigo de abajo es orientativo, sera sustituido en una line///////77
 			////////////////////777
 			/////////////////////
-			if (final==origen)
+			if (tablero.movValido(origen, final) == 0)
+			{
+				estado_juego = TurnoBlanco;
+				break;
+			}
+			if (final == origen)
 			{
 				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
 				estado_juego = TurnoBlanco;
-				tablero.moverPiezas(origen, final);
-				break;
-			}else if (tablero.getColor(final) == 0)
+			}
+			else if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
-				tablero.moverPiezas(origen, final);
-				
+				tablero.moverPiezasyAscenso(origen, final);
+				estado_juego = TurnoNegro;
+
 			}
-			else if (tablero.getColor(final) == 1)
+			else if (tablero.getColor(final) == 2)
 			{
 				std::cout << "ejecutas tu propia pieza\n";
-				tablero.moverPiezas(origen, final);
-				
+				tablero.moverPiezasyAscenso(origen, final);
+				estado_juego = TurnoNegro;
+				vidablanca--;
 			}
 			else
 			{
 				std::cout << "ejecutas pieza negra\n";
+				tablero.moverPiezasyAscenso(origen, final);
+				estado_juego = TurnoNegro;
+				vidanegra--;
 			}
-			estado_juego = TurnoNegro;
+			if (tablero.cantidadBlanco() == 0 || tablero.cantidadNegro() == 0)
+			{
+				estado_juego = END;
+			}
 			break;
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		case TurnoNegro:
-			std::cout << "Es turno de los blancos\n";
+			std::cout << "Es turno de los negros\n\n";
 			origen = getCoord(x, y);
 			if (/*turno % 2 == 1 &&*/ tablero.getColor(origen) == 2)
 			{
@@ -117,48 +131,55 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 		case TurnoNegro2:
 			final = getCoord(x, y);
 			std::cout << "puedes eliminar tu propia pieza, por lo que no comprobamos el color salvo haya una ejecucion\n";
+			if (tablero.movValido(origen, final) == 0)
+			{
+				estado_juego = TurnoNegro;
+				break;
+			}
 			//codigo de abajo es orientativo
-			if (final==origen)//quiero usar sobrecarga de operador para comprobar,final y origen son de clase casilla
+			if (final == origen)//quiero usar sobrecarga de operador para comprobar,final y origen son de clase casilla
 				//sobrecarga en casilla
 				//es como poner final.fila==origen.fila && final.columa==origen.columna
-				//la sobrecarga no funciona aun
 			{
 				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
 				estado_juego = TurnoNegro;
+				break;
 			}
 			//esto es orientativo, se puede sustituir por una fila de operacion exitoso
 			else if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
-				tablero.moverPiezas(origen, final);
+				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
 			}
 			else if (tablero.getColor(final) == 1)
 			{
 				std::cout << "ejecutas tu propia pieza\n";
-				tablero.moverPiezas(origen, final);
+				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
+				vidanegra--;
 			}
 			else
 			{
-				std::cout << "ejecutas pieza negra\n";
+				std::cout << "ejecutas pieza blanca\n";
 				estado_juego = TurnoBlanco;
-				tablero.moverPiezas(origen, final);
+				tablero.moverPiezasyAscenso(origen, final);
+				vidablanca--;
+			}
+			if (tablero.cantidadBlanco() == 0 || tablero.cantidadNegro() == 0)
+			{
+				estado_juego = END;
 			}
 			break;
-			
-
-			//comprobar de que se ha seleccionado dentro, si no, break directamente;
-			//if(final=inicial) estado_juego=Seleccion1; Selecciono misma casilla
-			//limpiamos lo dibujado; break;
-			//if(movimiento no permitido)
-			//limpiamos lo dibujado; break; es un or con anterior
-			//else(cambiamos la matriz de tablero)
-			//limpiamos lo destacado;
-			//estado_juego=Seleccioon1;
-			//turno++;
-			//break;
+		case END:
+		{
+			std::cout << "se ha terminado\n";
+			break;
 		}
+
+		}
+		//tablero.ascensoPeon();
+		
 	}
 	return;//hay q cambiar, dejo aqui para no saltar error
 }
