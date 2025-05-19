@@ -4,7 +4,12 @@ Pieza::Pieza()
 {
 }
 
-Pieza::~Pieza() {}
+void Pieza::miMov(const Casilla& origen, const Pieza* casilla[8][8], int matMov[8][8])
+{
+	return;
+}
+
+
 
 void Pieza::dibuja(float x, float y)
 {
@@ -21,7 +26,7 @@ void Pieza::dibuja(float x, float y)
 		switch (tipo)
 		{
 		case PEON:
-			if(color==BLANCO)
+			if (color == BLANCO)
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_blanco.png").id);
 			else
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/peon_negro.png").id);

@@ -2,6 +2,16 @@
 #include <math.h>
 #include<iostream>
 
+void Peon::miMov(const Casilla& origen, const Pieza* casilla[8][8], int matMov[8][8]) {
+	// implementaci¨®n aqu¨ª
+	return;
+}
+
+
+
+
+
+
 
 //EN ESTA FUNCION DEVUELVE LAS POSIBLES POSICIONES DE MOVIMIENTO RESPECTO UNA MATRIZ TABLERO
 //como hemos dicho va a Devolver:
@@ -40,13 +50,13 @@ int MoviMatriz(const Casilla& origen, Pieza* coordenadas[8][8])
 	//cambiar destino.columna por j
 	//cambiar coordenadas[destino.fila][destino.columna] por coordenadas[i][j]
 
-	
+
 	for (int i = 0; i < 8; i++)
 	{
-		for(int j=0;j<8;j++)
-		{ 
+		for (int j = 0;j < 8;j++)
+		{
 			//CASO 1) BLANCAS AVANZA 1
-	        //En este caso el peon AVANZA hacia delante una posicion y no hay ninguna otra pieza;
+			//En este caso el peon AVANZA hacia delante una posicion y no hay ninguna otra pieza;
 			if ((coordenadas[origen.fila][origen.columna]->getTipo() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna) && (coordenadas[i][j]->getTipo() == VACIO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor  de matriz auxiliar: 1" << "\n";
@@ -65,7 +75,7 @@ int MoviMatriz(const Casilla& origen, Pieza* coordenadas[8][8])
 			//En este caso el peon AVANZA hacia delante una posicion y no hay ninguna otra pieza;
 			if ((coordenadas[origen.fila][origen.columna]->getTipo() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna) && (coordenadas[i][j]->getTipo() == VACIO))
 			{
-				std::cout<<"El Peon puede desplazarse a la casilla: [ " << i << "," << j << "]" << "Que toma el valor 1" << "\n";
+				std::cout << "El Peon puede desplazarse a la casilla: [ " << i << "," << j << "]" << "Que toma el valor 1" << "\n";
 				matrix[i][j] == 1;
 			}
 
@@ -122,7 +132,7 @@ int MoviMatriz(const Casilla& origen, Pieza* coordenadas[8][8])
 			}
 
 			//CASO 4) NEGRO SE MUEVE A DCHA DIAGONAL Y COME A NEGRO
-		
+
 			if ((coordenadas[origen.fila][origen.columna]->getTipo() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna - 1) && (coordenadas[i][j]->getTipo() == NEGRO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 2" << "\n";

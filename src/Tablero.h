@@ -3,6 +3,14 @@
 #include"Pieza.h"
 #include "freeglut.h"
 #include<vector>
+#include "Peon.h"
+#include "Vacio.h"
+#include "Torre.h"
+#include "Alfil.h"
+#include "Caballo.h"
+#include "Rey.h"
+#include"Reina.h"
+
 class Tablero
 {
 	Pieza p;
@@ -29,12 +37,12 @@ public:
 	//~Tablero();
 	void dibuja();
 	void configurarTablero();
-	int getColor(const Casilla &);
-	void moverPiezasyAscenso(Casilla&,Casilla&);
-	Casilla getCasilla(const Casilla& casilla);
-	int movValido(const Casilla&,const Casilla&);
+	int getColor(const Casilla&);
+	void moverPiezasyAscenso(Casilla&, Casilla&);
+	//Casilla getCasilla(const Casilla& casilla);
+	int movValido(const Casilla&, const Casilla&);
 	void ascensoPeon();
-	
+
 };
 
 
