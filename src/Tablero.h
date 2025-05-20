@@ -27,10 +27,14 @@ class Tablero
 	{1,1,1,1,1,1,1,1},
 	{1,1,1,1,1,1,1,1}
 	}; //para detectar pieza con ejecucion obligatoria
-	int movvalido[8][8] = { 0,0,1 }; // para detectar mov validos
+	int movvalido[8][8] = { 0 }; // para detectar mov validos
 	//std::vector<std::vector<Pieza*>> casillas2;
 	//std::vector<std::vector<int>> movvalido2;
-	std::vector<Tipo> PIEZAS = { Tipo::TORRE, Tipo::CABALLO, Tipo::ALFIL, Tipo::REINA, Tipo::REY,Tipo::ALFIL,Tipo::CABALLO,Tipo::TORRE };
+	
+
+	int matrizPintar[8][8];
+
+
 
 public:
 	//Tablero();
@@ -42,7 +46,7 @@ public:
 	//Casilla getCasilla(const Casilla& casilla);
 	int movValido(const Casilla&, const Casilla&);
 	void ascensoPeon();
-
+	void pintaMov(const Casilla&);
 };
 
 

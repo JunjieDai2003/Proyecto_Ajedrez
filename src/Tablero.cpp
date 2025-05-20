@@ -13,36 +13,58 @@ void Tablero::dibuja()
     {
         for (int j = 0; j < 8; j++)
         {
+            float x = j * dim;
+            float y = i * dim;
             /* if (ejecucion[i][j] == 1)
              {
                  glColor3f(1,0,0);
              }
-             else if (movvalido[i][j] == 1)
-             {
-                 glColor3f(0, 1, 0);
-             }
-             else */if ((i + j) % 2 == 0)
-             {
-                 glColor3f(0, 1, 0);
-             }
-             else
-             {
-                 glColor3f(0, 0.5, 0);
-             }
-             float x = j * dim;
-             float y = i * dim;
+             else */
+            if (matrizPintar[i][j] == 1 || matrizPintar[i][j] == 2 || matrizPintar[i][j] == 3)
+            {
 
-             glBegin(GL_QUADS);
-             glVertex2f(x, y);        //0 0
-             glVertex2f(x + dim, y);    //1 0
-             glVertex2f(x + dim, y + dim);//1 1
-             glVertex2f(x, y + dim);    //0 1
-             glEnd();
-             glEnable(GL_LIGHTING);
-             casillas1[i][j]->dibuja(x, y);
-             //casillas1[i][j]->getTipo();
+                ///////////////////7
+                glColor3f(0.5, 0.5, 0.5);
+                /*
+                glBegin(GL_QUADS);
+                glVertex3f(x+2*cen, y+2*cen,0.001);        //0 0
+                glVertex3f(x + dim-2*cen, y+2*cen,0.001);    //1 0
+                glVertex3f(x + dim-2*cen, y + dim-2*cen,0.001);//1 1
+                glVertex3f(x+2*cen, y + dim-2*cen,0.001);    //0 1
+                glEnd();
+                glEnable(GL_LIGHTING);*/
+
+            }
+            else if ((i + j) % 2 == 0)
+            {
+                glColor3f(0, 1, 0);
+
+
+            }
+            else
+            {
+                glColor3f(0, 0.5, 0);
+
+
+            }
+            glBegin(GL_QUADS);
+            glVertex2f(x, y);        //0 0
+            glVertex2f(x + dim, y);    //1 0
+            glVertex2f(x + dim, y + dim);//1 1
+            glVertex2f(x, y + dim);    //0 1
+            glEnd();
+            glEnable(GL_LIGHTING);
+            casillas1[i][j]->dibuja(x, y);
         }
     }
+    for (int i = 0;i < 8;i++)
+    {
+        for (int j = 0;j < 8;j++)
+        {
+            matrizPintar[i][j] = 0;
+        }
+    }
+
 
 }
 
@@ -229,5 +251,20 @@ int Tablero::movValido(const Casilla& origen, const Casilla & final)
             }
         }
     }
+    if (movvalido[final.fila][final.columna] == 0)
+    {
+        return 0;
+    }
     return 1;
 }//prueba
+void Tablero::pintaMov(const Casilla& origen)
+{
+    for (int i = 0;i < 8;i++)
+    {
+        for (int j = 0;j < 8;j++)
+        {
+            matrizPintar[i][j] = 0;
+        }
+    }
+    casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, matrizPintar);
+}
