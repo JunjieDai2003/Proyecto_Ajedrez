@@ -46,7 +46,7 @@ public:
 	//void setCasilla(int fil, int colum) { casilla.fila = fil; casilla.columna = colum; }
 
 
-	virtual void miMov(const Casilla& origen, const Pieza* casilla[8][8], int matMov[8][8]);
+	virtual void miMov(const Casilla& origen, Pieza* casilla[8][8], int matMov[8][8]);
 	//virtual ~Pieza() = default;
 
 

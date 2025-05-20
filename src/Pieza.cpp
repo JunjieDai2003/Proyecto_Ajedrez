@@ -4,7 +4,7 @@ Pieza::Pieza()
 {
 }
 
-void Pieza::miMov(const Casilla& origen, const Pieza* casilla[8][8], int matMov[8][8])
+void Pieza::miMov(const Casilla& origen,  Pieza* casilla[8][8], int matMov[8][8])
 {
 	return;
 }

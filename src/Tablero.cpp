@@ -48,23 +48,23 @@ void Tablero::dibuja()
 
 void Tablero::configurarTablero()
 {
-    casillas1[0][0] = new Torre(Tipo::TORRE, Color::NEGRO);
-    casillas1[0][1] = new Caballo(Tipo::CABALLO, Color::NEGRO);
-    casillas1[0][2] = new Alfil(Tipo::ALFIL, Color::NEGRO);
-    casillas1[0][3] = new Reina(Tipo::REINA, Color::NEGRO);
-    casillas1[0][4] = new Rey(Tipo::REY, Color::NEGRO);
-    casillas1[0][5] = new Reina(Tipo::ALFIL, Color::NEGRO);
-    casillas1[0][6] = new Caballo(Tipo::CABALLO, Color::NEGRO);
-    casillas1[0][7] = new Torre(Tipo::TORRE, Color::NEGRO);
+    casillas1[7][0] = new Torre(Tipo::TORRE, Color::NEGRO);
+    casillas1[7][1] = new Caballo(Tipo::CABALLO, Color::NEGRO);
+    casillas1[7][2] = new Alfil(Tipo::ALFIL, Color::NEGRO);
+    casillas1[7][3] = new Reina(Tipo::REINA, Color::NEGRO);
+    casillas1[7][4] = new Rey(Tipo::REY, Color::NEGRO);
+    casillas1[7][5] = new Reina(Tipo::ALFIL, Color::NEGRO);
+    casillas1[7][6] = new Caballo(Tipo::CABALLO, Color::NEGRO);
+    casillas1[7][7] = new Torre(Tipo::TORRE, Color::NEGRO);
     //////////////////////////////////////////////////////////////////7
-    casillas1[7][0] = new Torre(Tipo::TORRE, Color::BLANCO);
-    casillas1[7][1] = new Caballo(Tipo::CABALLO, Color::BLANCO);
-    casillas1[7][2] = new Alfil(Tipo::ALFIL, Color::BLANCO);
-    casillas1[7][3] = new Reina(Tipo::REINA, Color::BLANCO);
-    casillas1[7][4] = new Rey(Tipo::REY, Color::BLANCO);
-    casillas1[7][5] = new Reina(Tipo::ALFIL, Color::BLANCO);
-    casillas1[7][6] = new Caballo(Tipo::CABALLO, Color::BLANCO);
-    casillas1[7][7] = new Torre(Tipo::TORRE, Color::BLANCO);
+    casillas1[0][0] = new Torre(Tipo::TORRE, Color::BLANCO);
+    casillas1[0][1] = new Caballo(Tipo::CABALLO, Color::BLANCO);
+    casillas1[0][2] = new Alfil(Tipo::ALFIL, Color::BLANCO);
+    casillas1[0][3] = new Reina(Tipo::REINA, Color::BLANCO);
+    casillas1[0][4] = new Rey(Tipo::REY, Color::BLANCO);
+    casillas1[0][5] = new Reina(Tipo::ALFIL, Color::BLANCO);
+    casillas1[0][6] = new Caballo(Tipo::CABALLO, Color::BLANCO);
+    casillas1[0][7] = new Torre(Tipo::TORRE, Color::BLANCO);
 
     //std::vector<Tipo> PIEZAS = { Tipo::TORRE, Tipo::CABALLO, Tipo::ALFIL, Tipo::REINA, Tipo::REY,Tipo::ALFIL,Tipo::CABALLO,Tipo::TORRE };
     for (int i = 0;i < 8;i++)
@@ -87,12 +87,12 @@ void Tablero::configurarTablero()
             {
                 casillas1[i][j] = new Vacio(Tipo::VACIO, Color::NO_COLOR);
             }
-            else if (i == 6)
+            else if (i == 1)
             {
                 casillas1[i][j] = new Peon(Tipo::PEON, Color::BLANCO);
 
             }
-            else if (i == 1)
+            else if (i == 6)
             {
                 casillas1[i][j] = new Peon(Tipo::PEON, Color::NEGRO);
             }/*
@@ -176,11 +176,11 @@ void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
     */
     casillas1[final.fila][final.columna] = casillas1[origen.fila][origen.columna];
     casillas1[origen.fila][origen.columna] = new Vacio(Tipo::VACIO, Color::NO_COLOR);
-    if (final.fila == 0)
+    if (final.fila == 7)
     {
         casillas1[final.fila][final.columna] = new Vacio(Tipo::REINA, Color::BLANCO);
     }
-    if (final.fila == 7)
+    if (final.fila == 0)
     {
         casillas1[final.fila][final.columna] = new Vacio(Tipo::REINA, Color::NEGRO);
     }
@@ -209,5 +209,25 @@ int Tablero::movValido(const Casilla& origen, const Casilla & final)
 
     }
     return 1;*/
+    for (int i = 0;i < 8;i++)
+    {
+        for (int j = 0;j < 8;j++)
+        {
+            movvalido[i][j] = 0;
+        }
+    }
+    casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, movvalido);
+    std::cout << "matriz en tablero\n";
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            std::cout << movvalido[i][j] << " , ";
+            if (j == 7)
+            {
+                std::cout << "\n"; //Cuando llega al final de la fila hace un salto de linea para imprimir la siguiente fila
+            }
+        }
+    }
     return 1;
 }//prueba
