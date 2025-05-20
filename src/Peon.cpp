@@ -47,7 +47,7 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 		{
 			//CASO 1) BLANCAS AVANZA 1
 			//En este caso el peon AVANZA hacia delante una posicion y no hay ninguna otra pieza;
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna) && (coordenadas[i][j]->getTipo() == VACIO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna) && (coordenadas[i][j]->getTipo() == VACIO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor  de matriz auxiliar: 1" << "\n";
 				matrix[i][j] = 1;
@@ -55,7 +55,7 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 
 			//CASO 2) BLANCAS AVANZA 2
 			//En este caso el peon puede AVANZAR hacia delante dos posiciones y no hay ninguna otra pieza;
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == BLANCO) && (i == origen.fila + 2) && (j == origen.columna) && (coordenadas[i][j]->getTipo() == VACIO) && (coordenadas[i - 1][j]->getTipo() == VACIO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == BLANCO) && (i == origen.fila + 2) && (j == origen.columna) && (coordenadas[i][j]->getTipo() == VACIO) && (coordenadas[i - 1][j]->getTipo() == VACIO) && (origen.fila == 1))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 1" << "\n";
 				matrix[i][j] = 1;
@@ -63,7 +63,7 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 
 			//CASO 1) NEGRAS AVANZA 1
 			//En este caso el peon AVANZA hacia delante una posicion y no hay ninguna otra pieza;
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna) && (coordenadas[i][j]->getTipo() == VACIO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna) && (coordenadas[i][j]->getTipo() == VACIO))
 			{
 				std::cout << "El Peon puede desplazarse a la casilla: [ " << i << "," << j << "]" << "Que toma el valor 1" << "\n";
 				matrix[i][j] = 1;
@@ -71,7 +71,7 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 
 			//CASO 2) NEGRAS AVANZA 2
 			//En este  caso el peon puede AVANZAR hacia delante dos posiciones y no hay ninguna otra pieza;
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == NEGRO) && (i == origen.fila - 2) && (j == origen.columna) && (coordenadas[i][j]->getTipo() == VACIO) && (coordenadas[i + 1][j]->getTipo() == VACIO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == NEGRO) && (i == origen.fila - 2) && (j == origen.columna) && (coordenadas[i][j]->getTipo() == VACIO) && (coordenadas[i + 1][j]->getTipo() == VACIO) && (origen.fila == 6))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 1" << "\n";
 				matrix[i][j] = 1;
@@ -80,7 +80,7 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 
 			//CASO 3) BLANCO SE MUEVE A DCHA DIAGONAL Y COME A NEGRO
 			//En este caso el peon si es BLANCO puede COMER hacia un lado cuando sea la otra pieza sea NEGRA
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna + 1) && (coordenadas[i][j]->getTipo() == NEGRO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna + 1) && (coordenadas[i][j]->getColor() == NEGRO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 3" << "\n";
 				matrix[i][j] = 2;
@@ -88,7 +88,7 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 
 			//CASO 4) BLANCO SE MUEVE A DCHA DIAGONAL Y COME A BLANCO
 			//En este caso el peon si es BLANCO puede COMER hacia un lado cuando la otra pieza sea BLANCA
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna + 1) && (coordenadas[i][j]->getTipo() == BLANCO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna + 1) && (coordenadas[i][j]->getColor() == BLANCO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 2" << "\n";
 				matrix[i][j] = 3;
@@ -96,7 +96,7 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 
 			//CASO 5) BLANCO SE MUEVE A IZQDA DIAGONAL Y COME A BLANCO
 			//En este caso si el Peon es BLANCO puede COMER hacia un lado cuando la otra pieza sea BLANCA //Equivalente caso 3)
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna - 1) && (coordenadas[i][j]->getTipo() == BLANCO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna - 1) && (coordenadas[i][j]->getColor() == BLANCO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 3" << "\n";
 				matrix[i][j] = 3;
@@ -104,7 +104,7 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 
 			//CASO 6) BLANCO SE MUEVE A IZQDA DIAGONAL Y COME A NEGRO
 			//En este caso si el PEON es BLANCO puede comer hacia un lado cuando la otra pieza sea NEGRA //Equivalente caso 4)
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna - 1) && (coordenadas[i][j]->getTipo() == NEGRO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == BLANCO) && (i == origen.fila + 1) && (j == origen.columna - 1) && (coordenadas[i][j]->getColor() == NEGRO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 2" << "\n";
 				matrix[i][j] = 2;
@@ -115,7 +115,7 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 
 
 			//CASO 3) NEGRO SE MUEVE A DCHA DIAGONAL Y COME A BLANCO
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna - 1) && (coordenadas[i][j]->getTipo() == BLANCO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna - 1) && (coordenadas[i][j]->getColor() == BLANCO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 3" << "\n";
 				matrix[i][j] = 2;
@@ -123,21 +123,21 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 
 			//CASO 4) NEGRO SE MUEVE A DCHA DIAGONAL Y COME A NEGRO
 
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna - 1) && (coordenadas[i][j]->getTipo() == NEGRO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna - 1) && (coordenadas[i][j]->getColor() == NEGRO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 2" << "\n";
 				matrix[i][j] = 3;
 			}
 
 			//CASO 5) NEGRO SE MUEVE A IZQDA DIAGONAL Y COME A BLANCO
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna + 1) && (coordenadas[i][j]->getTipo() == BLANCO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna + 1) && (coordenadas[i][j]->getColor() == BLANCO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 3" << "\n";
 				matrix[i][j] = 2;
 			}
 
 			//CASO 6) NEGRO SE MUEVE A IZQDA DIAGONAL Y COME A NEGRO
-			if ((coordenadas[origen.fila][origen.columna]->getTipo() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna + 1) && (coordenadas[i][j]->getTipo() == NEGRO))
+			if ((coordenadas[origen.fila][origen.columna]->getColor() == NEGRO) && (i == origen.fila - 1) && (j == origen.columna + 1) && (coordenadas[i][j]->getColor() == NEGRO))
 			{
 				std::cout << "El Peon puede desplazarse a: la casilla: [ " << i << "," << j << "]" << "Que toma el valor 2" << "\n";
 				matrix[i][j] = 3;
