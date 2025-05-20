@@ -316,7 +316,7 @@ int MoviMatriz(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][8]
 	//Una vez recorridos los IFs la Matriz Auxiliar (que hemos inicializado en cero con el primer bucle) tendra unos doses y treses; 
 	//Imprimimos para ver que queda;
 	//Bucle comprobación (Solo imprime la matriz)
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i<8; i++)
 	{
 		for (int j = 0; j < 8; j++)
 		{
