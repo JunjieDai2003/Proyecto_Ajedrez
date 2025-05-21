@@ -184,8 +184,8 @@ void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
 {
     //la filosofia es pedir dato de final y meterselo al original 
     // para ello dos ->
-    Tipo nuevoTipo = casillas1[origen.fila][origen.columna]->getTipo();
-    Color nuevoColor = casillas1[origen.fila][origen.columna]->getColor();
+    Tipo miTipo = casillas1[origen.fila][origen.columna]->getTipo();
+    Color miColor = casillas1[origen.fila][origen.columna]->getColor();
     //Casilla nuevoCasilla = casillas1[origen.fila][origen.columna]->getCasilla(); //funciona para otro tipo de inicializacion
     /*
     casillas1[final.fila][final.columna]->setTipo(nuevoTipo);
@@ -198,13 +198,13 @@ void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
     */
     casillas1[final.fila][final.columna] = casillas1[origen.fila][origen.columna];
     casillas1[origen.fila][origen.columna] = new Vacio(Tipo::VACIO, Color::NO_COLOR);
-    if (final.fila == 7)
+    if (final.fila == 7&& miTipo==PEON)
     {
-        casillas1[final.fila][final.columna] = new Vacio(Tipo::REINA, Color::BLANCO);
+        casillas1[final.fila][final.columna] = new Reina(Tipo::REINA, Color::BLANCO);
     }
-    if (final.fila == 0)
+    if (final.fila == 0 && miTipo == PEON)
     {
-        casillas1[final.fila][final.columna] = new Vacio(Tipo::REINA, Color::NEGRO);
+        casillas1[final.fila][final.columna] = new Reina(Tipo::REINA, Color::NEGRO);
     }
 }
 int Tablero::movValido(const Casilla& origen, const Casilla & final)
