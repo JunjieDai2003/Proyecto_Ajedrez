@@ -44,20 +44,20 @@ void Torre::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 		{
 			if (coordenadas[origen.fila][j]->getColor() == BLANCO)
 			{
-				matrix[origen.fila][j] == 3; //TORRE BLANCA COME algo BLANCO
+				matrix[origen.fila][j] = 3; //TORRE BLANCA COME algo BLANCO
 				std::cout << "La Torre puede comer Pieza blanca en casilla" << "[" << origen.fila << "," << j << "] \n";
 				break; //Break para salir del bucle ya que si encuentra algo en el camino y que el resto permanezca 
 			}
 			else if (coordenadas[origen.fila][j]->getColor() == NEGRO)
 			{
-				matrix[origen.fila][j] == 2; //TORRE BLANCA COME algo NEGRO
+				matrix[origen.fila][j] = 2; //TORRE BLANCA COME algo NEGRO
 				std::cout << "La Torre puede comer Pieza negra en casilla" << "[" << origen.fila << "," << j << "] \n";
 				break;
 
 			}
 			else if (coordenadas[origen.fila][j]->getTipo() == VACIO)
 			{
-				matrix[origen.fila][j] == 1; //TORRE BLANCA puede MOVER
+				matrix[origen.fila][j] = 1; //TORRE BLANCA puede MOVER
 				std::cout << "La casilla" << "[" << origen.fila << "," << j << "]" << "esta vacia \n";
 			}
 		}
@@ -66,19 +66,19 @@ void Torre::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 		{
 			if (coordenadas[origen.fila][j]->getColor() == BLANCO)
 			{
-				matrix[origen.fila][j] == 3; //TORRE BLANCA COME algo BLANCO
+				matrix[origen.fila][j] = 3; //TORRE BLANCA COME algo BLANCO
 				std::cout << "La Torre puede comer Pieza blanca en casilla" << "[" << origen.fila << "," << j << "] \n";
 				break; //Break para salir del bucle ya que si encuentra algo en el camino y que el resto permanezca 
 			}
 			else if (coordenadas[origen.fila][j]->getColor() == NEGRO)
 			{
-				matrix[origen.fila][j] == 2; //TORRE BLANCA COME algo NEGRO
+				matrix[origen.fila][j] = 2; //TORRE BLANCA COME algo NEGRO
 				std::cout << "La Torre puede comer Pieza negra en casilla" << "[" << origen.fila << "," << j << "] \n";
 				break;
 			}
 			else if (coordenadas[origen.fila][j]->getTipo() == VACIO)
 			{
-				matrix[origen.fila][j] == 1; //TORRE BLANCA puede MOVER
+				matrix[origen.fila][j] = 1; //TORRE BLANCA puede MOVER
 				std::cout << "La casilla" << "[" << origen.fila << "," << j << "]" << "esta vacia \n";
 			}
 		}
@@ -92,20 +92,20 @@ void Torre::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 		{
 			if (coordenadas[origen.fila][j]->getColor() == BLANCO)
 			{
-				matrix[origen.fila][j] == 2; //TORRE NEGRA COME algo BLANCO
+				matrix[origen.fila][j] = 2; //TORRE NEGRA COME algo BLANCO
 				std::cout << "La Torre puede comer Pieza blanca en casilla" << "[" << origen.fila << "," << j << "] \n";
 				break; //Break para salir del bucle ya que si encuentra algo en el camino y que el resto permanezca 
 			}
 			else if (coordenadas[origen.fila][j]->getColor() == NEGRO)
 			{
-				matrix[origen.fila][j] == 3; //TORRE NEGRA COME algo NEGRO
+				matrix[origen.fila][j] = 3; //TORRE NEGRA COME algo NEGRO
 				std::cout << "La Torre puede comer Pieza negra en casilla" << "[" << origen.fila << "," << j << "] \n";
 				break;
 
 			}
 			else if (coordenadas[origen.fila][j]->getTipo() == VACIO)
 			{
-				matrix[origen.fila][j] == 1; //TORRE BLANCA puede MOVER
+				matrix[origen.fila][j] = 1; //TORRE BLANCA puede MOVER
 				std::cout << "La casilla" << "[" << origen.fila << "," << j << "]" << "esta vacia \n";
 			}
 		}
@@ -114,19 +114,19 @@ void Torre::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 		{
 			if (coordenadas[origen.fila][j]->getColor() == BLANCO)
 			{
-				matrix[origen.fila][j] == 2; //TORRE NEGRA COME algo BLANCO
+				matrix[origen.fila][j] = 2; //TORRE NEGRA COME algo BLANCO
 				std::cout << "La Torre puede comer Pieza blanca en casilla" << "[" << origen.fila << "," << j << "] \n";
 				break; //Break para salir del bucle ya que si encuentra algo en el camino y que el resto permanezca 
 			}
 			else if (coordenadas[origen.fila][j]->getColor() == NEGRO)
 			{
-				matrix[origen.fila][j] == 3; //TORRE NEGRA COME algo NEGRO
+				matrix[origen.fila][j] = 3; //TORRE NEGRA COME algo NEGRO
 				std::cout << "La Torre puede comer Pieza negra en casilla" << "[" << origen.fila << "," << j << "] \n";
 				break;
 			}
 			else if (coordenadas[origen.fila][j]->getTipo() == VACIO)
 			{
-				matrix[origen.fila][j] == 1; //TORRE BLANCA puede MOVER
+				matrix[origen.fila][j] = 1; //TORRE BLANCA puede MOVER
 				std::cout << "La casilla" << "[" << origen.fila << "," << j << "]" << "esta vacia \n";
 			}
 		}
@@ -146,20 +146,20 @@ void Torre::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 		{
 			if (coordenadas[i][origen.columna]->getColor() == BLANCO)
 			{
-				matrix[i][origen.columna] == 3; //TORRE BLANCA COME algo BLANCO
+				matrix[i][origen.columna] = 3; //TORRE BLANCA COME algo BLANCO
 				std::cout << "La Torre puede comer Pieza blanca en casilla" << "[" << i << "," << origen.columna << "] \n";
 				break; //Break para salir del bucle ya que si encuentra algo en el camino y que el resto permanezca 
 			}
 			else if (coordenadas[i][origen.columna]->getColor() == NEGRO)
 			{
-				matrix[i][origen.columna] == 2; //TORRE BLANCA COME algo NEGRO
+				matrix[i][origen.columna] = 2; //TORRE BLANCA COME algo NEGRO
 				std::cout << "La Torre puede comer Pieza negra en casilla" << "[" << i << "," << origen.columna << "] \n";
 				break;
 
 			}
 			else if (coordenadas[i][origen.columna]->getTipo() == VACIO)
 			{
-				matrix[i][origen.columna] == 1; //TORRE BLANCA puede MOVER
+				matrix[i][origen.columna] = 1; //TORRE BLANCA puede MOVER
 				std::cout << "La casilla" << "[" << i << "," << origen.columna << "]" << "esta vacia \n";
 			}
 		}
@@ -168,19 +168,19 @@ void Torre::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 		{
 			if (coordenadas[i][origen.columna]->getColor() == BLANCO)
 			{
-				matrix[i][origen.columna] == 3; //TORRE BLANCA COME algo BLANCO
+				matrix[i][origen.columna] = 3; //TORRE BLANCA COME algo BLANCO
 				std::cout << "La Torre puede comer Pieza blanca en casilla" << "[" << i << "," << origen.columna << "] \n";
 				break; //Break para salir del bucle ya que si encuentra algo en el camino y que el resto permanezca 
 			}
 			else if (coordenadas[i][origen.columna]->getColor() == NEGRO)
 			{
-				matrix[i][origen.columna] == 2; //TORRE BLANCA COME algo NEGRO
+				matrix[i][origen.columna] = 2; //TORRE BLANCA COME algo NEGRO
 				std::cout << "La Torre puede comer Pieza negra en casilla" << "[" << i << "," << origen.columna << "] \n";
 				break;
 			}
 			else if (coordenadas[i][origen.columna]->getTipo() == VACIO)
 			{
-				matrix[i][origen.columna] == 1; //TORRE BLANCA puede MOVER
+				matrix[i][origen.columna] = 1; //TORRE BLANCA puede MOVER
 				std::cout << "La casilla" << "[" << i << "," << origen.columna << "]" << "esta vacia \n";
 			}
 		}
@@ -195,20 +195,20 @@ void Torre::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 		{
 			if (coordenadas[i][origen.columna]->getColor() == BLANCO)
 			{
-				matrix[i][origen.columna] == 2; //TORRE NEGRA COME algo BLANCO
+				matrix[i][origen.columna] = 2; //TORRE NEGRA COME algo BLANCO
 				std::cout << "La Torre puede comer Pieza blanca en casilla" << "[" << i << "," << origen.columna << "] \n";
 				break; //Break para salir del bucle ya que si encuentra algo en el camino y que el resto permanezca 
 			}
 			else if (coordenadas[i][origen.columna]->getColor() == NEGRO)
 			{
-				matrix[i][origen.columna] == 3; //TORRE NEGRA COME algo NEGRO
+				matrix[i][origen.columna] = 3; //TORRE NEGRA COME algo NEGRO
 				std::cout << "La Torre puede comer Pieza negra en casilla" << "[" << i << "," << origen.columna << "] \n";
 				break;
 
 			}
 			else if (coordenadas[i][origen.columna]->getTipo() == VACIO)
 			{
-				matrix[i][origen.columna] == 1; //TORRE NEGRA puede MOVER
+				matrix[i][origen.columna] = 1; //TORRE NEGRA puede MOVER
 				std::cout << "La casilla" << "[" << i << "," << origen.columna << "]" << "esta vacia \n";
 			}
 		}
@@ -217,19 +217,19 @@ void Torre::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 		{
 			if (coordenadas[i][origen.columna]->getColor() == BLANCO)
 			{
-				matrix[i][origen.columna] == 2; //TORRE NEGRA COME algo BLANCO
+				matrix[i][origen.columna] = 2; //TORRE NEGRA COME algo BLANCO
 				std::cout << "La Torre puede comer Pieza blanca en casilla" << "[" << i << "," << origen.columna << "] \n";
 				break; //Break para salir del bucle ya que si encuentra algo en el camino y que el resto permanezca 
 			}
 			else if (coordenadas[i][origen.columna]->getColor() == NEGRO)
 			{
-				matrix[i][origen.columna] == 3; //TORRE NEGRA COME algo NEGRO
+				matrix[i][origen.columna] = 3; //TORRE NEGRA COME algo NEGRO
 				std::cout << "La Torre puede comer Pieza negra en casilla" << "[" << i << "," << origen.columna << "] \n";
 				break;
 			}
 			else if (coordenadas[i][origen.columna]->getTipo() == VACIO)
 			{
-				matrix[i][origen.columna] == 1; //TORRE NEGRA puede MOVER
+				matrix[i][origen.columna] = 1; //TORRE NEGRA puede MOVER
 				std::cout << "La casilla" << "[" << i << "," << origen.columna << "]" << "esta vacia \n";
 			}
 		}
