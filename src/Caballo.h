@@ -1,10 +1,11 @@
 #pragma once
 #include "Pieza.h"
-class Caballo :public Pieza
+class  Caballo : public Pieza
 {
 public:
-	Caballo(Tipo tipo, Color color) :Pieza(tipo, color) {};
-	void miMov(const Casilla& origen, Pieza* casilla[8][8], int matMov[8][8]) override;
+    Caballo(Tipo tipo, Color color) :Pieza(tipo, color) {};
+    void miMov(const Casilla& origen, Pieza* casilla[8][8], int matMov[8][8]) override;
+    void dibuja(float x, float y) override;
 };
 
 

@@ -1,4 +1,5 @@
 #pragma once
+#include "ETSIDI.h"
 #include "Casilla.h"
 #include<vector>
 #include "freeglut.h"
@@ -52,7 +53,7 @@ public:
 
 
 
-	void dibuja(float x, float y);
+	virtual void dibuja(float x, float y);
 
 
 
