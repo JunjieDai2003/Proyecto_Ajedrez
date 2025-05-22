@@ -1,7 +1,8 @@
 #include"Reina.h"
-
+#include<iostream>
 void Reina::miMov(const Casilla& origen, Pieza* casilla[8][8], int matMov[8][8]) {
 	// implementaci¨®n aqu¨ª
+	std::cout << "soy reina";
 	return;
 }
 void::Reina::dibuja(float x, float y)

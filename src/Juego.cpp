@@ -48,7 +48,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 		switch (estado_juego)
 		{
 		case Seleccion1: //primera etapa
-			origen = getCoord(x, y);
+			//origen = getCoord(x, y);
 			//comprobar de que se ha seleccionado dentro, si no, break directamente;
 			//if(turno%2!=0) estado_juego=Seleccion1://has seleccionado color incorrecto o vacio
 			//else dibujo con tablero la casilla seleccionada y movimientos permitidos
@@ -66,11 +66,13 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "seleccionaste blanco en turno correcto, selecciona siguiente posicion\n";
 				tablero.pintaMov(origen);
 				estado_juego = TurnoBlanco2;
+				turno = 0;
 			}
 			else
 			{
 				std::cout << "seleccionaste negro en turno erroneo, vuelve a seleccionar una pieza blanca\n";
 				estado_juego = TurnoBlanco;
+				turno = 0;
 			}
 			break;
 		case TurnoBlanco2:
@@ -82,6 +84,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			if (tablero.movValido(origen, final) == 0)
 			{
 				estado_juego = TurnoBlanco;
+
 				break;
 			}
 			if (final == origen)

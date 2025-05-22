@@ -49,7 +49,7 @@ void Caballo::miMov(const Casilla& origen,  Pieza* casilla[8][8], int matMov[8][
 
 			if (i >= 0 && i < 8 && j >= 0 && j < 8)
 			{
-				//Avanza si la casilla está vacía
+				//Avanza si la casilla est?vacía
 				if (casilla[i][j]->getTipo() == VACIO)
 				{
 					std::cout << "El caballo puede desplazarse a la casilla [" << i << "," << j << "] Que toma el valor de matriz auxiliar: 1\n";
@@ -84,7 +84,7 @@ void Caballo::miMov(const Casilla& origen,  Pieza* casilla[8][8], int matMov[8][
 
 			if (i >= 0 && i < 8 && j >= 0 && j < 8)
 			{
-				// Avanza si la casilla está vacía o contiene una pieza enemiga
+				// Avanza si la casilla est?vacía o contiene una pieza enemiga
 				if (casilla[i][j]->getTipo() == VACIO)
 				{
 					std::cout << "El caballo puede desplazarse a la casilla [" << i << "," << j << "] Que toma el valor de matriz auxiliar: 1\n";

@@ -1,8 +1,9 @@
 #include"Alfil.h"
-
+#include<iostream>
 
 void Alfil::miMov(const Casilla& origen, Pieza* casilla[8][8], int matMov[8][8]) {
 	// implementaci¨®n aqu¨ª
+	std::cout << "soy alfil\n";
 	return;
 }
 

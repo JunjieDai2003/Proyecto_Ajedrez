@@ -48,6 +48,7 @@ public:
 	void ascensoPeon();
 	void pintaMov(const Casilla&);
 	int endGame();
+	bool encontrarEjecucion(int turno);
 };
 
 

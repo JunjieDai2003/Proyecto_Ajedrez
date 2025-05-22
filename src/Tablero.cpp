@@ -84,7 +84,7 @@ void Tablero::configurarTablero()
     casillas1[7][2] = new Alfil(Tipo::ALFIL, Color::NEGRO);
     casillas1[7][3] = new Reina(Tipo::REINA, Color::NEGRO);
     casillas1[7][4] = new Rey(Tipo::REY, Color::NEGRO);
-    casillas1[7][5] = new Reina(Tipo::ALFIL, Color::NEGRO);
+    casillas1[7][5] = new Alfil(Tipo::ALFIL, Color::NEGRO);
     casillas1[7][6] = new Caballo(Tipo::CABALLO, Color::NEGRO);
     casillas1[7][7] = new Torre(Tipo::TORRE, Color::NEGRO);
     //////////////////////////////////////////////////////////////////7
@@ -93,7 +93,7 @@ void Tablero::configurarTablero()
     casillas1[0][2] = new Alfil(Tipo::ALFIL, Color::BLANCO);
     casillas1[0][3] = new Reina(Tipo::REINA, Color::BLANCO);
     casillas1[0][4] = new Rey(Tipo::REY, Color::BLANCO);
-    casillas1[0][5] = new Reina(Tipo::ALFIL, Color::BLANCO);
+    casillas1[0][5] = new Alfil(Tipo::ALFIL, Color::BLANCO);
     casillas1[0][6] = new Caballo(Tipo::CABALLO, Color::BLANCO);
     casillas1[0][7] = new Torre(Tipo::TORRE, Color::BLANCO);
 
@@ -208,7 +208,7 @@ void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
     delete casillas1[final.fila][final.columna];
     casillas1[final.fila][final.columna] = casillas1[origen.fila][origen.columna];
     casillas1[origen.fila][origen.columna] = new Vacio(Tipo::VACIO, Color::NO_COLOR);
-
+    
     if (final.fila == 7&& miTipo==PEON)
     {
         casillas1[final.fila][final.columna] = new Reina(Tipo::REINA, Color::BLANCO);
@@ -221,52 +221,65 @@ void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
 int Tablero::movValido(const Casilla& origen, const Casilla & final)
 {
 
-    //if(ejecucion==1 && (casillas->getColor!=casillas->getColor)
-    //return 0;
-    //salir de funcion directamente si hay una ejecucion pero no ejecutamos7
-    ///
-    ///
-    /// /// este es el protoripo
-    //casillas1[origen.fila][origen.columna] - miMov(origen, const casillas1[8][8], int matrizmov[8][8]);
-    ///////////////////7
-    ////plan abortado
-    /*
-    Tipo pieza;
-    pieza = (casillas1[origen.fila][origen.columna])->getTipo();
-    switch (pieza)
-    {
-    case PEON:
-        //mov matriz=Peon::comprobacionmov(origen,const &matriz);
-        //if
-        return 0;
+    if (encontrarEjecucion(turno) == true && (casillas1[origen.fila][origen.columna]->getColor() != casillas1[final.fila][final.columna]->getColor()) &&
+        casillas1[final.fila][final.columna]->getColor() != NO_COLOR)
 
-    }
-    return 1;*/
-    for (int i = 0;i < 8;i++)
     {
-        for (int j = 0;j < 8;j++)
+        for (int i = 0;i < 8;i++)
         {
-            movvalido[i][j] = 0;
-        }
-    }
-    casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, movvalido);
-    std::cout << "matriz en tablero\n";
-    for (int i = 0; i < 8; i++)
-    {
-        for (int j = 0; j < 8; j++)
-        {
-            std::cout << movvalido[i][j] << " , ";
-            if (j == 7)
+            for (int j = 0;j < 8;j++)
             {
-                std::cout << "\n"; //Cuando llega al final de la fila hace un salto de linea para imprimir la siguiente fila
+                movvalido[i][j] = 0;
             }
         }
+        casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, movvalido);
+        std::cout << "matriz en tablero\n";
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                std::cout << movvalido[i][j] << " , ";
+                if (j == 7)
+                {
+                    std::cout << "\n"; //Cuando llega al final de la fila hace un salto de linea para imprimir la siguiente fila
+                }
+            }
+        }
+        if (movvalido[final.fila][final.columna] == 0)
+        {
+            return 0;//no
+        }
+        return 1;//si
     }
-    if (movvalido[final.fila][final.columna] == 0)
+    if (encontrarEjecucion(turno) == false)
     {
-        return 0;
+        for (int i = 0;i < 8;i++)
+        {
+            for (int j = 0;j < 8;j++)
+            {
+                movvalido[i][j] = 0;
+            }
+        }
+        casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, movvalido);
+        std::cout << "matriz en tablero\n";
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                std::cout << movvalido[i][j] << " , ";
+                if (j == 7)
+                {
+                    std::cout << "\n"; //Cuando llega al final de la fila hace un salto de linea para imprimir la siguiente fila
+                }
+            }
+        }
+        if (movvalido[final.fila][final.columna] == 0)
+        {
+            return 0;//no
+        }
+        return 1;//si
     }
-    return 1;
+    return 0; //no
 }//prueba
 void Tablero::pintaMov(const Casilla& origen)
 {
@@ -302,4 +315,54 @@ int Tablero::endGame() {
     else if (blanco == 0) {
         return 2; // white win
     }
+}
+bool Tablero::encontrarEjecucion(int turno)
+{
+    for (int i = 0;i < 8;i++)
+    {
+        for (int j = 0;j < 8;j++)
+        {
+            if (turno == 0 && casillas1[i][j]->getColor() == BLANCO)
+            {
+                Casilla miCasilla;
+                miCasilla.fila = i;
+                miCasilla.columna = j;
+                casillas1[i][j]->miMov(miCasilla, casillas1, movvalido);
+                for (int x = 0;x < 8;x++)
+                {
+                    for (int y = 0;y < 8;y++)
+                    {
+                        if (movvalido[x][y] == 2)
+                        {
+                            return true;
+                        }
+
+                    }
+
+                }
+            }
+            if (turno == 1 && casillas1[i][j]->getColor() == NEGRO)
+            {
+                Casilla miCasilla;
+                miCasilla.fila = i;
+                miCasilla.columna = j;
+                casillas1[i][j]->miMov(miCasilla, casillas1, movvalido);
+                for (int x = 0;x < 8;x++)
+                {
+                    for (int y = 0;y < 8;y++)
+                    {
+                        if (movvalido[x][y] == 2)
+                        {
+                            return true;
+                        }
+
+                    }
+
+                }
+            }
+
+        }
+
+    }
+    return false;
 }
