@@ -3,6 +3,15 @@
 #include<iostream>
 #include"ETSIDI.h"
 
+Tablero::~Tablero() {
+    for (int i = 0; i < 8; ++i) {
+        delete[] casillas1[i];  // delete each row
+    }
+    delete[] casillas1;          // delete the array of pointers
+
+
+}
+
 void Tablero::dibuja()
 {
 
@@ -196,9 +205,11 @@ void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
     casillas1[origen.fila][origen.columna]->setColor(NO_COLOR);
     casillas1[origen.fila][origen.columna]->setTipo(VACIO);
     */
+    delete casillas1[final.fila][final.columna];
     casillas1[final.fila][final.columna] = casillas1[origen.fila][origen.columna];
     casillas1[origen.fila][origen.columna] = new Vacio(Tipo::VACIO, Color::NO_COLOR);
-    if (final.fila == 7 && miTipo == PEON)
+
+    if (final.fila == 7&& miTipo==PEON)
     {
         casillas1[final.fila][final.columna] = new Reina(Tipo::REINA, Color::BLANCO);
     }
@@ -231,65 +242,31 @@ int Tablero::movValido(const Casilla& origen, const Casilla & final)
 
     }
     return 1;*/
-    if (encontrarEjecucion(turno) == true && (casillas1[origen.fila][origen.columna]->getColor() != casillas1[final.fila][final.columna]->getColor()) &&
-        casillas1[final.fila][final.columna]->getColor() != NO_COLOR)
-
+    for (int i = 0;i < 8;i++)
     {
-        for (int i = 0;i < 8;i++)
+        for (int j = 0;j < 8;j++)
         {
-            for (int j = 0;j < 8;j++)
-            {
-                movvalido[i][j] = 0;
-            }
+            movvalido[i][j] = 0;
         }
-        casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, movvalido);
-        std::cout << "matriz en tablero\n";
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                std::cout << movvalido[i][j] << " , ";
-                if (j == 7)
-                {
-                    std::cout << "\n"; //Cuando llega al final de la fila hace un salto de linea para imprimir la siguiente fila
-                }
-            }
-        }
-        if (movvalido[final.fila][final.columna] == 0)
-        {
-            return 0;//no
-        }
-        return 1;//si
     }
-    if (encontrarEjecucion(turno) == false)
+    casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, movvalido);
+    std::cout << "matriz en tablero\n";
+    for (int i = 0; i < 8; i++)
     {
-        for (int i = 0;i < 8;i++)
+        for (int j = 0; j < 8; j++)
         {
-            for (int j = 0;j < 8;j++)
+            std::cout << movvalido[i][j] << " , ";
+            if (j == 7)
             {
-                movvalido[i][j] = 0;
+                std::cout << "\n"; //Cuando llega al final de la fila hace un salto de linea para imprimir la siguiente fila
             }
         }
-        casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, movvalido);
-        std::cout << "matriz en tablero\n";
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                std::cout << movvalido[i][j] << " , ";
-                if (j == 7)
-                {
-                    std::cout << "\n"; //Cuando llega al final de la fila hace un salto de linea para imprimir la siguiente fila
-                }
-            }
-        }
-        if (movvalido[final.fila][final.columna] == 0)
-        {
-            return 0;//no
-        }
-        return 1;//si
     }
-    return 0; //no
+    if (movvalido[final.fila][final.columna] == 0)
+    {
+        return 0;
+    }
+    return 1;
 }//prueba
 void Tablero::pintaMov(const Casilla& origen)
 {
@@ -301,54 +278,4 @@ void Tablero::pintaMov(const Casilla& origen)
         }
     }
     casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, matrizPintar);
-}
-bool Tablero::encontrarEjecucion(int turno)
-{
-    for (int i = 0;i < 8;i++)
-    {
-        for (int j = 0;j < 8;j++)
-        {
-            if (turno == 0 && casillas1[i][j]->getColor() == BLANCO)
-            {
-                Casilla miCasilla;
-                miCasilla.fila = i;
-                miCasilla.columna = j;
-                casillas1[i][j]->miMov(miCasilla, casillas1, movvalido);
-                for (int x = 0;x < 8;x++)
-                {
-                    for (int y = 0;y < 8;y++)
-                    {
-                        if (movvalido[x][y] == 2)
-                        {
-                            return true;
-                        }
-
-                    }
-
-                }
-            }
-            if (turno == 1 && casillas1[i][j]->getColor() == NEGRO)
-            {
-                Casilla miCasilla;
-                miCasilla.fila = i;
-                miCasilla.columna = j;
-                casillas1[i][j]->miMov(miCasilla, casillas1, movvalido);
-                for (int x = 0;x < 8;x++)
-                {
-                    for (int y = 0;y < 8;y++)
-                    {
-                        if (movvalido[x][y] == 2)
-                        {
-                            return true;
-                        }
-
-                    }
-
-                }
-            }
-
-        }
-
-    }
-    return false;
 }
