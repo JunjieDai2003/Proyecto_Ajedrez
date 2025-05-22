@@ -30,7 +30,7 @@ class Tablero
 	int movvalido[8][8] = { 0 }; // para detectar mov validos
 	//std::vector<std::vector<Pieza*>> casillas2;
 	//std::vector<std::vector<int>> movvalido2;
-	
+
 
 	int matrizPintar[8][8];
 
@@ -47,6 +47,7 @@ public:
 	int movValido(const Casilla&, const Casilla&);
 	void ascensoPeon();
 	void pintaMov(const Casilla&);
+	bool encontrarEjecucion(int turno);
 };
 
 

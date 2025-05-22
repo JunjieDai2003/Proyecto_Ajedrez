@@ -54,6 +54,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			//else dibujo con tablero la casilla seleccionada y movimientos permitidos
 			tablero.configurarTablero();
 			estado_juego = TurnoBlanco;
+			turno = 0;
 			std::cout << "estoy en seleccion inicial\n";
 			break;
 		case TurnoBlanco:
@@ -93,6 +94,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "seleccionaste vacio\n";
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
+				turno = 1;
 
 			}
 			else if (tablero.getColor(final) == 2)
@@ -101,12 +103,14 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
 				vidablanca--;
+				turno = 1;
 			}
 			else
 			{
 				std::cout << "ejecutas pieza negra\n";
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
+				turno = 1;
 				vidanegra--;
 			}
 			if (vidablanca == 0 || vidanegra == 0)
@@ -123,11 +127,13 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "seleccionaste negro en turno correcto, selecciona siguiente posicion\n";
 				tablero.pintaMov(origen);
 				estado_juego = TurnoNegro2;
+				turno = 1;
 			}
 			else
 			{
 				std::cout << "seleccionaste blanco en turno erroneo, vuelve a seleccionar una pieza negro\n";
 				estado_juego = TurnoNegro;
+				turno = 1;
 			}
 			break;
 		case TurnoNegro2:
@@ -136,6 +142,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			if (tablero.movValido(origen, final) == 0)
 			{
 				estado_juego = TurnoNegro;
+				turno = 1;
 				break;
 			}
 			//codigo de abajo es orientativo
@@ -145,6 +152,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 			{
 				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
 				estado_juego = TurnoNegro;
+				turno = 1;
 				break;
 			}
 			//esto es orientativo, se puede sustituir por una fila de operacion exitoso
@@ -153,6 +161,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "seleccionaste vacio\n";
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
+				turno = 0;
 			}
 			else if (tablero.getColor(final) == 1)
 			{
@@ -160,6 +169,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
 				vidanegra--;
+				turno = 0;
 			}
 			else
 			{
@@ -167,6 +177,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				estado_juego = TurnoBlanco;
 				tablero.moverPiezasyAscenso(origen, final);
 				vidablanca--;
+				turno = 0;
 			}
 			if (vidablanca == 0 || vidanegra == 0)
 			{
