@@ -47,7 +47,7 @@ public:
 	int movValido(const Casilla&, const Casilla&);
 	void ascensoPeon();
 	void pintaMov(const Casilla&);
-	bool endGame();
+	int endGame();
 };
 
 
