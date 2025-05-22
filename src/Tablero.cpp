@@ -279,3 +279,24 @@ void Tablero::pintaMov(const Casilla& origen)
     }
     casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, matrizPintar);
 }
+
+bool Tablero::endGame() {
+    int negro = 0, blanco = 0;
+    for (int i = 0;i < 8;i++) {
+        for (int j = 0;j < 8;j++) {
+            if (negro != 0 && blanco != 0) {
+                return false;
+            }
+            if (casillas1[i][j]->getColor() == NEGRO) {
+                negro++;
+            }
+            else if (casillas1[i][j]->getColor() == BLANCO) {
+                blanco++;
+            }
+
+        }
+    }
+    if (negro == 0 || blanco == 0) {
+        return true;
+    }
+}
