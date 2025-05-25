@@ -30,6 +30,10 @@ void Juego::dibuja()
 	glDisable(GL_TEXTURE_2D);
 
 }
+
+
+
+
 Casilla Juego::getCoord(int x, int y)
 {
 	//las coordenadas seran modificadas posteriormente, este funciona con mi pov, pero creo q usare pov de laboratorio
@@ -40,7 +44,7 @@ Casilla Juego::getCoord(int x, int y)
 	std::cout << "estoy clickeando " << casilla.fila << " y " << casilla.columna << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
 	return casilla;
 }
-void Juego::ratonjuego(int button, int state, int x, int y)
+int Juego::ratonjuego(int button, int state, int x, int y)
 {
 
 	if ((button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) && (x > 216) && (x < 585) && (y > 116) && (y < 483))
@@ -97,6 +101,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "seleccionaste vacio\n";
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
+				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				turno = 1;
 
 			}
@@ -105,6 +110,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "ejecutas tu propia pieza\n";
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
+				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				vidablanca--;
 				turno = 1;
 			}
@@ -114,6 +120,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
 				turno = 1;
+				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				vidanegra--;
 			}
 			if (vidablanca == 0 || vidanegra == 0)
@@ -156,6 +163,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
 				estado_juego = TurnoNegro;
 				turno = 1;
+				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				break;
 			}
 			//esto es orientativo, se puede sustituir por una fila de operacion exitoso
@@ -164,6 +172,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "seleccionaste vacio\n";
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
+				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				turno = 0;
 			}
 			else if (tablero.getColor(final) == 1)
@@ -172,6 +181,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
 				vidanegra--;
+				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				turno = 0;
 			}
 			else
@@ -180,6 +190,7 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 				estado_juego = TurnoBlanco;
 				tablero.moverPiezasyAscenso(origen, final);
 				vidablanca--;
+				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				turno = 0;
 			}
 			if (vidablanca == 0 || vidanegra == 0)
@@ -190,11 +201,15 @@ void Juego::ratonjuego(int button, int state, int x, int y)
 		case END:
 		{
 			std::cout << "se ha terminado\n";
+			estado_juego = Seleccion1;
+			vidablanca = 16;
+			vidanegra = 16;
+			return 1;
 			break;
 		}
 
 		}
 		//tablero.ascensoPeon();
 	}
-	return;//hay q cambiar, dejo aqui para no saltar error
+	return 0;//hay q cambiar, dejo aqui para no saltar error
 }

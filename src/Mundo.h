@@ -7,7 +7,7 @@
 class Mundo
 {
 	Juego juego;
-	enum Estado_mundo { PANT_INI, DOS_JUGADOR, CONTRA_AI };
+	enum Estado_mundo { PANT_INI, DOS_JUGADOR, CONTRA_AI, END , END_FORREAL};
 	//int fil, col;
 	//esta linea ya no lo neecsitamos si dibujamos en otra funcion
 	Estado_mundo estado_mundo;
