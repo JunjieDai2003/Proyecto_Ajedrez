@@ -226,10 +226,10 @@ void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
 int Tablero::movValido(const Casilla& origen, const Casilla & final)
 {
 
-    /*if (encontrarEjecucion(turno) == true && (casillas1[origen.fila][origen.columna]->getColor() != casillas1[final.fila][final.columna]->getColor()) &&
-        casillas1[final.fila][final.columna]->getColor() != NO_COLOR)*/
+    if (encontrarEjecucion(turno) == true && (casillas1[origen.fila][origen.columna]->getColor() != casillas1[final.fila][final.columna]->getColor()) &&
+        casillas1[final.fila][final.columna]->getColor() != NO_COLOR)
 
-    //{
+    {
         for (int i = 0;i < 8;i++)
         {
             for (int j = 0;j < 8;j++)
@@ -255,8 +255,8 @@ int Tablero::movValido(const Casilla& origen, const Casilla & final)
             return 0;//no
         }
         return 1;//si
-    //}
-    /*
+    }
+    
     if (encontrarEjecucion(turno) == false)
     {
         for (int i = 0;i < 8;i++)
@@ -284,7 +284,7 @@ int Tablero::movValido(const Casilla& origen, const Casilla & final)
             return 0;//no
         }
         return 1;//si
-    }*/
+    }
     return 0; //no
 }//prueba
 void Tablero::pintaMov(const Casilla& origen)

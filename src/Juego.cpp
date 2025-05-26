@@ -62,10 +62,11 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			std::cout << "estoy en seleccion inicial\n";
 			break;
 		case TurnoBlanco:
+			turno = 0;
 			std::cout << "Es turno de los blancos\n\n";
 			origen = getCoord(x, y);
 			//tablero.getCasilla(origen);
-			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 1 && ((tablero.getTableroEjecucion(origen) && tablero.encontrarEjecucion(turno) || tablero.encontrarEjecucion(turno) == false)))
+			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 1 /* && ((tablero.getTableroEjecucion(origen) && tablero.encontrarEjecucion(turno) || tablero.encontrarEjecucion(turno) == false))*/)
 			{
 				std::cout << "seleccionaste blanco en turno correcto, selecciona siguiente posicion\n";
 				tablero.pintaMov(origen);
@@ -135,7 +136,8 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 		case TurnoNegro:
 			std::cout << "Es turno de los negros\n\n";
 			origen = getCoord(x, y);
-			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 2 && ((tablero.getTableroEjecucion(origen) && tablero.encontrarEjecucion(turno) || tablero.encontrarEjecucion(turno) == false)))
+			turno = 1;
+			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 2 /* && ((tablero.getTableroEjecucion(origen) && tablero.encontrarEjecucion(turno) || tablero.encontrarEjecucion(turno) == false))*/)
 			{
 				std::cout << "seleccionaste negro en turno correcto, selecciona siguiente posicion\n";
 				tablero.pintaMov(origen);
