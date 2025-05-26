@@ -66,7 +66,7 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 				i++;
 				j++;
 
-			} while ((i > 7) || (j > 7));
+			} while ((i <= 7) && (j <= 7));
 		}
 
 
@@ -97,7 +97,7 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 				i--;
 				j++;
 
-			} while ((i < 0) || (j > 7));
+			} while ((i >= 0) && (j <= 7));
 		}
 
 
@@ -127,7 +127,7 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 				}
 				i++;
 				j--;
-			} while ((i > 7) || (j < 0));
+			} while ((i <= 7) && (j >= 0));
 
 		}
 
@@ -159,7 +159,7 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 				i--;
 				j--;
 
-			} while ((i < 0) || (j < 0));
+			} while ((i >= 0) && (j >= 0));
 		}
 	}
 
@@ -202,7 +202,7 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 				i++;
 				j++;
 
-			} while ((i > 7) || (j > 7));
+			} while ((i <= 7) && (j <= 7));
 		}
 
 		//CASO 2) DERECHA ABAJO
@@ -232,7 +232,7 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 				i--;
 				j++;
 
-			} while ((i > 7) || (i < 0));
+			} while ((i <= 7) && (i >= 0));
 		}
 
 		//CASO 3) IZQUIERDA ARRIBA
@@ -262,7 +262,7 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 
 				i++;
 				j--;
-			} while ((i > 7) || (j < 0));
+			} while ((i <= 7) && (j >= 0));
 		}
 
 		//CASO 4) IZQUIERDA ABAJO
@@ -292,10 +292,24 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 
 				i--;
 				j--;
-			} while ((i < 0) || (j < 0));
+			} while ((i >= 0) && (j >= 0));
 		}
 
 	}
+
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++)
+		{
+			std::cout << matrix[i][j] << " , ";
+			if (j == 7)
+			{
+				std::cout << "\n"; //Cuando llega al final de la fila hace un salto de linea para imprimir la siguiente fila
+			}
+		}
+	}
+
+	return;
 
 	return;
 }
