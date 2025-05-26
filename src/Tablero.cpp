@@ -203,17 +203,20 @@ void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
     casillas1[origen.fila][origen.columna]->setColor(NO_COLOR);
     casillas1[origen.fila][origen.columna]->setTipo(VACIO);
     */
-    delete casillas1[final.fila][final.columna];
+    delete casillas1[final.fila][final.columna]; // delete 
+
+    // mover objeto, de origen a final£¬final apunta misma direccion que origen  
     casillas1[final.fila][final.columna] = casillas1[origen.fila][origen.columna];
-    casillas1[origen.fila][origen.columna] = new Vacio(Tipo::VACIO, Color::NO_COLOR);
+
+   //crear vacio para origen
+    casillas1[origen.fila][origen.columna] = new Vacio(VACIO, NO_COLOR);
+
     
-    if (final.fila == 7&& miTipo==PEON)
+    if ((final.fila == 7 && miTipo == PEON && miColor == BLANCO) ||
+        (final.fila == 0 && miTipo == PEON && miColor == NEGRO))
     {
-        casillas1[final.fila][final.columna] = new Reina(Tipo::REINA, Color::BLANCO);
-    }
-    if (final.fila == 0 && miTipo == PEON)
-    {
-        casillas1[final.fila][final.columna] = new Reina(Tipo::REINA, Color::NEGRO);
+        delete casillas1[final.fila][final.columna]; // delete pe¨®n
+        casillas1[final.fila][final.columna] = new Reina(REINA, miColor); // crear Reina
     }
 }
 int Tablero::movValido(const Casilla& origen, const Casilla & final)

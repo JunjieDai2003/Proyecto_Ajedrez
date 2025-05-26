@@ -40,6 +40,44 @@ void Mundo::dibuja()
 		juego.dibuja();
 		//imprimimos el tablero aqui
 		break;
+	case BLACK:
+		gluLookAt(0, 7.5, 20,  // posicion del ojo
+			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
+			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/negra.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex2f(-10, 0);
+		glTexCoord2d(1, 1); glVertex2f(10, 0);
+		glTexCoord2d(1, 0); glVertex2f(10, 15);
+		glTexCoord2d(0, 0); glVertex2f(-10, 15);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+
+		estado_mundo = END;
+
+		break;
+	case WHITE:
+		gluLookAt(0, 7.5, 20,  // posicion del ojo
+			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
+			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/blanca.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex2f(-10, 0);
+		glTexCoord2d(1, 1); glVertex2f(10, 0);
+		glTexCoord2d(1, 0); glVertex2f(10, 15);
+		glTexCoord2d(0, 0); glVertex2f(-10, 15);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+		estado_mundo = END;
+		break;
 	case END:
 		gluLookAt(0, 7.5, 20,  // posicion del ojo
 			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
@@ -59,7 +97,7 @@ void Mundo::dibuja()
 		break;
 	case END_FORREAL:
 		//teneis que llamar funciones para limpiar la memoria.
-		exit(0);
+		quick_exit(0);
 		break;
 	case CONTRA_AI:
 		break;
@@ -115,8 +153,12 @@ void Mundo::raton(int button, int state, int x, int y)
 		}
 		if (estado_mundo == CONTRA_AI || estado_mundo == DOS_JUGADOR)
 		{
-			if (juego.ratonjuego(button, state, x, y) == 1) {
-				estado_mundo = END;
+			int j = juego.ratonjuego(button, state, x, y);
+			if (j == 2) {
+				estado_mundo = BLACK;
+			}
+			else if (j == 3) {
+				estado_mundo = WHITE;
 			}
 		}
 	}

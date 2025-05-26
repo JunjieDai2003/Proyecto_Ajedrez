@@ -16,7 +16,7 @@ void Juego::dibuja()
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
 	tablero.dibuja();//hay que dibujarlo antes
 	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/rift.png").id);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo3.png").id);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
@@ -202,9 +202,14 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 		{
 			std::cout << "se ha terminado\n";
 			estado_juego = Seleccion1;
+			int whowins;
+			if (vidablanca == 0) {
+				whowins = 1;
+			}
+			else whowins = 2;
 			vidablanca = 16;
 			vidanegra = 16;
-			return 1;
+			return 1+whowins;
 			break;
 		}
 
