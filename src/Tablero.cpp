@@ -15,36 +15,17 @@ Tablero::~Tablero() {
 void Tablero::dibuja()
 {
 
-    float dim = (float)9 / 8; //6 pq es multiplo de tamano de ventana
-    float dim1 = (float)4.5 / 8; //6 pq es multiplo de tamano de ventana
-    float cen = (dim - dim1) / 2;
+    float dim = (float)9 / 8; //6 pq es multiplo de tamaño de ventana
+
     for (int i = 0; i < 8; i++)
     {
         for (int j = 0; j < 8; j++)
         {
             float x = j * dim;
             float y = i * dim;
-            /* if (ejecucion[i][j] == 1)
-             {
-                 glColor3f(1,0,0);
-             }
-             else */
-            if (matrizPintar[i][j] == 1 || matrizPintar[i][j] == 2 || matrizPintar[i][j] == 3)
-            {
 
-                ///////////////////7
-                glColor3f(0.5, 0.5, 0.5);
-                /*
-                glBegin(GL_QUADS);
-                glVertex3f(x+2*cen, y+2*cen,0.001);        //0 0
-                glVertex3f(x + dim-2*cen, y+2*cen,0.001);    //1 0
-                glVertex3f(x + dim-2*cen, y + dim-2*cen,0.001);//1 1
-                glVertex3f(x+2*cen, y + dim-2*cen,0.001);    //0 1
-                glEnd();
-                glEnable(GL_LIGHTING);*/
 
-            }
-            else if ((i + j) % 2 == 0)
+            if ((i + j) % 2 == 0)
             {
                 glColor3f(0, 1, 0);
 
@@ -56,6 +37,8 @@ void Tablero::dibuja()
 
 
             }
+
+            glDisable(GL_LIGHTING);
             glBegin(GL_QUADS);
             glVertex2f(x, y);        //0 0
             glVertex2f(x + dim, y);    //1 0
@@ -63,12 +46,27 @@ void Tablero::dibuja()
             glVertex2f(x, y + dim);    //0 1
             glEnd();
             glEnable(GL_LIGHTING);
+
+
+            if (matrizPintar[i][j] == 1 || matrizPintar[i][j] == 2 || matrizPintar[i][j] == 3)
+            {
+                //3d para subirlo y que se vea                       
+                glColor3f(0.5f, 0.5f, 0.5f);
+                glBegin(GL_QUADS);
+                glVertex3f(x + dim * 0.25f, y + dim * 0.25f, 0.01f);
+                glVertex3f(x + dim - dim * 0.25f, y + dim * 0.25f, 0.01f);
+                glVertex3f(x + dim - dim * 0.25f, y + dim - dim * 0.25f, 0.01f);
+                glVertex3f(x + dim * 0.25f, y + dim - dim * 0.25f, 0.01f);
+                glEnd();
+
+            }
+
             casillas1[i][j]->dibuja(x, y);
         }
     }
-    for (int i = 0;i < 8;i++)
+    for (int i = 0; i < 8; i++)
     {
-        for (int j = 0;j < 8;j++)
+        for (int j = 0; j < 8; j++)
         {
             matrizPintar[i][j] = 0;
         }
