@@ -388,7 +388,7 @@ bool Tablero::encontrarEjecucion(int turno)
 }
 bool Tablero::getTableroEjecucion(Casilla& origen)
 {
-    if (matrizPintarEjecucion[origen.columna][origen.fila] != 0)
+    if (matrizPintarEjecucion[origen.fila][origen.columna] != 0)
     {
         return true;
     }
