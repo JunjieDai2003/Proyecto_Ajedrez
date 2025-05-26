@@ -58,10 +58,10 @@ void Reina::dibuja(float x, float y)
     glBegin(GL_POLYGON);
     glColor3f(1, 1, 1);
     glColor4f(1, 1, 1, 0.9);
-    glTexCoord2d(0, 1); glVertex3f(x + cen, y + cen, 0.01);
-    glTexCoord2d(1, 1); glVertex3f(x + cen + dim1, y + cen, 0.01);
-    glTexCoord2d(1, 0); glVertex3f(x + cen + dim1, y + cen + dim1, 0.01);
-    glTexCoord2d(0, 0); glVertex3f(x + cen, y + cen + dim1, 0.01);
+    glTexCoord2d(0, 1); glVertex3f(x + cen, y + cen, 0.02f);
+    glTexCoord2d(1, 1); glVertex3f(x + cen + dim1, y + cen, 0.02f);
+    glTexCoord2d(1, 0); glVertex3f(x + cen + dim1, y + cen + dim1, 0.02f);
+    glTexCoord2d(0, 0); glVertex3f(x + cen, y + cen + dim1, 0.02f);
     glEnd();
 
     glEnable(GL_LIGHTING);

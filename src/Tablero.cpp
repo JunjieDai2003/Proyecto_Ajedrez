@@ -23,6 +23,7 @@ void Tablero::dibuja()
         {
             float x = j * dim;
             float y = i * dim;
+            float cen = dim * 0.25f;
 
 
             if ((i + j) % 2 == 0)
@@ -53,10 +54,10 @@ void Tablero::dibuja()
                 //3d para subirlo y que se vea                       
                 glColor3f(0.5f, 0.5f, 0.5f);
                 glBegin(GL_QUADS);
-                glVertex3f(x + dim * 0.25f, y + dim * 0.25f, 0.01f);
-                glVertex3f(x + dim - dim * 0.25f, y + dim * 0.25f, 0.01f);
-                glVertex3f(x + dim - dim * 0.25f, y + dim - dim * 0.25f, 0.01f);
-                glVertex3f(x + dim * 0.25f, y + dim - dim * 0.25f, 0.01f);
+                glVertex3f(x + cen, y + cen, 0.01f);
+                glVertex3f(x + dim - cen, y + cen, 0.01f);
+                glVertex3f(x + dim - cen, y + dim - cen, 0.01f);
+                glVertex3f(x + cen, y + dim - cen, 0.01f);
                 glEnd();
 
             }

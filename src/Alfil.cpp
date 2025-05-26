@@ -331,10 +331,10 @@ void Alfil::dibuja(float x, float y)
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
 	glColor4f(1, 1, 1, 0.9);
-	glTexCoord2d(0, 1); glVertex3f(x + cen, y + cen, 0.01);
-	glTexCoord2d(1, 1); glVertex3f(x + cen + dim1, y + cen, 0.01);
-	glTexCoord2d(1, 0); glVertex3f(x + dim1 + cen, y + dim1 + cen, 0.01);
-	glTexCoord2d(0, 0); glVertex3f(x + cen, y + dim1 + cen, 0.01);
+	glTexCoord2d(0, 1); glVertex3f(x + cen, y + cen, 0.02f);
+	glTexCoord2d(1, 1); glVertex3f(x + cen + dim1, y + cen, 0.02f);
+	glTexCoord2d(1, 0); glVertex3f(x + dim1 + cen, y + dim1 + cen, 0.02f);
+	glTexCoord2d(0, 0); glVertex3f(x + cen, y + dim1 + cen, 0.02f);
 	glEnd();
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
