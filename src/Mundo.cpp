@@ -24,7 +24,7 @@ void Mundo::dibuja()
 			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
 		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Pantallainicial.png").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/inicio.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
@@ -45,7 +45,7 @@ void Mundo::dibuja()
 			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
 		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/end.png").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/termino.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
@@ -87,13 +87,9 @@ void Mundo::raton(int button, int state, int x, int y)
 		switch (estado_mundo)
 		{
 		case PANT_INI:
-			if ((x > 230) && (x < 500) && (y > 418) && (y < 585))
+			if ((x > 224) && (x < 576) && (y > 298) && (y < 385))
 			{
 				estado_mundo = DOS_JUGADOR;
-			}
-			else if ((x > 230) && (x < 500) && (y > 520) && (y < 570))
-			{
-				estado_mundo = CONTRA_AI;
 			}
 			else
 			{
@@ -102,11 +98,11 @@ void Mundo::raton(int button, int state, int x, int y)
 
 			break;
 		case END: {
-			if ((x > 290) && (x < 515) && (y > 321) && (y < 363))
+			if ((x > 197) && (x < 599) && (y > 246) && (y < 338))
 			{
 				estado_mundo = DOS_JUGADOR;
 			}
-			else if ((x > 282) && (x < 515) && (y > 381) && (y < 420))
+			else if ((x > 203) && (x < 599) && (y > 379) && (y < 471))
 			{
 				estado_mundo = END_FORREAL;
 			}
