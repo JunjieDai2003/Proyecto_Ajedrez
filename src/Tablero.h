@@ -33,6 +33,7 @@ class Tablero
 	
 
 	int matrizPintar[8][8];
+	int matrizPintarEjecucion[8][8] = { 0 };
 
 
 
@@ -49,6 +50,7 @@ public:
 	void pintaMov(const Casilla&);
 	int endGame();
 	bool encontrarEjecucion(int turno);
+	bool getTableroEjecucion(Casilla&);
 };
 
 

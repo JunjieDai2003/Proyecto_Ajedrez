@@ -30,6 +30,13 @@ void Peon::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][
 	// implementaci¨®n aqu¨ª
 	//int matrix[8][8];
 	//Bucle que recorre la matriz auxiliar de coordenadas haciendo que todas las casillas inicialmente sean movimientos invalidos o 0s.
+	for (int i = 0;i < 8;i++)
+	{
+		for (int j = 0;j < 8;j++)
+		{
+			matrix[i][j] = 0;
+		}
+	}
 	for (int i = 0; i < 8; i++)
 	{
 		for (int j = 0; j < 8; j++)

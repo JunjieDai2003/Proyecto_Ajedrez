@@ -25,8 +25,11 @@ void Tablero::dibuja()
             float y = i * dim;
             float cen = dim * 0.25f;
 
-
-            if ((i + j) % 2 == 0)
+            if (matrizPintarEjecucion[i][j] != 0)
+            {
+                glColor3f(1, 0,0);
+            }
+            else if ((i + j) % 2 == 0)
             {
                 glColor3f(0, 1, 0);
 
@@ -321,6 +324,14 @@ int Tablero::endGame() {
 }
 bool Tablero::encontrarEjecucion(int turno)
 {
+    int cont = 0;
+    for (int i = 0;i < 8;i++)
+    {
+        for (int j = 0;j < 8;j++)
+        {
+            matrizPintarEjecucion[i][j] = 0;
+        }
+    }
     for (int i = 0;i < 8;i++)
     {
         for (int j = 0;j < 8;j++)
@@ -337,7 +348,8 @@ bool Tablero::encontrarEjecucion(int turno)
                     {
                         if (movvalido[x][y] == 2)
                         {
-                            return true;
+                            matrizPintarEjecucion[i][j] = 1;
+                            cont++;
                         }
 
                     }
@@ -356,7 +368,8 @@ bool Tablero::encontrarEjecucion(int turno)
                     {
                         if (movvalido[x][y] == 2)
                         {
-                            return true;
+                            matrizPintarEjecucion[i][j] = 1;
+                            cont++;
                         }
 
                     }
@@ -366,6 +379,18 @@ bool Tablero::encontrarEjecucion(int turno)
 
         }
 
+    }
+    if (cont != 0)
+    {
+        return true;
+    }
+    return false;
+}
+bool Tablero::getTableroEjecucion(Casilla& origen)
+{
+    if (matrizPintarEjecucion[origen.columna][origen.fila] != 0)
+    {
+        return true;
     }
     return false;
 }

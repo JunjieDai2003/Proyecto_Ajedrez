@@ -65,7 +65,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			std::cout << "Es turno de los blancos\n\n";
 			origen = getCoord(x, y);
 			//tablero.getCasilla(origen);
-			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 1)
+			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 1 && ((tablero.getTableroEjecucion(origen) && tablero.encontrarEjecucion(turno) || tablero.encontrarEjecucion(turno) == false)))
 			{
 				std::cout << "seleccionaste blanco en turno correcto, selecciona siguiente posicion\n";
 				tablero.pintaMov(origen);
@@ -103,6 +103,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				estado_juego = TurnoNegro;
 				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				turno = 1;
+				tablero.encontrarEjecucion(turno);
 
 			}
 			else if (tablero.getColor(final) == 2)
@@ -113,6 +114,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				vidablanca--;
 				turno = 1;
+				tablero.encontrarEjecucion(turno);
 			}
 			else
 			{
@@ -122,6 +124,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				turno = 1;
 				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				vidanegra--;
+				tablero.encontrarEjecucion(turno);
 			}
 			if (vidablanca == 0 || vidanegra == 0)
 			{
@@ -132,7 +135,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 		case TurnoNegro:
 			std::cout << "Es turno de los negros\n\n";
 			origen = getCoord(x, y);
-			if (/*turno % 2 == 1 &&*/ tablero.getColor(origen) == 2)
+			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 2 && ((tablero.getTableroEjecucion(origen) && tablero.encontrarEjecucion(turno) || tablero.encontrarEjecucion(turno) == false)))
 			{
 				std::cout << "seleccionaste negro en turno correcto, selecciona siguiente posicion\n";
 				tablero.pintaMov(origen);
@@ -174,6 +177,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				estado_juego = TurnoBlanco;
 				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				turno = 0;
+				tablero.encontrarEjecucion(turno);
 			}
 			else if (tablero.getColor(final) == 1)
 			{
@@ -183,6 +187,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				vidanegra--;
 				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				turno = 0;
+				tablero.encontrarEjecucion(turno);
 			}
 			else
 			{
@@ -192,6 +197,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				vidablanca--;
 				ETSIDI::play("sonidos/CHESS_EAT.wav");
 				turno = 0;
+				tablero.encontrarEjecucion(turno);
 			}
 			if (vidablanca == 0 || vidanegra == 0)
 			{

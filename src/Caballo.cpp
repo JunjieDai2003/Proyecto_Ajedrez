@@ -2,7 +2,13 @@
 #include<iostream>
 
 void Caballo::miMov(const Casilla& origen,  Pieza* casilla[8][8], int matMov[8][8]) {
-    
+	for (int i = 0;i < 8;i++)
+	{
+		for (int j = 0;j < 8;j++)
+		{
+			matMov[i][j] = 0;
+		}
+	}
 	//Bucle que recorre la matriz auxiliar de coordenadas haciendo que todas las casillas inicialmente sean movimientos invalidos o 0s.
 	for (int i = 0; i < 8; i++)
 	{

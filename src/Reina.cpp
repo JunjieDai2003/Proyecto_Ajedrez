@@ -2,6 +2,13 @@
 #include <iostream>
 
 void Reina::miMov(const Casilla& origen, Pieza* casilla[8][8], int matMov[8][8]) {
+    for (int i = 0;i < 8;i++)
+    {
+        for (int j = 0;j < 8;j++)
+        {
+            matMov[i][j] = 0;
+        }
+    }
     int fila = origen.fila;
     int col = origen.columna;
     int color = casilla[fila][col]->getColor();
