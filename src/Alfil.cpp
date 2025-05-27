@@ -1,16 +1,11 @@
 #include"Alfil.h"
 #include<iostream>
 
-void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][8]) {
-	std::cout << "soy alfil\n";
+void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][8])
+{
+	
+	std::cout << "soy ALFIL\n";
 	std::cout << "COMPRUEBO ALFIL \n";
-	for (int i = 0;i < 8;i++)
-	{
-		for (int j = 0;j < 8;j++)
-		{
-			matrix[i][j] = 0;
-		}
-	}
 
 	//Bucle que recorre la matriz auxiliar de coordenadas haciendo que todas las casillas inicialmente sean movimientos invalidos o 0s.
 	for (int i = 0; i < 8; i++)
@@ -42,6 +37,9 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 		}
 	}
 
+
+	//ALFIL BLANCO
+
 	if ((coordenadas[origen.fila][origen.columna]->getColor() == BLANCO) && (coordenadas[origen.fila][origen.columna]->getTipo() == ALFIL))
 	{
 
@@ -52,19 +50,19 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 			int j = origen.columna + 1;
 			do
 			{
-				if ((coordenadas[i][j]->getColor() == BLANCO))
+				if ((coordenadas[i][j]->getColor() == BLANCO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 3;
 					std::cout << "El ALFIL BLANCO puede comer Pieza BLANCA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getColor() == NEGRO))
+				else if ((coordenadas[i][j]->getColor() == NEGRO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 2;
 					std::cout << "El ALFIL BLANCO puede comer pieza NEGRA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getTipo() == VACIO))
+				else if ((coordenadas[i][j]->getTipo() == VACIO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 1;
 					std::cout << "El ALFIL BLANCO puede moverse a casilla" << "[" << i << "," << j << "] \n";
@@ -84,19 +82,19 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 			int j = origen.columna + 1;
 			do
 			{
-				if ((coordenadas[i][j]->getColor() == BLANCO))
+				if ((coordenadas[i][j]->getColor() == BLANCO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 3;
 					std::cout << "El ALFIL BLANCO puede comer Pieza BLANCA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getColor() == NEGRO))
+				else if ((coordenadas[i][j]->getColor() == NEGRO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 2;
 					std::cout << "El ALFIL BLANCO puede comer pieza NEGRA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getTipo() == VACIO))
+				else if ((coordenadas[i][j]->getTipo() == VACIO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 1;
 					std::cout << "El ALFIL BLANCO puede moverse a casilla" << "[" << i << "," << j << "] \n";
@@ -115,19 +113,19 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 			int j = origen.columna - 1;
 			do
 			{
-				if ((coordenadas[i][j]->getColor() == BLANCO))
+				if ((coordenadas[i][j]->getColor() == BLANCO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 3;
 					std::cout << "El ALFIL BLANCO puede comer Pieza BLANCA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getColor() == NEGRO))
+				else if ((coordenadas[i][j]->getColor() == NEGRO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 2;
 					std::cout << "El ALFIL BLANCO puede comer pieza NEGRA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getTipo() == VACIO))
+				else if ((coordenadas[i][j]->getTipo() == VACIO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 1;
 					std::cout << "El ALFIL BLANCO puede moverse a casilla" << "[" << i << "," << j << "] \n";
@@ -146,19 +144,19 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 			int j = origen.columna - 1;
 			do
 			{
-				if ((coordenadas[i][j]->getColor() == BLANCO))
+				if ((coordenadas[i][j]->getColor() == BLANCO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 3;
 					std::cout << "El ALFIL BLANCO puede comer Pieza BLANCA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getColor() == NEGRO))
+				else if ((coordenadas[i][j]->getColor() == NEGRO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 2;
 					std::cout << "El ALFIL BLANCO puede comer pieza NEGRA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getTipo() == VACIO))
+				else if ((coordenadas[i][j]->getTipo() == VACIO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 1;
 					std::cout << "El ALFIL BLANCO puede moverse a casilla" << "[" << i << "," << j << "] \n";
@@ -178,29 +176,29 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 
 
 
-
 	if ((coordenadas[origen.fila][origen.columna]->getColor() == NEGRO) && (coordenadas[origen.fila][origen.columna]->getTipo() == ALFIL))
 	{
+
 		//CASO 1) DERECHA/ARRIBA
-		if (((origen.fila + 1) <= 7) && ((origen.columna) <= 7))
+		if (((origen.fila + 1) <= 7) && ((origen.columna + 1) <= 7))
 		{
 			int i = origen.fila + 1;
 			int j = origen.columna + 1;
 			do
 			{
-				if ((coordenadas[i][j]->getColor() == BLANCO))
+				if ((coordenadas[i][j]->getColor() == BLANCO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 2;
 					std::cout << "El ALFIL NEGRO puede comer Pieza BLANCA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getColor() == NEGRO))
+				else if ((coordenadas[i][j]->getColor() == NEGRO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 3;
 					std::cout << "El ALFIL NEGRO puede comer pieza NEGRA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getTipo() == VACIO))
+				else if ((coordenadas[i][j]->getTipo() == VACIO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 1;
 					std::cout << "El ALFIL NEGRO puede moverse a casilla" << "[" << i << "," << j << "] \n";
@@ -212,6 +210,7 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 			} while ((i <= 7) && (j <= 7));
 		}
 
+
 		//CASO 2) DERECHA ABAJO
 		if (((origen.fila - 1) >= 0) && ((origen.columna + 1) <= 7))
 		{
@@ -219,19 +218,19 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 			int j = origen.columna + 1;
 			do
 			{
-				if ((coordenadas[i][j]->getColor() == BLANCO))
+				if ((coordenadas[i][j]->getColor() == BLANCO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 2;
 					std::cout << "El ALFIL NEGRO puede comer Pieza BLANCA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getColor() == NEGRO))
+				else if ((coordenadas[i][j]->getColor() == NEGRO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 3;
 					std::cout << "El ALFIL NEGRO puede comer pieza NEGRA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getTipo() == VACIO))
+				else if ((coordenadas[i][j]->getTipo() == VACIO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 1;
 					std::cout << "El ALFIL NEGRO puede moverse a casilla" << "[" << i << "," << j << "] \n";
@@ -239,8 +238,9 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 				i--;
 				j++;
 
-			} while ((i <= 7) && (i >= 0));
+			} while ((i >= 0) && (j <= 7));
 		}
+
 
 		//CASO 3) IZQUIERDA ARRIBA
 		if (((origen.fila + 1) <= 7) && ((origen.columna - 1) >= 0))
@@ -249,28 +249,29 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 			int j = origen.columna - 1;
 			do
 			{
-				if ((coordenadas[i][j]->getColor() == BLANCO))
+				if ((coordenadas[i][j]->getColor() == BLANCO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 2;
 					std::cout << "El ALFIL NEGRO puede comer Pieza BLANCA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getColor() == NEGRO))
+				else if ((coordenadas[i][j]->getColor() == NEGRO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 3;
 					std::cout << "El ALFIL NEGRO puede comer pieza NEGRA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-				else if ((coordenadas[i][j]->getTipo() == VACIO))
+				else if ((coordenadas[i][j]->getTipo() == VACIO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 1;
 					std::cout << "El ALFIL NEGRO puede moverse a casilla" << "[" << i << "," << j << "] \n";
 				}
-
 				i++;
 				j--;
 			} while ((i <= 7) && (j >= 0));
+
 		}
+
 
 		//CASO 4) IZQUIERDA ABAJO
 		if (((origen.fila - 1) >= 0) && ((origen.columna - 1) >= 0))
@@ -279,30 +280,31 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 			int j = origen.columna - 1;
 			do
 			{
-				if ((coordenadas[i][j]->getTipo() == VACIO))
-				{
-					matrix[i][j] = 1;
-					std::cout << "El ALFIL NEGRO puede moverse a casilla" << "[" << i << "," << j << "] \n";
-				}
-				else if ((coordenadas[i][j]->getColor() == NEGRO))
-				{
-					matrix[i][j] = 3;
-					std::cout << "El ALFIL NEGRO puede comer pieza NEGRA en casilla" << "[" << i << "," << j << "] \n";
-					break;
-				}
-				else if ((coordenadas[i][j]->getColor() == BLANCO))
+				if ((coordenadas[i][j]->getColor() == BLANCO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
 				{
 					matrix[i][j] = 2;
 					std::cout << "El ALFIL NEGRO puede comer Pieza BLANCA en casilla" << "[" << i << "," << j << "] \n";
 					break;
 				}
-
+				else if ((coordenadas[i][j]->getColor() == NEGRO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
+				{
+					matrix[i][j] = 3;
+					std::cout << "El ALFIL NEGRO puede comer pieza NEGRA en casilla" << "[" << i << "," << j << "] \n";
+					break;
+				}
+				else if ((coordenadas[i][j]->getTipo() == VACIO) && ((abs(i - origen.fila)) == (abs(j - origen.columna))))
+				{
+					matrix[i][j] = 1;
+					std::cout << "El ALFIL NEGRO puede moverse a casilla" << "[" << i << "," << j << "] \n";
+				}
 				i--;
 				j--;
+
 			} while ((i >= 0) && (j >= 0));
 		}
-
 	}
+
+	std::cout << "IMPRIMO MATRIZ \n";
 
 	for (int i = 0; i < 8; i++)
 	{
@@ -317,8 +319,7 @@ void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8]
 	}
 
 	return;
-
-	return;
+	
 }
 
 void Alfil::dibuja(float x, float y)
