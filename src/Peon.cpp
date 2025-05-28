@@ -1,6 +1,10 @@
 #include "Peon.h"
 #include <math.h>
 #include<iostream>
+Peon::~Peon()
+{
+	std::cout << "Peon destruida\n";
+}
 void::Peon::dibuja(float x, float y)
 {
 	float dim = (float)9 / 8;

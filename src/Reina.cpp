@@ -1,6 +1,9 @@
 #include "Reina.h"
 #include <iostream>
-
+Reina::~Reina()
+{
+	std::cout << "Reina destruida\n";
+}
 void Reina::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][8]) 
 {
 	std::cout << "Soy una REINA\n";

@@ -7,13 +7,9 @@
 Mundo::Mundo()
 {
 	estado_mundo = PANT_INI;
-	//fil = 0;
-	//col = 0;
+	
 }
-/*Mundo::~Mundo()
-{
-	//todavia no entiendo muy bien como funciona destructor
-}*/
+
 void Mundo::dibuja()
 {
 	switch (estado_mundo)
@@ -103,21 +99,7 @@ void Mundo::dibuja()
 		break;
 	}
 }
-//ESTE CODIGO ESTA COMENTADO PQ HAY UN BUG DE QUE SOLO REFRESCA SI CLICKEAMOS EL RATON
-//HABRA QUE SOLUCIONARLO POSTERIORMENTE
-/*void Mundo::teclado(unsigned char key)
-{
-	switch (estado)
-	{
-	case PANT_INI:
-		if (key == 'j' || key == 'J')
-		{
-			estado = JUEGO;
-			dibuja();
-		}
-	}
-}*/
-///*
+
 void Mundo::raton(int button, int state, int x, int y)
 {
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
@@ -165,13 +147,3 @@ void Mundo::raton(int button, int state, int x, int y)
 
 
 }
-//paso lla informacion de raton 
-/*
-void Mundo::ratonmundo(int button, int state, int x, int y)
-{
-	if(estado==CONTRA_AI || estado==DOS_JUGADOR)
-	{
-		juego.ratonjuego(button, state, x, y);
-	}
-}*/
-//*/

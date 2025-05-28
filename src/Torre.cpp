@@ -1,7 +1,10 @@
 #include"Torre.h"
 #include <math.h>
 #include<iostream>
-
+Torre::~Torre()
+{
+	std::cout << "Torre destruida\n";
+}
 void Torre::dibuja(float x, float y)
 {
 	float dim = (float)9 / 8;

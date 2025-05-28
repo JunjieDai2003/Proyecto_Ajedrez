@@ -4,10 +4,8 @@
 Juego::Juego()
 {
 	estado_juego = Seleccion1;
-	//turnov1 = 2;
-	//fil = 0;
-	//col = 0;
 }
+//llamada de dibuja de tablero
 void Juego::dibuja()
 {
 
@@ -30,10 +28,7 @@ void Juego::dibuja()
 	glDisable(GL_TEXTURE_2D);
 
 }
-
-
-
-
+//funcion que retorna la coordenada fila y columna seleccionada 
 Casilla Juego::getCoord(int x, int y)
 {
 	//las coordenadas seran modificadas posteriormente, este funciona con mi pov, pero creo q usare pov de laboratorio
@@ -44,6 +39,7 @@ Casilla Juego::getCoord(int x, int y)
 	std::cout << "estoy clickeando " << casilla.fila << " y " << casilla.columna << std::endl;//queria poner esta fila para ver si x y estan bien pero no imprime, tengo que preguntar como funciona lamda
 	return casilla;
 }
+//maquina de estado que se encarga de gestionar los resultados enviados por tablero para averiguar si pasamos al siguiente estado o mentenemos en el presente
 int Juego::ratonjuego(int button, int state, int x, int y)
 {
 
@@ -52,10 +48,6 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 		switch (estado_juego)
 		{
 		case Seleccion1: //primera etapa
-			//origen = getCoord(x, y);
-			//comprobar de que se ha seleccionado dentro, si no, break directamente;
-			//if(turno%2!=0) estado_juego=Seleccion1://has seleccionado color incorrecto o vacio
-			//else dibujo con tablero la casilla seleccionada y movimientos permitidos
 			tablero.configurarTablero();
 			estado_juego = TurnoBlanco;
 			turno = 0;
@@ -65,8 +57,8 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			turno = 0;
 			std::cout << "Es turno de los blancos\n\n";
 			origen = getCoord(x, y);
-			//tablero.getCasilla(origen);
-			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 1  && ((tablero.getTableroEjecucion(origen) && tablero.encontrarEjecucion(turno) || tablero.encontrarEjecucion(turno) == false)))
+			//si he seleccionado mi color y , obien hay ejecucion y casilla seleccionada tiene ejecucion, o bien no hay ejecucion
+			if (tablero.getColor(origen) == 1  && (( tablero.encontrarEjecucion(turno)&& tablero.getTableroEjecucion(origen) || tablero.encontrarEjecucion(turno) == false)))
 			{
 				std::cout << "seleccionaste blanco en turno correcto, selecciona siguiente posicion\n";
 				tablero.pintaMov(origen);
@@ -75,7 +67,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			}
 			else
 			{
-				std::cout << "seleccionaste negro en turno erroneo, vuelve a seleccionar una pieza blanca\n";
+				std::cout << "mala seleccion\n";
 				estado_juego = TurnoBlanco;
 				turno = 0;
 			}
@@ -83,21 +75,16 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 		case TurnoBlanco2:
 			final = getCoord(x, y);
 			std::cout << "puedes eliminar tu propia pieza, por lo que no comprobamos el color salvo haya una ejecucion\n";
-			//codigo de abajo es orientativo, sera sustituido en una line///////77
-			////////////////////777
-			/////////////////////
-			if (tablero.movValido(origen, final) == 0)
+			//condicion invalido
+			if (tablero.movValido(origen, final) == 0 && final == origen) //sobrecarga de operador
 			{
 				estado_juego = TurnoBlanco;
 
 				break;
 			}
-			if (final == origen)
-			{
-				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
-				estado_juego = TurnoBlanco;
-			}
-			else if (tablero.getColor(final) == 0)
+			//codigo de abajo es orientativo, sera sustituido en una linea
+			// condiciones validos
+		    if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
 				tablero.moverPiezasyAscenso(origen, final);
@@ -162,8 +149,6 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			}
 			//codigo de abajo es orientativo
 			if (final == origen)//quiero usar sobrecarga de operador para comprobar,final y origen son de clase casilla
-				//sobrecarga en casilla
-				//es como poner final.fila==origen.fila && final.columa==origen.columna
 			{
 				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
 				estado_juego = TurnoNegro;
@@ -171,7 +156,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				ETSIDI::play("sonidos/dog.mp3");
 				break;
 			}
-			//esto es orientativo, se puede sustituir por una fila de operacion exitoso
+			//esto es orientativo, se puede sustituir por una fila de operacion exitosa
 			else if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
@@ -208,6 +193,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			break;
 		case END:
 		{
+			
 			std::cout << "se ha terminado\n";
 			estado_juego = Seleccion1;
 			int whowins;
@@ -222,7 +208,6 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 		}
 
 		}
-		//tablero.ascensoPeon();
 	}
-	return 0;//hay q cambiar, dejo aqui para no saltar error
+	return 0;
 }

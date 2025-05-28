@@ -1,6 +1,10 @@
 #include"Alfil.h"
 #include<iostream>
 
+Alfil::~Alfil()
+{
+	std::cout << "Alfil destruida\n";
+}
 void Alfil::miMov(const Casilla& origen, Pieza* coordenadas[8][8], int matrix[8][8])
 {
 	

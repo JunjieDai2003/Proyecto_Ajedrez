@@ -2,20 +2,35 @@
 #include"freeglut.h"
 #include<iostream>
 #include"ETSIDI.h"
-
+// destructor de tablero, lo llamaremos cuando termina el juego
 Tablero::~Tablero() {
     for (int i = 0; i < 8; ++i) {
         delete[] casillas1[i];  // delete each row
     }
     delete[] casillas1;          // delete the array of pointers
-
-
 }
 
+/*
+Tablero::~Tablero() {
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j)
+        {
+            delete[] casillas1[i][j];  // delete each row
+        }
+        delete[] casillas1[i];  // delete each row
+    }
+    delete[] casillas1;          // delete the array of pointers
+
+
+}*/
+
+
+//funcion para dibujar el tablero con los pasos, casilla roja de ejecucion
+//tambien llama a la funcion dibuja de la pieza
 void Tablero::dibuja()
 {
 
-    float dim = (float)9 / 8; //6 pq es multiplo de tamaño de ventana
+    float dim = (float)9 / 8; //divisor pq es multiplo de tamaño de ventana 600
 
     for (int i = 0; i < 8; i++)
     {
@@ -27,17 +42,17 @@ void Tablero::dibuja()
 
             if (matrizPintarEjecucion[i][j] != 0)
             {
-                glColor3f(1, 0,0);
+                glColor3f(1, 0,0); //si hay ejecucion rojo
             }
             else if ((i + j) % 2 == 0)
             {
-                glColor3f(0, 1, 0);
+                glColor3f(0, 1, 0); //Verde
 
 
             }
             else
             {
-                glColor3f(0, 0.5, 0);
+                glColor3f(0, 0.5, 0); //verde claro
 
 
             }
@@ -52,7 +67,7 @@ void Tablero::dibuja()
             glEnable(GL_LIGHTING);
 
 
-            if (matrizPintar[i][j] == 1 || matrizPintar[i][j] == 2 || matrizPintar[i][j] == 3)
+            if (matrizPintar[i][j] == 1 || matrizPintar[i][j] == 2 || matrizPintar[i][j] == 3) //si se puede avanzar, dibujar camino
             {
                 //3d para subirlo y que se vea                       
                 glColor3f(0.5f, 0.5f, 0.5f);
@@ -65,9 +80,10 @@ void Tablero::dibuja()
 
             }
 
-            casillas1[i][j]->dibuja(x, y);
+            casillas1[i][j]->dibuja(x, y); //dibujar pieza en la posicion de la casilla
         }
     }
+    //resetamos la matriz pintar 
     for (int i = 0; i < 8; i++)
     {
         for (int j = 0; j < 8; j++)
@@ -78,7 +94,7 @@ void Tablero::dibuja()
 
 
 }
-
+//Crear el objeto
 void Tablero::configurarTablero()
 {
     casillas1[7][0] = new Torre(Tipo::TORRE, Color::NEGRO);
@@ -98,24 +114,13 @@ void Tablero::configurarTablero()
     casillas1[0][5] = new Alfil(Tipo::ALFIL, Color::BLANCO);
     casillas1[0][6] = new Caballo(Tipo::CABALLO, Color::BLANCO);
     casillas1[0][7] = new Torre(Tipo::TORRE, Color::BLANCO);
-
-    //std::vector<Tipo> PIEZAS = { Tipo::TORRE, Tipo::CABALLO, Tipo::ALFIL, Tipo::REINA, Tipo::REY,Tipo::ALFIL,Tipo::CABALLO,Tipo::TORRE };
+ 
+    
     for (int i = 0;i < 8;i++)
     {
         for (int j = 0;j < 8;j++)
         {
-            //Casilla casilla(i, j);
-            /*
-            if (i == 0)
-            {
-                casillas1[i][j] =  new Torre( Color::NEGRO,casilla,Tipo::TORRE);
-
-            }
-            else if (i == 1)
-            {
-
-                casillas1[i][j] = new Pieza(Tipo::PEON, Color::NEGRO, casilla);
-            }*/
+           
             if (i > 1 && i < 6)
             {
                 casillas1[i][j] = new Vacio(Tipo::VACIO, Color::NO_COLOR);
@@ -128,50 +133,12 @@ void Tablero::configurarTablero()
             else if (i == 6)
             {
                 casillas1[i][j] = new Peon(Tipo::PEON, Color::NEGRO);
-            }/*
-            else
-            {
-                //para invertir
-                casillas1[i][j] = new Pieza(PIEZAS[7-j], Color::BLANCO, casilla);
-            }*/
+            }
+         
         }
     }
-    /*
-    std::vector<Tipo> PIEZAS = { Tipo::TORRE, Tipo::CABALLO, Tipo::ALFIL, Tipo::REINA, Tipo::REY,Tipo::ALFIL,Tipo::CABALLO,Tipo::TORRE };
-    for (int i = 0;i < 8;i++)
-    {
-        for (int j = 0;j < 8;j++)
-        {
-            Casilla casilla(i, j);
-            if (i == 0)
-            {
-                casillas1[i][j] =  new Pieza(PIEZAS[j], NEGRO,casilla);
-
-            }
-            else if (i == 1)
-            {
-
-                casillas1[i][j] = new Pieza(PEON,NEGRO, casilla);
-            }
-            else if (i > 1 && i < 6)
-            {
-                casillas1[i][j] = new Pieza(VACIO, NO_COLOR, casilla);
-            }
-            else if (i == 6)
-            {
-                casillas1[i][j] = new Pieza(PEON, BLANCO, casilla);
-
-            }
-            else
-            {
-                //para invertir
-                casillas1[i][j] = new Pieza(PIEZAS[7-j], BLANCO, casilla);
-            }
-        }
-    }
-    */
-
 }
+//funcion para ver el atributo privado de la pieza atraves de getColor de Pieza
 int Tablero::getColor(const Casilla& casillacolor)
 {
     int color;
@@ -180,33 +147,13 @@ int Tablero::getColor(const Casilla& casillacolor)
     std::cout << "EL COLOR OBTENIDO ES\n" << color;
     return color;
 }
-/*
-Casilla Tablero::getCasilla(const Casilla & casilla)
-{
-    Casilla cas;
-    cas = casillas1[casilla.fila][casilla.columna]->getCasilla();
-    std::cout << "LA FILA CON LA CONCION ES" << cas.fila<<std::endl;
-    std::cout << "LA FILA CON LA CONCION ES" << cas.columna<< std::endl;
-    return cas;
-}*/
-
-
 void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
 {
     //la filosofia es pedir dato de final y meterselo al original 
     // para ello dos ->
     Tipo miTipo = casillas1[origen.fila][origen.columna]->getTipo();
     Color miColor = casillas1[origen.fila][origen.columna]->getColor();
-    //Casilla nuevoCasilla = casillas1[origen.fila][origen.columna]->getCasilla(); //funciona para otro tipo de inicializacion
-    /*
-    casillas1[final.fila][final.columna]->setTipo(nuevoTipo);
-    casillas1[final.fila][final.columna]->setColor(nuevoColor);
-    //casillas1[final.fila][final.columna]->setCasilla() //pensaba que pieza tenia 4 atributos, tipo, color, fil, col,
-    //pensaba q habria madoficarr i j tambien, pero pensandolo bien creo q no es necesario
-
-    casillas1[origen.fila][origen.columna]->setColor(NO_COLOR);
-    casillas1[origen.fila][origen.columna]->setTipo(VACIO);
-    */
+ 
     delete casillas1[final.fila][final.columna]; // delete 
 
     // mover objeto, de origen a final£¬final apunta misma direccion que origen  
@@ -215,7 +162,7 @@ void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
    //crear vacio para origen
     casillas1[origen.fila][origen.columna] = new Vacio(VACIO, NO_COLOR);
 
-    
+    //Convertir por en reina
     if ((final.fila == 7 && miTipo == PEON && miColor == BLANCO) ||
         (final.fila == 0 && miTipo == PEON && miColor == NEGRO))
     {
@@ -223,13 +170,15 @@ void Tablero::moverPiezasyAscenso(Casilla& origen, Casilla & final)
         casillas1[final.fila][final.columna] = new Reina(REINA, miColor); // crear Reina
     }
 }
+//una funcion que retorna 0 cuando es un movimiento invalido y 1 cuando es valido
 int Tablero::movValido(const Casilla& origen, const Casilla & final)
 {
-
-    if (encontrarEjecucion(turno) == true && (casillas1[origen.fila][origen.columna]->getColor() != casillas1[final.fila][final.columna]->getColor()) &&
-        casillas1[final.fila][final.columna]->getColor() != NO_COLOR)
+    //si hay ejecucion y el origen y final es de distinto color sin ser el final un vacio
+    if ((encontrarEjecucion(turno) == true && (casillas1[origen.fila][origen.columna]->getColor() != casillas1[final.fila][final.columna]->getColor()) &&
+        casillas1[final.fila][final.columna]->getColor() != NO_COLOR)||encontrarEjecucion(turno)==false)
 
     {
+        //researamos matriz de mov valido"en teoria no es necesario pq miMov ya lo hace, lo dejamos por si alguna pieza no lo resetea
         for (int i = 0;i < 8;i++)
         {
             for (int j = 0;j < 8;j++)
@@ -237,6 +186,7 @@ int Tablero::movValido(const Casilla& origen, const Casilla & final)
                 movvalido[i][j] = 0;
             }
         }
+        // generar matriz de movimiento
         casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, movvalido);
         std::cout << "matriz en tablero\n";
         for (int i = 0; i < 8; i++)
@@ -250,35 +200,7 @@ int Tablero::movValido(const Casilla& origen, const Casilla & final)
                 }
             }
         }
-        if (movvalido[final.fila][final.columna] == 0)
-        {
-            return 0;//no
-        }
-        return 1;//si
-    }
-    
-    if (encontrarEjecucion(turno) == false)
-    {
-        for (int i = 0;i < 8;i++)
-        {
-            for (int j = 0;j < 8;j++)
-            {
-                movvalido[i][j] = 0;
-            }
-        }
-        casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, movvalido);
-        std::cout << "matriz en tablero\n";
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                std::cout << movvalido[i][j] << " , ";
-                if (j == 7)
-                {
-                    std::cout << "\n"; //Cuando llega al final de la fila hace un salto de linea para imprimir la siguiente fila
-                }
-            }
-        }
+        //verificacion 
         if (movvalido[final.fila][final.columna] == 0)
         {
             return 0;//no
@@ -286,9 +208,11 @@ int Tablero::movValido(const Casilla& origen, const Casilla & final)
         return 1;//si
     }
     return 0; //no
-}//prueba
+}
+//funcion para rellenar la matriz de movimiento
 void Tablero::pintaMov(const Casilla& origen)
 {
+    //reseteamos a 0
     for (int i = 0;i < 8;i++)
     {
         for (int j = 0;j < 8;j++)
@@ -296,9 +220,10 @@ void Tablero::pintaMov(const Casilla& origen)
             matrizPintar[i][j] = 0;
         }
     }
+    //rellenar con la funcion miMov de la pieza
     casillas1[origen.fila][origen.columna]->miMov(origen, casillas1, matrizPintar);
 }
-
+//condicion de finn de juego
 int Tablero::endGame() {
     int negro = 0, blanco = 0;
     for (int i = 0;i < 8;i++) {
@@ -322,6 +247,7 @@ int Tablero::endGame() {
         return 2; // white win
     }
 }
+//funcion para encontrar si hay una ejecicion obligatoria
 bool Tablero::encontrarEjecucion(int turno)
 {
     int cont = 0;
@@ -336,11 +262,13 @@ bool Tablero::encontrarEjecucion(int turno)
     {
         for (int j = 0;j < 8;j++)
         {
+            //analizar fichas blancas en turno de los blancos
             if (turno == 0 && casillas1[i][j]->getColor() == BLANCO)
             {
                 Casilla miCasilla;
                 miCasilla.fila = i;
                 miCasilla.columna = j;
+                //relleno la matriz de movimiento de cada ficha
                 casillas1[i][j]->miMov(miCasilla, casillas1, movvalido);
                 for (int x = 0;x < 8;x++)
                 {
@@ -348,6 +276,8 @@ bool Tablero::encontrarEjecucion(int turno)
                     {
                         if (movvalido[x][y] == 2)
                         {
+                            //si en la matriz hay un 1, significa que hay ejecucion obligatoria, el contador no retorna 0
+                            //guardamos la posicion de la pieza con ejecucion 
                             matrizPintarEjecucion[i][j] = 1;
                             cont++;
                         }
@@ -356,6 +286,7 @@ bool Tablero::encontrarEjecucion(int turno)
 
                 }
             }
+            //misma filosofia que la pieza blanca
             if (turno == 1 && casillas1[i][j]->getColor() == NEGRO)
             {
                 Casilla miCasilla;
@@ -380,12 +311,14 @@ bool Tablero::encontrarEjecucion(int turno)
         }
 
     }
+    
     if (cont != 0)
     {
         return true;
     }
     return false;
 }
+// avisa a juego que hay ejecucion 
 bool Tablero::getTableroEjecucion(Casilla& origen)
 {
     if (matrizPintarEjecucion[origen.fila][origen.columna] != 0)

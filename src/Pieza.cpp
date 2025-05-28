@@ -9,7 +9,10 @@ void Pieza::miMov(const Casilla& origen,  Pieza* casilla[8][8], int matMov[8][8]
 	return;
 }
 
-
+Pieza::~Pieza()
+{
+	std::cout << "bASE DESTR\n";
+}
 
 void Pieza::dibuja(float x, float y)
 {

@@ -2,13 +2,6 @@
 //#include "raton.h"
 #include"Mundo.h"
 #include<iostream>
-//estas son lineas inutiles para comprobar el funcionamiento de github(push, pull,merge,etc)
-//cambio2122212
-// 
-// 1234512
-
-
-
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
 // 
@@ -69,10 +62,6 @@ void OnDraw(void)
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-	//He probado en mundo.cpp, cambiar la maquina de estado introduciendo jJ, sin embargo no refresa la pantalla hasta recibir un raton
-	//no es muy importante ahora pq podemos crear una pantalla y selecionar el objeto
-	//habra que solucionarlo que otras posibles funcionalidades
-
 	//m.teclado(key);
 }
 void OnMouseDown(int button, int state, int x, int y) {

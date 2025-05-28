@@ -16,7 +16,9 @@ class Tablero
 	Pieza p;
 	//una matriz donde sus elementos son de clase pieza
 	//int **casillas1;
+	//Matriz de punteros que apuntan a los objetos de tipo pieza, con el polimorfismo podemos lograr que apunte a peones, reina....
 	Pieza* casillas1[8][8];
+	//matriz para almacenar posiciones donde hay una pieza que pueda realiaz una ejecucion
 	int ejecucion[8][8] = { //prueba de que funciona bien
 	{0,1,0,1,1,1,1,1},
 	{1,1,1,1,1,1,1,1},
@@ -26,13 +28,14 @@ class Tablero
 	{1,1,0,1,1,1,1,1},
 	{1,1,1,1,1,1,1,1},
 	{1,1,1,1,1,1,1,1}
-	}; //para detectar pieza con ejecucion obligatoria
-	int movvalido[8][8] = { 0 }; // para detectar mov validos
-	//std::vector<std::vector<Pieza*>> casillas2;
-	//std::vector<std::vector<int>> movvalido2;
-	
-
+	}; 
+	//matriz que almacena los movimientos de las piezas
+	//0 si no se puede, 1 si es espacio vacio, 2 si es pieza enemiga, 3 si es pieza aliada
+	int movvalido[8][8] = { 0 }; 
+	//matriz para pintar el camino de la pieza seleccionada
 	int matrizPintar[8][8];
+	//matriz que pinta la casilla con la pieza con ejecucion obligatoria
+	//su movimiento sera obligatorio
 	int matrizPintarEjecucion[8][8] = { 0 };
 
 
@@ -44,7 +47,6 @@ public:
 	void configurarTablero();
 	int getColor(const Casilla&);
 	void moverPiezasyAscenso(Casilla&, Casilla&);
-	//Casilla getCasilla(const Casilla& casilla);
 	int movValido(const Casilla&, const Casilla&);
 	void ascensoPeon();
 	void pintaMov(const Casilla&);

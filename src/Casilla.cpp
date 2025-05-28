@@ -16,22 +16,9 @@ Casilla::Casilla() {}
 
 
 
-//FUNCIONES
-
+//Sobrecarga de operador
 
 bool operator==(const Casilla& c1, const Casilla& c2)
 {
 	return((c1.fila == c2.fila) && (c1.columna == c2.columna));
 }
-
-
-double Casilla::modulo()const
-{
-	return sqrt((fila * fila) + (columna * columna));//NO SE PARA QUE SIRVE
-}
-double Casilla::argumento()const
-{
-	return atan2(fila, columna); //NO SE PARA QUE SIRVE
-}
-// atan2(x,y) Calcula el ángulo EN RADIANES entre el eje positivo de X 
-//y el vector (x,y)  

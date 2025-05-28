@@ -1,6 +1,9 @@
 #include"Caballo.h"
 #include<iostream>
-
+Caballo::~Caballo()
+{
+	std::cout << "Caballo destruida\n";
+}
 void Caballo::miMov(const Casilla& origen,  Pieza* casilla[8][8], int matMov[8][8]) {
 	for (int i = 0;i < 8;i++)
 	{
