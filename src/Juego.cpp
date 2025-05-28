@@ -76,15 +76,20 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			final = getCoord(x, y);
 			std::cout << "puedes eliminar tu propia pieza, por lo que no comprobamos el color salvo haya una ejecucion\n";
 			//condicion invalido
-			if (tablero.movValido(origen, final) == 0 && final == origen) //sobrecarga de operador
+			if (tablero.movValido(origen, final) == 0) 
 			{
 				estado_juego = TurnoBlanco;
 
 				break;
 			}
+			if (final == origen)
+			{
+				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
+				estado_juego = TurnoBlanco;
+			}
 			//codigo de abajo es orientativo, sera sustituido en una linea
 			// condiciones validos
-		    if (tablero.getColor(final) == 0)
+		    else if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
 				tablero.moverPiezasyAscenso(origen, final);
