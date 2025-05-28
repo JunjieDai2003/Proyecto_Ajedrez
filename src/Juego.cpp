@@ -16,7 +16,7 @@ void Juego::dibuja()
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
 	tablero.dibuja();//hay que dibujarlo antes
 	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo3.png").id);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo4.png").id);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
@@ -102,7 +102,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "seleccionaste vacio\n";
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
-				ETSIDI::play("sonidos/CHESS_EAT.wav");
+				ETSIDI::play("sonidos/miao.mp3");
 				turno = 1;
 				tablero.encontrarEjecucion(turno);
 
@@ -112,7 +112,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "ejecutas tu propia pieza\n";
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
-				ETSIDI::play("sonidos/CHESS_EAT.wav");
+				ETSIDI::play("sonidos/miao.mp3");
 				vidablanca--;
 				turno = 1;
 				tablero.encontrarEjecucion(turno);
@@ -123,7 +123,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
 				turno = 1;
-				ETSIDI::play("sonidos/CHESS_EAT.wav");
+				ETSIDI::play("sonidos/miao.mp3");
 				vidanegra--;
 				tablero.encontrarEjecucion(turno);
 			}
@@ -168,7 +168,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "seleccionaste misma pieza,vuele a seleccionar la pieza de inicio\n";
 				estado_juego = TurnoNegro;
 				turno = 1;
-				ETSIDI::play("sonidos/CHESS_EAT.wav");
+				ETSIDI::play("sonidos/dog.mp3");
 				break;
 			}
 			//esto es orientativo, se puede sustituir por una fila de operacion exitoso
@@ -177,7 +177,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "seleccionaste vacio\n";
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
-				ETSIDI::play("sonidos/CHESS_EAT.wav");
+				ETSIDI::play("sonidos/dog.mp3");
 				turno = 0;
 				tablero.encontrarEjecucion(turno);
 			}
@@ -187,7 +187,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
 				vidanegra--;
-				ETSIDI::play("sonidos/CHESS_EAT.wav");
+				ETSIDI::play("sonidos/dog.mp3");
 				turno = 0;
 				tablero.encontrarEjecucion(turno);
 			}
@@ -197,7 +197,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				estado_juego = TurnoBlanco;
 				tablero.moverPiezasyAscenso(origen, final);
 				vidablanca--;
-				ETSIDI::play("sonidos/CHESS_EAT.wav");
+				ETSIDI::play("sonidos/dog.mp3");
 				turno = 0;
 				tablero.encontrarEjecucion(turno);
 			}
