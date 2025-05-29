@@ -3,6 +3,7 @@
 #include<iostream>
 #include"ETSIDI.h"
 // destructor de tablero, lo llamaremos cuando termina el juego
+
 Tablero::~Tablero() {
     for (int i = 0; i < 8; ++i) {
         delete[] casillas1[i];  // delete each row

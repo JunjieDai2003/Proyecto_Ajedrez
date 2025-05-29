@@ -8,7 +8,10 @@ Juego::Juego()
 //llamada de dibuja de tablero
 void Juego::dibuja()
 {
-
+	if (estado_juego == Seleccion1)
+	{
+		tablero.configurarTablero();
+	}
 	gluLookAt(4.5, 4.5, 20,  // posicion del ojo
 		4.5, 4.5, 0.0,      // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  

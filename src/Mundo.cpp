@@ -79,6 +79,7 @@ void Mundo::dibuja()
 	case END:
 	case END_FORREAL:
 		//teneis que llamar funciones para limpiar la memoria.
+		
 		quick_exit(0);
 		break;
 	
@@ -139,6 +140,7 @@ void Mundo::raton(int button, int state, int x, int y)
 			else if ((x >235 ) && (x <564 ) && (y >536 ) && (y <593 ))
 			{
 				estado_mundo = END_FORREAL;
+				
 			}
 			else
 			{

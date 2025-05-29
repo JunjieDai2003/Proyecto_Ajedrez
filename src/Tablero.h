@@ -53,6 +53,7 @@ public:
 	int endGame();
 	bool encontrarEjecucion(int turno);
 	bool getTableroEjecucion(Casilla&);
+	
 };
 
 
