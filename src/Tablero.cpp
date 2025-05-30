@@ -247,6 +247,7 @@ int Tablero::endGame() {
     else if (blanco == 0) {
         return 2; // white win
     }
+    return 0;
 }
 //funcion para encontrar si hay una ejecicion obligatoria
 bool Tablero::encontrarEjecucion(int turno)

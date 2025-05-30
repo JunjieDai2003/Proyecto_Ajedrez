@@ -61,7 +61,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			std::cout << "Es turno de los blancos\n\n";
 			origen = getCoord(x, y);
 			//si he seleccionado mi color y , obien hay ejecucion y casilla seleccionada tiene ejecucion, o bien no hay ejecucion
-			if (tablero.getColor(origen) == 1  && (( tablero.encontrarEjecucion(turno)&& tablero.getTableroEjecucion(origen) || tablero.encontrarEjecucion(turno) == false)))
+			if (tablero.getColor(origen) == 1 && ((tablero.encontrarEjecucion(turno) && tablero.getTableroEjecucion(origen) || tablero.encontrarEjecucion(turno) == false)))
 			{
 				std::cout << "seleccionaste blanco en turno correcto, selecciona siguiente posicion\n";
 				tablero.pintaMov(origen);
@@ -79,7 +79,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			final = getCoord(x, y);
 			std::cout << "puedes eliminar tu propia pieza, por lo que no comprobamos el color salvo haya una ejecucion\n";
 			//condicion invalido
-			if (tablero.movValido(origen, final) == 0) 
+			if (tablero.movValido(origen, final) == 0)
 			{
 				estado_juego = TurnoBlanco;
 
@@ -92,7 +92,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			}
 			//codigo de abajo es orientativo, sera sustituido en una linea
 			// condiciones validos
-		    else if (tablero.getColor(final) == 0)
+			else if (tablero.getColor(final) == 0)
 			{
 				std::cout << "seleccionaste vacio\n";
 				tablero.moverPiezasyAscenso(origen, final);
@@ -122,7 +122,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				vidanegra--;
 				tablero.encontrarEjecucion(turno);
 			}
-			if (vidablanca == 0 || vidanegra == 0)
+			if (tablero.endGame()>0)
 			{
 				estado_juego = END;
 			}
@@ -132,7 +132,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 			std::cout << "Es turno de los negros\n\n";
 			origen = getCoord(x, y);
 			turno = 1;
-			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 2  && ((tablero.getTableroEjecucion(origen) && tablero.encontrarEjecucion(turno) || tablero.encontrarEjecucion(turno) == false)))
+			if (/*turno % 2 == 0 &&*/ tablero.getColor(origen) == 2 && ((tablero.getTableroEjecucion(origen) && tablero.encontrarEjecucion(turno) || tablero.encontrarEjecucion(turno) == false)))
 			{
 				std::cout << "seleccionaste negro en turno correcto, selecciona siguiente posicion\n";
 				tablero.pintaMov(origen);
@@ -194,24 +194,17 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				turno = 0;
 				tablero.encontrarEjecucion(turno);
 			}
-			if (vidablanca == 0 || vidanegra == 0)
+			if (tablero.endGame() > 0)
 			{
 				estado_juego = END;
 			}
 			break;
 		case END:
 		{
-			
+
 			std::cout << "se ha terminado\n";
 			estado_juego = Seleccion1;
-			int whowins;
-			if (vidablanca == 0) {
-				whowins = 1;
-			}
-			else whowins = 2;
-			vidablanca = 16;
-			vidanegra = 16;
-			return 1+whowins;
+			return 1 + tablero.endGame();
 			break;
 		}
 
