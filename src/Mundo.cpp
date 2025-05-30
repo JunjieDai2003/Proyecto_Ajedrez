@@ -7,13 +7,8 @@
 Mundo::Mundo()
 {
 	estado_mundo = PANT_INI;
-	//fil = 0;
-	//col = 0;
 }
-/*Mundo::~Mundo()
-{
-	//todavia no entiendo muy bien como funciona destructor
-}*/
+
 void Mundo::dibuja()
 {
 	switch (estado_mundo)
