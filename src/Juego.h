@@ -17,5 +17,5 @@ public:
 	void dibuja();
 	int ratonjuego(int button, int state, int x, int y);
 	Casilla getCoord(int x, int y);
-	
+	void destruir();
 };

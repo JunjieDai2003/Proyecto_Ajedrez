@@ -212,3 +212,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 	}
 	return 0;
 }
+void Juego::destruir()
+{
+	tablero.destruir();
+}

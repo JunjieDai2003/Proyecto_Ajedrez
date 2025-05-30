@@ -73,8 +73,7 @@ void Mundo::dibuja()
 		break;
 	case END:
 	case END_FORREAL:
-		//teneis que llamar funciones para limpiar la memoria.
-		
+		//destruir();
 		quick_exit(0);
 		break;
 	
@@ -161,7 +160,10 @@ void Mundo::raton(int button, int state, int x, int y)
 		}
 	}
 }
-
+void Mundo::destruir()
+{
+	juego.destruir();
+}
 
 //paso lla informacion de raton 
 /*

@@ -9,10 +9,12 @@ class Mundo
 	Juego juego;
 	enum Estado_mundo { PANT_INI, DOS_JUGADOR, CONTRA_AI,BLACK,WHITE, END , END_FORREAL};
 	Estado_mundo estado_mundo;
+	
 
 public:
 	Mundo();
 	void dibuja();
 	void raton(int button, int state, int x, int y);
+	void destruir();
 };
 

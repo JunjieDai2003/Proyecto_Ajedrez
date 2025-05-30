@@ -13,6 +13,7 @@
 
 class Tablero
 {
+	
 	Pieza p;
 	//una matriz donde sus elementos son de clase pieza
 	//int **casillas1;
@@ -53,7 +54,7 @@ public:
 	int endGame();
 	bool encontrarEjecucion(int turno);
 	bool getTableroEjecucion(Casilla&);
-	
+	void destruir();
 };
 
 

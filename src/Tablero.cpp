@@ -10,7 +10,10 @@ Tablero::~Tablero() {
     }
     delete[] casillas1;          // delete the array of pointers
 }
-
+void Tablero::destruir()
+{
+    delete casillas1;
+}
 /*
 Tablero::~Tablero() {
     for (int i = 0; i < 8; ++i) {
