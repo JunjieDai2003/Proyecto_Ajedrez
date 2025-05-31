@@ -3,18 +3,13 @@
 #include<iostream>
 #include"ETSIDI.h"
 // destructor de tablero, lo llamaremos cuando termina el juego
-
+/*
 Tablero::~Tablero() {
     for (int i = 0; i < 8; ++i) {
         delete[] casillas1[i];  // delete each row
     }
     delete[] casillas1;          // delete the array of pointers
-}
-void Tablero::destruir()
-{
-    delete casillas1;
-}
-/*
+}*/
 Tablero::~Tablero() {
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j)
@@ -26,9 +21,11 @@ Tablero::~Tablero() {
     delete[] casillas1;          // delete the array of pointers
 
 
-}*/
-
-
+}
+void Tablero::destruir()
+{
+    delete casillas1;
+}
 //funcion para dibujar el tablero con los pasos, casilla roja de ejecucion
 //tambien llama a la funcion dibuja de la pieza
 void Tablero::dibuja()
