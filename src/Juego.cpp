@@ -108,7 +108,6 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoNegro;
 				ETSIDI::play("sonidos/miao.mp3");
-				vidablanca--;
 				turno = 1;
 				tablero.encontrarEjecucion(turno);
 			}
@@ -119,7 +118,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				estado_juego = TurnoNegro;
 				turno = 1;
 				ETSIDI::play("sonidos/miao.mp3");
-				vidanegra--;
+				
 				tablero.encontrarEjecucion(turno);
 			}
 			if (tablero.endGame()>0)
@@ -179,7 +178,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "ejecutas tu propia pieza\n";
 				tablero.moverPiezasyAscenso(origen, final);
 				estado_juego = TurnoBlanco;
-				vidanegra--;
+				
 				ETSIDI::play("sonidos/dog.mp3");
 				turno = 0;
 				tablero.encontrarEjecucion(turno);
@@ -189,7 +188,7 @@ int Juego::ratonjuego(int button, int state, int x, int y)
 				std::cout << "ejecutas pieza blanca\n";
 				estado_juego = TurnoBlanco;
 				tablero.moverPiezasyAscenso(origen, final);
-				vidablanca--;
+				
 				ETSIDI::play("sonidos/dog.mp3");
 				turno = 0;
 				tablero.encontrarEjecucion(turno);

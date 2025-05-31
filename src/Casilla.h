@@ -2,8 +2,6 @@
 #include<math.h>
 #include"ostream"
 extern int turno;
-extern int vidablanca;
-extern int vidanegra;
 class Casilla
 {	
 public:

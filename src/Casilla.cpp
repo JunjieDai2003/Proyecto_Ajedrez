@@ -2,8 +2,6 @@
 #include<math.h> //No hace falta, est?declarado en Casilla.h
 #include<iostream>
 int turno = 1;
-int vidablanca = 16;
-int vidanegra = 16;
 //CONSTRUCTORES
 //Crea una Casilla con dos parametros (int),fila y columna
 Casilla::Casilla(int fil, int column)
